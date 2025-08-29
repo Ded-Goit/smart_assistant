@@ -1,0 +1,20 @@
+import Image from "next/image";
+import styles from "./faq.module.css";
+
+export default function FaqPage() {
+  return (
+    <>
+      <section className={styles.faq}>
+        <div className={styles.imagesBlock}>
+          <Image
+            src="/faq/faq.png"
+            alt="Foto page"
+            width={1440}
+            height={772}
+            priority
+          />
+        </div>
+      </section>
+    </>
+  );
+}

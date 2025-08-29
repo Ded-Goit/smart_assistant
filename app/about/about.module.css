@@ -1,0 +1,166 @@
+/* === Base Wrapper === */
+.wrapper {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.colImage {
+  width: 100%;
+}
+
+.colText {
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  cursor: zoom-in;
+  filter: brightness(0.5); /* Уменьшает яркость до 50% */
+}
+.imagep {
+  width: 100%;
+  height: auto;
+}
+
+/* === Only for clickable image (обкладинка) === */
+.clickableImage {
+  cursor: zoom-in;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.clickableImage:hover {
+  cursor: zoom-in;
+  transform: scale(1.02);
+}
+
+/* === Only for portrait === */
+/* portrait uses only .image — no cursor, no shadow, no hover — done! */
+
+/* === Modal === */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  animation: scaleIn 0.3s ease;
+  padding: 1rem;
+}
+
+/* Модальне зображення — чисте: без курсора, без ховера */
+.modalImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  pointer-events: none; /* гарантія: не реагує на ховер чи кліки */
+}
+
+.closeBtn {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  background: var(--accent);
+  border-radius: 50%;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.closeBtn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.quote {
+  font-style: italic;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  margin: 1rem 0;
+}
+
+.keyPoints {
+  list-style: none;
+  padding: 0;
+}
+
+.keyPoints li {
+  margin-bottom: 0.5rem;
+}
+
+/* === Responsive === */
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .colImage {
+    flex: 1 1 40%;
+  }
+
+  .colText {
+    flex: 1 1 60%;
+    padding-left: 2rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+}

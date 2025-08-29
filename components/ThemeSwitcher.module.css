@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* Pills shape */
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background-color: var(--accent);
+  color: #000;
+  transform: scale(1.05);
+}

@@ -1,0 +1,47 @@
+.header {
+  background-color: var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.desktopNav a {
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.desktopNav a:hover {
+  opacity: 0.8;
+}
+.navLink[aria-current="page"] {
+  color: #1abc9c;
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+}

@@ -1,0 +1,365 @@
+/* ========== Wrapper ========== */
+.wrapper {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Заголовки */
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+/* Mobile First: горизонтальний свайп */
+.teamGrid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  /*scrollbar-width: none;*/
+  scrollbar-width: inherit; /* замість none */
+  scroll-behavior: smooth;
+}
+/*.teamGrid::-webkit-scrollbar {
+  display: none;
+}*/
+.teamGrid::-webkit-scrollbar {
+  display: block; /* показуємо */
+  height: 6px; /* задаємо висоту скролбару */
+}
+.teamGrid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.teamGrid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* трек */
+  border-radius: 3px;
+}
+
+.teamGrid::-webkit-scrollbar-thumb {
+  background: var(--accent, #8bc34a); /* колір повзунка */
+  border-radius: 3px;
+}
+
+.teamGrid::-webkit-scrollbar-thumb:hover {
+  background: #6ab1d7; /* hover ефект */
+}
+
+.teamGrid {
+  scrollbar-color: var(--accent, #8bc34a) rgba(255, 255, 255, 0.1); /* для Firefox */
+  scrollbar-width: thin; /* для Firefox */
+}
+
+/* Картка (mobile) — тепер одна на екрані */
+.card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--card-shadow);
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  animation: fadeInUpScale 1s ease forwards;
+  animation-delay: calc(var(--index) * 200ms);
+}
+
+/* Контент картки */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Фото — завжди квадрат і кругле */
+.photo {
+  display: block;
+  width: 140px;
+  height: 140px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+}
+
+/* Анімація */
+@keyframes fadeInUpScale {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95) rotateZ(-2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.02) rotateZ(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateZ(0);
+  }
+}
+
+/* Індикатори */
+/*.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.dot {
+  width: 20px;
+  height: 6px;
+  background-color: #ccc;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: var(--accent);
+}*/
+
+/* Tablet ≥768px: grid 2-3 колонки */
+@media (min-width: 768px) {
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    overflow: visible;
+  }
+  .card {
+    flex: initial;
+  }
+  .indicators {
+    display: none;
+  }
+}
+
+/* Desktop ≥1024px: 4 колонки */
+@media (min-width: 1024px) {
+  .teamGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Desktop ≥1440px: 5 колонок */
+@media (min-width: 1440px) {
+  .teamGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Соцкнопки */
+.socials {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.socialButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+.socialButton:before {
+  content: "";
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5)
+  );
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -8px;
+  left: -75px;
+  transform: skewX(-45deg);
+}
+.socialButton:hover {
+  background: #6ab1d7;
+  color: #fff;
+  transform: translateY(-4px);
+}
+.socialButton:hover:before {
+  left: 150px;
+  transition: 0.5s ease-in-out;
+}
+
+/* Email link */
+.emailLink {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+.emailLink:hover {
+  text-decoration: underline;
+  color: #6ab1d7;
+  transform: scale(1.1);
+}
+
+/* Tooltip */
+.emailLink::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+.emailLink::before {
+  content: "Send email";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+.emailLink:hover::after,
+.emailLink:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+/* === Базова анімація === */
+.heading {
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Градієнт тільки для <h1> */
+.headingMain {
+  font-size: clamp(2rem, 6vw, 3rem);
+  background: linear-gradient(90deg, #007cf0, #00dfd8);
+  background-clip: text; /* Стандартна! */
+  -webkit-background-clip: text; /* Для Safari */
+  -webkit-text-fill-color: transparent;
+}
+
+.headingSub {
+  font-size: clamp(1.2rem, 5vw, 2rem);
+  color: var(--text-color, #333);
+}
+
+.headingDesc {
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: var(--text-color, #555);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Затримки для каскаду */
+.delay1 {
+  animation-delay: 0.2s;
+}
+
+.delay2 {
+  animation-delay: 0.5s;
+}
+
+.delay3 {
+  animation-delay: 0.8s;
+}
+/* Основний заголовок */
+.headingMain {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+
+  /* 🇺🇦 Градієнт прапора */
+  background: linear-gradient(270deg, #0057b7, #ffd700, #0057b7, #ffd700);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Основна хвиля кольорів */
+  animation: flagWave 6s ease infinite;
+
+  /* Сяйво */
+  text-shadow: 0 0 10px rgba(0, 87, 183, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+
+  /* Позиціонування для блиску */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Блиск зверху */
+.headingMain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-25deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  50% {
+    left: 125%;
+  }
+  100% {
+    left: 125%;
+  }
+}

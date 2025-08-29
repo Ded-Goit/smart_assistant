@@ -11,6 +11,7 @@ export default function FocussessionPage() {
             alt="Foto page"
             width={1440}
             height={497}
+            style={{ width: "100%", height: "auto" }}
             priority
           />
         </div>

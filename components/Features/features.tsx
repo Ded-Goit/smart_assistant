@@ -11,6 +11,7 @@ export default function FeaturesPage() {
             alt="Foto page"
             width={1440}
             height={992}
+            style={{ width: "100%", height: "auto" }}
             priority
           />
         </div>

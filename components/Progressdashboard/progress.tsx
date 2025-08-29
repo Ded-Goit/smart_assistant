@@ -11,6 +11,7 @@ export default function ProgressPage() {
             alt="Foto page"
             width={1440}
             height={709}
+            style={{ width: "100%", height: "auto" }}
             priority
           />
         </div>

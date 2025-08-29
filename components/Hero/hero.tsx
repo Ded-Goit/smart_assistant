@@ -11,6 +11,7 @@ export default function HeroPage() {
             alt="Foto page"
             width={1440}
             height={739}
+            style={{ width: "100%", height: "auto" }}
             priority
           />
         </div>

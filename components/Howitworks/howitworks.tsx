@@ -11,6 +11,7 @@ export default function HowitworksPage() {
             alt="Foto page"
             width={1440}
             height={594}
+            style={{ width: "100%", height: "auto" }}
             priority
           />
         </div>

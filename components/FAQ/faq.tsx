@@ -11,6 +11,7 @@ export default function FaqPage() {
             alt="Foto page"
             width={1440}
             height={772}
+            style={{ width: "100%", height: "auto" }}
             priority
           />
         </div>

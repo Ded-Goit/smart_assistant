@@ -11,6 +11,7 @@ export const navLinks = [
   { href: "/checklist", label: "Check-List" },
   { href: "/team", label: "Team" },
   { href: "/resources", label: "Resources" },
+  { href: "/resourcesnew", label: "resourcesnew" },
   { href: "/profile", label: "Profile" },
   { href: "/calendar", label: "Calendar" },
   { href: "/setting", label: "setting" },

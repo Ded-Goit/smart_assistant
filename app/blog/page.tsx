@@ -48,6 +48,7 @@ export default function BlogPage() {
                        (max-width: 1024px) 250px,
                        300px"
                 priority
+                style={{ width: "100%", height: "auto" }}
                 className={styles.imageMain}
               />
               <Image
@@ -55,6 +56,7 @@ export default function BlogPage() {
                 alt="Summary"
                 width={120}
                 height={120}
+                style={{ width: "100%", height: "auto" }}
                 className={styles.imageFrog}
               />
             </div>

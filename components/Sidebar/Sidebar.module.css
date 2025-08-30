@@ -1,0 +1,84 @@
+/* Mobile first */
+.sidebar {
+  width: 100%;
+  height: auto;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: row; /* на мобайлі в рядок */
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navCenter {
+  display: flex;
+  gap: 10px;
+}
+
+.navBottom {
+  display: flex;
+  gap: 10px;
+}
+
+.navButton {
+  padding: 6px 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 6px;
+  background: #e0e0e0;
+  transition: background 0.2s ease;
+}
+
+.navButton:hover {
+  background: #ccc;
+}
+
+/* Tablet (від 768px) */
+@media (min-width: 768px) {
+  .sidebar {
+    width: 80px;
+    min-width: 80px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navCenter {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .navBottom {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 30px;
+  }
+}
+
+/* Desktop (від 1200px) */
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 100px; /* на десктопі трохи ширше */
+    min-width: 100px;
+  }
+
+  .navButton {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+}

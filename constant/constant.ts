@@ -1,4 +1,6 @@
 export const navLinks = [
+  { href: "/login", label: "Log in" },
+  { href: "/register", label: "Register" },
   { href: "/about", label: "About" },
   { href: "/book", label: "About book" },
   { href: "/shiassistant", label: "Shi assistant" },
@@ -9,4 +11,7 @@ export const navLinks = [
   { href: "/checklist", label: "Check-List" },
   { href: "/team", label: "Team" },
   { href: "/resources", label: "Resources" },
+  { href: "/profile", label: "Profile" },
+  { href: "/calendar", label: "Calendar" },
+  { href: "/setting", label: "setting" },
 ];

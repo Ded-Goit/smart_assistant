@@ -1,4 +1,3 @@
-//components\Header\Header.tsx
 "use client";
 
 import Link from "next/link";
@@ -31,7 +30,18 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <ThemeSwitcher />
+
+        <div className={styles.rightSection}>
+          <ThemeSwitcher />
+          <div className={styles.authButtons}>
+            <Link href="/login" className={styles.loginBtn}>
+              Log in
+            </Link>
+            <Link href="/register" className={styles.registerBtn}>
+              Register
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );

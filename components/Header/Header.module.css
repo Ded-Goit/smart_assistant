@@ -40,6 +40,45 @@
   color: #1abc9c;
 }
 
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.loginBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.loginBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.registerBtn {
+  padding: 0.5rem 1rem;
+  background-color: #1abc9c;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.registerBtn:hover {
+  background-color: #16a085;
+}
+
 @media (max-width: 768px) {
   .desktopNav {
     display: none;

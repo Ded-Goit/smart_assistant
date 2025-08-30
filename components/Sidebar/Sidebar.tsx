@@ -12,7 +12,7 @@ export default function Sidebar() {
 
       {/* Центральні кнопки */}
       <nav className={styles.navCenter}>
-        <Link href="/" className={styles.navButton}>
+        <Link href="/profile" className={styles.navButton}>
           Home
         </Link>
         <Link href="/calendar" className={styles.navButton}>

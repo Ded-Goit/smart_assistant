@@ -30,11 +30,12 @@ export default function HeroPage() {
           {/* Зображення */}
           <Image
             className={styles.hero__image}
-            src="/hero/desk_girl_at_kanban@2x.webp"
-            alt="image"
+            src="/hero/desk_girl_at_kanban.webp"
+            alt="Productivity illustration"
             width={537}
-            height={400}
+            height={739}
             priority
+            sizes="(max-width: 768px) 100vw, 537px"
           />
         </div>
       </div>

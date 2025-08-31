@@ -1,6 +1,8 @@
 /* -------- IMPORTS -------- */
 @import "normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import "swiper/css";
 @import "swiper/css/navigation";
 @import "swiper/css/scrollbar";
@@ -45,6 +47,221 @@ html.light {
   --swiper-scrollbar-drag-bg-color: var(--accent, #0057b7) !important;
 }
 
+/* -------- THEME VARIABLES NEW -------- */
+/* ===== СВІТЛА ТЕМА (default) ===== */
+:root {
+  --color-bg: #f9fafb;
+  --color-text: #1f2937;
+  --color-neutral: #e5e7eb;
+  --color-primary: #6c63ff;
+  --color-secondary: #00bfa6;
+  --color-tertiary: #ffc857;
+  --color-bg-viol: #bebee233;
+  --color-white: #ffffff;
+  --color-grey: #717680;
+
+  --color-primary-10: #6c63ff1a;
+  --color-secondary-10: #00bfa61a;
+  --color-tertiary-10: #ffc8571a;
+
+  --gradient-linear: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  --gradient-title: linear-gradient(38deg, #6c63ff 0%, #00bfa6 100%);
+
+  /* Сіра шкала */
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  --gray-300: #e2e8f0;
+  --gray-400: #cbd5e0;
+  --gray-500: #a0aec0;
+  --gray-600: #718096;
+  --gray-700: #4a5568;
+  --gray-800: #2d3748;
+  --gray-900: #1a202c;
+}
+
+/* ===== ТЕМНА ТЕМА ===== */
+[data-theme="dark"] {
+  --color-bg: #1a202c; /* колишній gray-900 */
+  --color-text: #f9fafb; /* світлий текст */
+  --color-neutral: #2d3748; /* глибший фон */
+  --color-primary: #8c85ff; /* трішки світліший варіант */
+  --color-secondary: #00e0c3;
+  --color-tertiary: #ffd97a;
+  --color-bg-viol: #3b3b5f66;
+  --color-white: #1a202c; /* у темі "білий" стає темним */
+  --color-grey: #cbd5e0;
+
+  --color-primary-10: #8c85ff33;
+  --color-secondary-10: #00e0c333;
+  --color-tertiary-10: #ffd97a33;
+
+  --gradient-linear: linear-gradient(49deg, #8c85ff 0%, #6c63ff 100%);
+  --gradient-title: linear-gradient(38deg, #00e0c3 0%, #8c85ff 100%);
+
+  /* Перевернута сіра шкала */
+  --gray-100: #1a202c;
+  --gray-200: #2d3748;
+  --gray-300: #4a5568;
+  --gray-400: #718096;
+  --gray-500: #a0aec0;
+  --gray-600: #cbd5e0;
+  --gray-700: #e2e8f0;
+  --gray-800: #edf2f7;
+  --gray-900: #f7fafc;
+}
+
+/* ===== БАЗОВІ ПРИЗНАЧЕННЯ ===== */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+/* ===== ШРИФТИ (змінні) ===== */
+:root {
+  --ff-inter:
+    "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ff-nunito:
+    "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ff-roboto: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+}
+
+/* ===== ТИПОГРАФІКА (класи зі стилів у JSON) ===== */
+/* Header → Head1-58Bold (Nunito Bold, 58/64) */
+.h1 {
+  font-family: var(--ff-nunito);
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 64px; /* з токена lineHeights.3 */
+  letter-spacing: 0;
+}
+
+/* Header → Head2-48SB (Nunito SemiBold, 48, line-height: AUTO→normal) */
+.h2 {
+  font-family: var(--ff-nunito);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Header → Head3-34SB (Nunito SemiBold, 34, line-height: AUTO→normal) */
+.h3 {
+  font-family: var(--ff-nunito);
+  font-weight: 600;
+  font-size: 34px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Header → Head4-22Medium (Inter Medium, 22, line-height: AUTO→normal) */
+.h4 {
+  font-family: var(--ff-inter);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Main text → Text1-24Reg (Inter Regular, 24) */
+.text24 {
+  font-family: var(--ff-inter);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Main text → Text2-18Reg (Inter Regular, 18) */
+.text18 {
+  font-family: var(--ff-inter);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Main text → Text3-16Medium (Inter Medium, 16) */
+.text16medium {
+  font-family: var(--ff-inter);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Main text → Text4-14Reg (Inter Regular, 14/30) */
+.text14 {
+  font-family: var(--ff-inter);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+
+/* Main text → Text5-14SB (Inter SemiBold, 14/20) */
+.text14sb {
+  font-family: var(--ff-inter);
+  font-weight: 600; /* "Semi Bold" */
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+/* Main text → Text6-18Medium (Inter Medium, 18) */
+.text18medium {
+  font-family: var(--ff-inter);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+/* Допоміжні (малий текст із JSON) */
+.text16 {
+  /* Text7-16Reg */
+  font-family: var(--ff-inter);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+}
+
+.text12 {
+  /* Text7-12Reg */
+  font-family: var(--ff-inter);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.text12medium {
+  /* Text8-12Medium */
+  font-family: var(--ff-inter);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+/* Утилітарні кольорові класи (приклади) */
+.bg-primary {
+  background: var(--color-primary);
+}
+.bg-secondary {
+  background: var(--color-secondary);
+}
+.bg-tertiary {
+  background: var(--color-tertiary);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-grey {
+  color: var(--color-grey);
+}
+.border-neutral {
+  border-color: var(--color-neutral);
+}
 /* -------- RESET & BASE -------- */
 *,
 *::before,
@@ -58,8 +275,6 @@ html,
 body {
   height: 100%;
   font-family: var(--font-main);
-  background-color: var(--bg);
-  color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -95,4 +310,64 @@ textarea {
   background: none;
   cursor: pointer;
 }
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
 /* -------- ДОПИСАТИ ДЛЯ СЕКЦІЙ МЕДІАПРАВИЛА -------- */
+/* 🎨 Базові змінні для кнопок */
+:root {
+  /* Кольори кнопки (світла тема) */
+  --btn-bg: #6c63ff;
+  --btn-bg-hover: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  --btn-bg-active: #00bfa6;
+
+  /* Текст кнопки */
+  --btn-font-family: "Inter", sans-serif;
+  --btn-font-weight: 500;
+  --btn-font-size: 16px;
+  --btn-text-color: #f9fafb;
+}
+
+/* 🌙 Темна тема (через клас .dark на <html>) */
+.dark {
+  --btn-bg: #00bfa6;
+  --btn-bg-hover: linear-gradient(49deg, #00bfa6 0%, #008066 100%);
+  --btn-bg-active: #6c63ff;
+  --btn-text-color: #ffffff;
+}
+
+/* 🔘 Базова повнокольорова кнопка */
+.btnfullcolor {
+  background: var(--btn-bg);
+  color: var(--btn-text-color);
+  font-family: var(--btn-font-family);
+  font-weight: var(--btn-font-weight);
+  font-size: var(--btn-font-size);
+  text-align: center;
+  user-select: none;
+  border: none;
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.btnfullcolor:hover {
+  background: var(--btn-bg-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.btnfullcolor:active {
+  background: var(--btn-bg-active);
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}

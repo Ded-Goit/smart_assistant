@@ -1,6 +1,7 @@
 export const navLinks = [
-  { href: "/login", label: "Log in" },
-  { href: "/register", label: "Register" },
+  { href: "/cookies-policy", label: "About" },
+  { href: "/terms-and-conditions", label: "About" },
+  { href: "/privacy-policy", label: "About" },
   { href: "/about", label: "About" },
   { href: "/book", label: "About book" },
   { href: "/shiassistant", label: "Shi assistant" },

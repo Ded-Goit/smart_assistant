@@ -1,41 +1,57 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
-import styles from "./MobileMenu.module.css";
+import Link from "next/link";
 import { navLinks } from "@/constant/constant";
+import styles from "./MobileMenu.module.css";
+import { Menu, X } from "lucide-react";
 
 export default function MobileMenu() {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <button className={styles.burger} onClick={() => setOpen(true)}>
-        ☰
+    <div className={styles.mobileMenu}>
+      <button
+        className={styles.menuButton}
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
-      {open && (
-        <div className={styles.overlay}>
-          <button className={styles.close} onClick={() => setOpen(false)}>
-            x
-          </button>
-          <nav className={styles.nav}>
-            {navLinks.map(({ href, label }) => (
+
+      {isOpen && (
+        <div className={styles.menuOverlay}>
+          <nav className={styles.menuNav}>
+            {navLinks.map((link) => (
               <Link
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className={`${styles.link} ${
-                  pathname === href ? styles.active : ""
-                }`}
+                key={link.href}
+                href={link.href}
+                className={styles.menuLink}
+                onClick={() => setIsOpen(false)}
               >
-                {label}
+                {link.label}
               </Link>
             ))}
+
+            <div className={styles.authButtons}>
+              <Link
+                href="/login"
+                className={styles.loginBtn}
+                onClick={() => setIsOpen(false)}
+              >
+                Log in
+              </Link>
+              <Link
+                href="/register"
+                className={styles.registerBtn}
+                onClick={() => setIsOpen(false)}
+              >
+                Register
+              </Link>
+            </div>
           </nav>
         </div>
       )}
-    </>
+    </div>
   );
 }

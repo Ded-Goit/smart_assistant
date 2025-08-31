@@ -1,0 +1,55 @@
+svg {
+  transition: color 0.4s ease, transform 0.3s ease-in-out;
+}
+svg:hover {
+  color: #00bfa6;
+  transform: scale(1.05);
+  /* box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); */
+}
+svg:active {
+  transform: scale(0.97);
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); */
+}
+.arrow {
+  color: #1F2937;
+  fill: #E5E7EB;
+}
+.arrow:hover {
+  transform: rotate(90deg);
+  color: #fff;
+  fill: #6c63ff;
+}
+.done {
+  color: #00bfa6;
+}
+.done:hover {
+  color: #6c63ff;
+}
+.facebook {
+  color: #6c63ff;
+}
+.facebook:hover {
+  color: #00bfa6;
+}
+.instagram {
+  color: #6c63ff;
+}
+.instagram:hover {
+  color: #00bfa6;
+}
+.linkedin {
+  color: #6c63ff;
+}
+.linkedin:hover {
+  color: #6c63ff;
+}
+.linkedin:hover {
+  color: #00bfa6;
+}
+
+.telegram {
+  color: #6c63ff;
+}
+.telegram:hover {
+  color: #00bfa6;
+}

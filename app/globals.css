@@ -330,7 +330,7 @@ button {
   --btn-bg-active: #00bfa6;
 
   /* Текст кнопки */
-  --btn-font-family: "Nunito", sans-serif;
+  --btn-font-family: "Inter", sans-serif;
   --btn-font-weight: 500;
   --btn-font-size: 16px;
   --btn-text-color: #f9fafb;
@@ -370,4 +370,11 @@ button {
   background: var(--btn-bg-active);
   transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/*  */
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

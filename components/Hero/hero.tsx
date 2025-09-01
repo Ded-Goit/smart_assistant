@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./hero.module.css";
+import Link from "next/link";
 
 export default function HeroPage() {
   return (
@@ -19,12 +20,12 @@ export default function HeroPage() {
             </p>
 
             {/* Кнопка */}
-            <button
+            <Link
+              href="/profile"
               className={`${styles.hero__btn} btnfullcolor`}
-              type="button"
             >
               Start Now
-            </button>
+            </Link>
           </div>
 
           {/* Зображення */}
@@ -35,6 +36,7 @@ export default function HeroPage() {
             width={537}
             height={739}
             priority
+            style={{ width: "100%", height: "auto" }}
             sizes="(max-width: 768px) 100vw, 537px"
           />
         </div>

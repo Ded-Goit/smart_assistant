@@ -4,7 +4,7 @@ import styles from "./howitworks.module.css";
 export default function HowitworksPage() {
   return (
     <>
-      <section className={styles.howitworks}>
+      <section id="how-it-works" className={styles.howitworks}>
         <div className={styles.imagesBlock}>
           <Image
             src="/howitworks/howitworks.png"

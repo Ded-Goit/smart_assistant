@@ -47,6 +47,9 @@
   height: auto;
   display: block;
 }
+.howitworks__box-list {
+list-style: none;
+}
 .howitworks__box-title {
   margin-bottom: 8px;
 }

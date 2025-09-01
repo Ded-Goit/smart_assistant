@@ -38,7 +38,9 @@ export default function BookPage() {
             alt="Brian Tracy"
             width={800}
             height={800}
+            style={{ width: "100%", height: "auto" }}
             className={styles.image}
+            priority
           />
         </div>
       </div>
@@ -51,7 +53,9 @@ export default function BookPage() {
             alt="Do It Now Book"
             width={800}
             height={800}
+            style={{ width: "100%", height: "auto" }}
             className={styles.image}
+            priority
           />
         </div>
         <div className={styles.textBlock}>

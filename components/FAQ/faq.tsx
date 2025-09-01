@@ -4,7 +4,7 @@ import styles from "./faq.module.css";
 export default function FaqPage() {
   return (
     <>
-      <section className={styles.faq}>
+      <section id="faq" className={styles.faq}>
         <div className={styles.imagesBlock}>
           <Image
             src="/faq/faq.png"

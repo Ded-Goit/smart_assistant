@@ -1,16 +1,16 @@
 export const navLinks = [
-  { href: "/cookies-policy", label: "About" },
-  { href: "/terms-and-conditions", label: "About" },
-  { href: "/privacy-policy", label: "About" },
-  { href: "/about", label: "About" },
-  { href: "/book", label: "About book" },
-  { href: "/shiassistant", label: "Shi assistant" },
-  { href: "/tools", label: "Tools" },
-  { href: "/study", label: "Study" },
-  { href: "/blog", label: "Blog / News" },
-  { href: "/community", label: "Community" },
-  { href: "/checklist", label: "Check-List" },
-  { href: "/team", label: "Team" },
-  { href: "/resources", label: "Resources" },
-  { href: "/profile", label: "Profile" },
+  { href: "/", label: "Home" },
+  { href: "/#how-it-works", label: "How It Works?" },
+  { href: "/#features", label: "Features" },
+  { href: "/#faq", label: "FAQ" },
 ];
+export const logoText = "Smart Assistent";
+
+export const subscribe = {
+  linkedin:
+    "https://www.linkedin.com/school/goit-start-your-career-in-it/posts/?feedView=all",
+  telegram: "https://t.me/junior_developer_ua",
+  youtube: "https://www.youtube.com/c/GoIT",
+  instagram: "https://www.instagram.com/goitclub/",
+  facebook: "https://www.facebook.com/goITclub",
+};

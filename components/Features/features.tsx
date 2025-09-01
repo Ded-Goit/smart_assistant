@@ -4,7 +4,7 @@ import styles from "./features.module.css";
 export default function FeaturesPage() {
   return (
     <>
-      <section className={styles.features}>
+      <section id="features" className={styles.features}>
         <div className={styles.imagesBlock}>
           <Image
             src="/features/features.png"

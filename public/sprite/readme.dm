@@ -1,0 +1,1 @@
+svg-sprite-generate -d svg/ -o ./sprite.svg

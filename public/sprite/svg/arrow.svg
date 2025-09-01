@@ -1,0 +1,8 @@
+<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.000000" height="40.000000" fill="none" customFrame="#000000">
+	<g id="next arrow">
+		<circle id="Ellipse 60" cx="20" cy="20" r="17" fill="transparent" fill-opacity="0.00999999978" />
+		<circle id="Ellipse 60" cx="20" cy="20" r="18.5" stroke="transparent" stroke-width="3" />
+
+		<path id="Vector" d="M18.0492 8.19676L10.3033 0.45082C9.69905 -0.150273 8.72311 -0.150273 8.11889 0.45082L0.372949 8.19676C-0.124316 8.77613 -0.124316 9.63285 0.372949 10.2122C0.929121 10.8614 1.90818 10.9372 2.55733 10.3811L9.20334 3.73512L15.8648 10.3811C16.469 10.9822 17.445 10.9822 18.0492 10.3811C18.6503 9.77691 18.6503 8.8009 18.0492 8.19676Z" fill="currentColor" fill-rule="nonzero" transform="matrix(1.19249e-08,-1,-1,-1.19249e-08,26.8319,29.5)" />
+	</g>
+</svg>

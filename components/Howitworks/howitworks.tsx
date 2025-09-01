@@ -144,6 +144,15 @@ export default function HowitworksPage() {
               </ul>
             </div>
           </div>
+          <div className={styles.howitworks__bottom}>
+            <p className={`${styles["howitworks__bottom-text"]} text24`}>
+              Boost your productivity and reach your goals faster! Join now and
+              start tracking your tasks like a pro.
+            </p>
+            <button className={`${styles["howitworks__bottom-btn"]} btnfullcolor`} type="button">
+              Get Started
+            </button>
+          </div>
         </div>
       </section>
     </>

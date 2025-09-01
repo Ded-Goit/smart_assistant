@@ -4,3 +4,33 @@
 .imagesBlock {
   max-width: 100%;
 }
+.container {
+  max-width: 1248px;
+  margin: 0 auto;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+.features__title {
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* расстояние между иконками и текстом */
+  margin-bottom: 32px;
+}
+.features__title::before,
+.features__title::after {
+  content: "";
+  width: 91px;
+  height: 24px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.features__title::before {
+  background-image: url("/icon/vector-left.svg");
+}
+.features__title::after {
+  background-image: url("/icon/vector-right.svg");
+}

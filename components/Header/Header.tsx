@@ -32,7 +32,6 @@ export default function Header() {
         </nav>
 
         <div className={styles.rightSection}>
-          <ThemeSwitcher />
           <div className={styles.authButtons}>
             <Link href="/login" className={styles.loginBtn}>
               Log in

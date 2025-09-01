@@ -13,8 +13,6 @@ export default function HomePage() {
       <section className={styles.hero}>
         <HeroPage />
         <HowitworksPage />
-        <FocussessionPage />
-        <ProgressPage />
         <FeaturesPage />
         <FaqPage />
       </section>

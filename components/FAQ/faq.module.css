@@ -90,6 +90,6 @@
 }
 
 .faq__item-text {
-  /* display: none; */
+  display: none;
   margin-top: 16px;
 }

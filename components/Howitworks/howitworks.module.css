@@ -1,6 +1,184 @@
-.howitworks {
+/* === БАЗА (мобільний перший) === */
+.container {
   max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
 }
-.imagesBlock {
-  max-width: 100%;
+
+.howitworks__title {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+.howitworks__title::before,
+.howitworks__title::after {
+  display: none; /* прибираємо декоративні елементи на мобілці */
+}
+
+.howitworks__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 16px;
+}
+
+.howitworks__box-image {
+  width: 100%;
+  max-width: 300px;
+}
+
+.howitworks__box-title {
+  font-size: 20px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.howitworks__box-list {
+  padding: 0;
+  margin: 0;
+}
+
+.howitworks__box-item {
+  padding: 6px 0;
+}
+
+.howitworks__box-text {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.howitworks__box-text::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-image: url("/icons/done.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.howitworks__bottom {
+  width: 100%;
+  border-radius: 16px;
+  background-color: #bebee27c;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.howitworks__bottom-text {
+  margin: 0 auto 24px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.howitworks__bottom-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 5px;
+  background-color: #6c63ff;
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease;
+}
+
+.howitworks__bottom-btn:hover {
+  background-color: #00bfa6;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.howitworks__bottom-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* === ПЛАНШЕТИ (min-width: 768px) === */
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .howitworks__title {
+    font-size: 28px;
+  }
+
+  .howitworks__box-title {
+    font-size: 22px;
+  }
+
+  .howitworks__box-text {
+    font-size: 18px;
+  }
+
+  .howitworks__bottom-text {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  .howitworks__bottom-btn {
+    width: auto;
+    padding: 12px 40px;
+  }
+}
+
+/* === ДЕСКТОПИ (min-width: 1024px) === */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1248px;
+  }
+
+  .howitworks__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .howitworks__title::before,
+  .howitworks__title::after {
+    display: inline-block;
+    content: "";
+    width: 91px;
+    height: 24px;
+    background-repeat: no-repeat;
+  }
+
+  .howitworks__title::before {
+    background-image: url("/icons/vector-left.svg");
+  }
+  .howitworks__title::after {
+    background-image: url("/icons/vector-right.svg");
+  }
+
+  .howitworks__box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .howitworks__box-image {
+    max-width: 513px;
+  }
+
+  .howitworks__box-title {
+    font-size: 24px;
+  }
+
+  .howitworks__bottom {
+    max-width: 1036px;
+    margin: 0 auto;
+    padding: 32px;
+    border-radius: 25px;
+  }
+
+  .howitworks__bottom-text {
+    max-width: 642px;
+    font-size: 22px;
+  }
 }

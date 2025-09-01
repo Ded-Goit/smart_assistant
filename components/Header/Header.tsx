@@ -10,6 +10,18 @@ import { logoText, navLinks } from "@/constant/constant";
 export default function Header() {
   const pathname = usePathname();
 
+  // ❌ список сторінок, де ThemeSwitcher не потрібен
+  const excludeTheme = [
+    "/",
+    "/login",
+    "/register",
+    "/calendar",
+    "/resourcesnew",
+  ];
+
+  // якщо поточний шлях у списку — не показуємо
+  const showTheme = !excludeTheme.includes(pathname);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -32,6 +44,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.rightSection}>
+          {showTheme && <ThemeSwitcher />}
           <div className={styles.authButtons}>
             <Link href="/login" className={styles.loginBtn}>
               Log in

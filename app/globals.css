@@ -9,28 +9,53 @@
 
 /* -------- THEME VARIABLES -------- */
 :root {
-  /* Шрифти */
-  --font-main: "Inter", sans-serif;
+  /* ===== ШРИФТИ (змінні) ===== */
+  --ff-inter:
+    "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ff-nunito:
+    "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ff-roboto: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 
-  /* Mobile First: dark theme за замовчуванням */
-  --bg: #000;
-  --text: #f4f4f4;
-  --accent: rgb(139, 195, 74);
-  --accent-rgb: 139, 195, 74;
-  --card-bg: #111;
-  --card-shadow: rgba(0, 0, 0, 0.5);
-  --hover-text-dark: #1c1f23;
-  --hover-scale: 1.05;
-  --transition-base: 0.3s ease;
-  --pagination-bullet: #555; /* темніші смужки */
-  --pagination-bullet-active: var(--accent, #8bc34a); /* яскравий акцент */
+  /* -------- THEME VARIABLES NEW -------- */
 
-  /* Кольори бібліотек темна тема */
-  --swiper-scrollbar-border-radius: 8px !important;
-  --swiper-scrollbar-size: 6px !important;
-  --swiper-scrollbar-bottom: 8px !important;
-  --swiper-scrollbar-bg-color: rgba(255, 255, 255, 0.1) !important;
-  --swiper-scrollbar-drag-bg-color: var(--accent, #8bc34a) !important;
+  /* ===== СВІТЛА ТЕМА (default) ===== */
+  --background: #f9fafb;
+  --background-viol: rgba(190, 190, 226, 0.2);
+  --color-text: #1f2937;
+  --color-neutral: #e5e7eb;
+  --color-primary: #6c63ff;
+  --color-secondary: #00bfa6;
+  --color-tertiary: #ffc857;
+  --color-bg: #f9fafb;
+  --color-bg-viol: #bebee233;
+  --color-white: #ffffff;
+  --color-grey: #717680;
+  --color-primary-10: #6c63ff1a;
+  --color-secondary-10: #00bfa61a;
+  --color-tertiary-10: #ffc8571a;
+  --gradient-linear: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  --gradient-title: linear-gradient(38deg, #6c63ff 0%, #00bfa6 100%);
+  --grey: #717680;
+  --neutral: #e5e7eb;
+  --primary: #6c63ff;
+  --primary-10: rgba(108, 99, 255, 0.1);
+  --secondary: #00bfa6;
+  --secondary-10: rgba(0, 191, 166, 0.1);
+  --tertiary: #ffc857;
+  --tertiary-10: rgba(255, 200, 87, 0.1);
+  --text-main: #1f2937;
+  --white: #fff;
+
+  /* Сіра шкала */
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  --gray-300: #e2e8f0;
+  --gray-400: #cbd5e0;
+  --gray-500: #a0aec0;
+  --gray-600: #718096;
+  --gray-700: #4a5568;
+  --gray-800: #2d3748;
+  --gray-900: #1a202c;
 }
 
 /* Light theme overrides */
@@ -47,38 +72,6 @@ html.light {
   --swiper-scrollbar-drag-bg-color: var(--accent, #0057b7) !important;
 }
 
-/* -------- THEME VARIABLES NEW -------- */
-/* ===== СВІТЛА ТЕМА (default) ===== */
-:root {
-  --color-bg: #f9fafb;
-  --color-text: #1f2937;
-  --color-neutral: #e5e7eb;
-  --color-primary: #6c63ff;
-  --color-secondary: #00bfa6;
-  --color-tertiary: #ffc857;
-  --color-bg-viol: #bebee233;
-  --color-white: #ffffff;
-  --color-grey: #717680;
-
-  --color-primary-10: #6c63ff1a;
-  --color-secondary-10: #00bfa61a;
-  --color-tertiary-10: #ffc8571a;
-
-  --gradient-linear: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
-  --gradient-title: linear-gradient(38deg, #6c63ff 0%, #00bfa6 100%);
-
-  /* Сіра шкала */
-  --gray-100: #f7fafc;
-  --gray-200: #edf2f7;
-  --gray-300: #e2e8f0;
-  --gray-400: #cbd5e0;
-  --gray-500: #a0aec0;
-  --gray-600: #718096;
-  --gray-700: #4a5568;
-  --gray-800: #2d3748;
-  --gray-900: #1a202c;
-}
-
 /* ===== ТЕМНА ТЕМА ===== */
 [data-theme="dark"] {
   --color-bg: #1a202c; /* колишній gray-900 */
@@ -90,13 +83,29 @@ html.light {
   --color-bg-viol: #3b3b5f66;
   --color-white: #1a202c; /* у темі "білий" стає темним */
   --color-grey: #cbd5e0;
-
   --color-primary-10: #8c85ff33;
   --color-secondary-10: #00e0c333;
   --color-tertiary-10: #ffd97a33;
-
   --gradient-linear: linear-gradient(49deg, #8c85ff 0%, #6c63ff 100%);
   --gradient-title: linear-gradient(38deg, #00e0c3 0%, #8c85ff 100%);
+  --bg: #000;
+  --text: #f4f4f4;
+  --accent: rgb(139, 195, 74);
+  --accent-rgb: 139, 195, 74;
+  --card-bg: #111;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --hover-text-dark: #1c1f23;
+  --hover-scale: 1.05;
+  --transition-base: 0.3s ease;
+  --pagination-bullet: #555;
+  --pagination-bullet-active: var(--accent, #8bc34a);
+
+  /* Кольори бібліотек темна тема */
+  --swiper-scrollbar-border-radius: 8px !important;
+  --swiper-scrollbar-size: 6px !important;
+  --swiper-scrollbar-bottom: 8px !important;
+  --swiper-scrollbar-bg-color: rgba(255, 255, 255, 0.1) !important;
+  --swiper-scrollbar-drag-bg-color: var(--accent, #8bc34a) !important;
 
   /* Перевернута сіра шкала */
   --gray-100: #1a202c;
@@ -117,14 +126,6 @@ body {
   transition:
     background 0.3s ease,
     color 0.3s ease;
-}
-/* ===== ШРИФТИ (змінні) ===== */
-:root {
-  --ff-inter:
-    "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --ff-nunito:
-    "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --ff-roboto: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 }
 
 /* ===== ТИПОГРАФІКА (класи зі стилів у JSON) ===== */
@@ -271,14 +272,14 @@ body {
   padding: 0;
 }
 
-html,
+/*html,
 body {
   height: 100%;
   font-family: var(--font-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
 
 img,
 picture,
@@ -291,7 +292,6 @@ svg {
 }
 
 a {
-  color: var(--accent);
   text-decoration: none;
   transition: color var(--transition-base);
 }
@@ -321,9 +321,9 @@ button {
   cursor: pointer;
   outline: none;
 }
-/* -------- ДОПИСАТИ ДЛЯ СЕКЦІЙ МЕДІАПРАВИЛА -------- */
-/* 🎨 Базові змінні для кнопок */
+
 :root {
+  /* 🎨 Базові змінні для кнопок */
   /* Кольори кнопки (світла тема) */
   --btn-bg: #6c63ff;
   --btn-bg-hover: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
@@ -371,3 +371,5 @@ button {
   transform: scale(0.97);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+/* -------- ДОПИСАТИ ДЛЯ СЕКЦІЙ МЕДІАПРАВИЛА -------- */

@@ -3,7 +3,8 @@
 }
 .features__box {
   border-radius: 25px;
-  background-color: #bebee27c;
+  backdrop-filter: blur(40px);
+  background: var(--background-viol);
   padding: 24px 24px;
 }
 .features__box-title {

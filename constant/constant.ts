@@ -1,10 +1,10 @@
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#how-it-works", label: "How It Works?" },
-  { href: "/#features", label: "Features" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "#how-it-works", label: "How It Works?" },
+  { href: "#features", label: "Features" },
+  { href: "#faq", label: "FAQ" },
 ];
-export const logoText = "Smart Assistent";
+export const logo = "/logo.png";
 
 export const subscribe = {
   linkedin:

@@ -47,7 +47,7 @@ export default function Header() {
           {showTheme && <ThemeSwitcher />}
           <div className={styles.authButtons}>
             <Link href="/login" className={styles.loginBtn}>
-              Log in
+              Log In
             </Link>
             <Link href="/register" className={styles.registerBtn}>
               Register

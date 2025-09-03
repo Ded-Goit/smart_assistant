@@ -12,7 +12,6 @@ export default function HeroPage() {
             <h1 className={`${styles.hero__title} h1`}>
               Your smart productivity partner
             </h1>
-
             {/* Текст */}
             <p className={`${styles.hero__text} text24`}>
               Track your tasks, manage your time, and boost productivity with

@@ -1,12 +1,13 @@
 .header {
-  background-color: var(--accent);
+  background-color: var(--background-viol);
+  border-radius: 0 0 16px 16px;
+  padding: 0px 96px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 }
-
 .container {
   display: flex;
   align-items: center;
@@ -15,31 +16,51 @@
   max-width: 1200px;
   margin: auto;
 }
-
 .logo {
   color: white;
   font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
 }
-
 .desktopNav {
   display: flex;
   gap: 1.25rem;
 }
 
-.desktopNav a {
-  color: white;
+/* 🔹 Базовий стиль */
+.navLink {
+  color: #1f2937;
   font-weight: 500;
   text-decoration: none;
-  transition: opacity 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.desktopNav a:hover {
-  opacity: 0.8;
+/* 🔹 Hover */
+.navLink:hover {
+  color: #00bfa6;
 }
+
+/* 🔹 Active (поточна сторінка/секція) */
 .navLink[aria-current="page"] {
-  color: #1abc9c;
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  background-clip: text; /* ✅ стандартна властивість */
+  -webkit-background-clip: text; /* ✅ для Safari/Chrome */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* ✅ для сумісності з Firefox */
+  font-weight: 600;
+}
+
+/* 🔹 Підкреслення тільки для активного */
+.navLink[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  border-radius: 2px;
 }
 
 .rightSection {
@@ -47,12 +68,10 @@
   align-items: center;
   gap: 1rem;
 }
-
 .authButtons {
   display: flex;
   gap: 0.75rem;
 }
-
 .loginBtn {
   padding: 0.5rem 1rem;
   border: 1px solid white;
@@ -62,11 +81,9 @@
   font-weight: 500;
   transition: all 0.3s ease;
 }
-
 .loginBtn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
 .registerBtn {
   padding: 0.5rem 1rem;
   background-color: #1abc9c;
@@ -76,11 +93,9 @@
   font-weight: 600;
   transition: background-color 0.3s ease;
 }
-
 .registerBtn:hover {
   background-color: #16a085;
 }
-
 @media (max-width: 768px) {
   .desktopNav {
     display: none;

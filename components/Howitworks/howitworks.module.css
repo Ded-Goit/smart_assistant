@@ -65,7 +65,7 @@
 .howitworks__bottom {
   width: 100%;
   border-radius: 16px;
-  background-color: #bebee27c;
+  background-color: var(--background-viol);
   padding: 24px 16px;
   text-align: center;
 }

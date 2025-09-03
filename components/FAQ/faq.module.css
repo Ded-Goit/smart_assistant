@@ -2,19 +2,18 @@
   width: 100%;
 }
 
-.imagesBlock {
-  width: 100%;
-}
 .container {
   max-width: 1248px;
   margin: 0 auto;
+  padding: 0 16px;
 }
+
 .faq__title {
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* расстояние между иконками и текстом */
+  gap: 10px;
   margin-bottom: 32px;
 }
 .faq__title::before,
@@ -25,71 +24,86 @@
   height: 24px;
   background-repeat: no-repeat;
 }
-
 .faq__title::before {
   background-image: url("/icons/vector-left.svg");
 }
 .faq__title::after {
   background-image: url("/icons/vector-right.svg");
 }
+
 .faq__box {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 40px;
 }
-.faq__box-image {
-  width: 575px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-right: 77px;
+
+.faq__image {
+  flex: 0 0 40%;
 }
+
 .faq__list {
+  flex: 1;
+  list-style: none;
   max-width: 610px;
   width: 100%;
-  list-style: none;
 }
 
 .faq__item {
   padding: 26px 32px;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: 0px 1px 4px 0px #19213d0f;
   transition: all 0.4s;
+  cursor: pointer;
 }
 .faq__item:hover {
   box-shadow: 0px 1px 4px 0px #19213d8f;
 }
 .faq__item:not(:last-child) {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
+
 .faq__item-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .faq__item-title {
   max-width: 482px;
   margin: 0;
   padding: 0;
 }
+
 .faq__item-icon {
   width: 34px;
   height: 34px;
-  color: #1f2937;
-  fill: #e5e7eb;
+  color: var(--text-main);
+  fill: var(--color-neutral);
   transition:
-    color 0.4s ease,
-    transform 0.3s ease-in-out,
-    fill 0.3s ease-in-out;
+    transform 0.3s ease,
+    fill 0.3s ease;
 }
 .faq__item-icon:hover {
+  fill: var(--color-primary);
+}
+.rotate {
   transform: rotate(90deg);
-  color: #fff;
-  fill: #6c63ff;
+  fill: var(--color-primary);
 }
 
+/* Текст для акордеона */
 .faq__item-text {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: all 0.3s ease;
+}
+
+.show {
+  max-height: 300px; /* достатньо для тексту */
+  opacity: 1;
   margin-top: 16px;
 }

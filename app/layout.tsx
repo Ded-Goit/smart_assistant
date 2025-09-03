@@ -7,7 +7,7 @@ import Footer from "@/components/Footer/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://hackathon2025-beta.vercel.app"),
   title: {
-    default: "Твій час. Твій ритм. Твій асистент.",
+    default: "Smart Assistant",
     template: "%s — Ши Помічник",
   },
   description:

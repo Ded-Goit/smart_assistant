@@ -74,27 +74,37 @@
 }
 .loginBtn {
   padding: 0.5rem 1rem;
-  border: 1px solid white;
+  border: 1px solid #6c63ff;
   border-radius: 6px;
-  color: white;
+  color: #1f2937;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 .loginBtn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #413b99;
+  transform: scale(1.05);
 }
 .registerBtn {
   padding: 0.5rem 1rem;
-  background-color: #1abc9c;
+  background-color: #6c63ff;
   border-radius: 6px;
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
+  transition:
+    background 0.3s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 .registerBtn:hover {
-  background-color: #16a085;
+  /* background-color: #16a085; */
+  transform: scale(1.05);
+  background: linear-gradient(to right, #6c63ff, #413b99);
+}
+.registerBtn:active {
+  transform: scale(0.97);
+  background-color: #00bfa6;
 }
 @media (max-width: 768px) {
   .desktopNav {

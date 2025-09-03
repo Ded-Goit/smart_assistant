@@ -342,12 +342,15 @@ button {
 .btnfullcolor:hover {
   background: var(--btn-bg-hover);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 .btnfullcolor:active {
   background: var(--btn-bg-active);
   transform: scale(0.97);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* -------- ДОПИСАТИ ДЛЯ СЕКЦІЙ МЕДІАПРАВИЛА -------- */
+
+/* Добавила плавный переход по секциям  */
+html {
+  scroll-behavior: smooth;
+}

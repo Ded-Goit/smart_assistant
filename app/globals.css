@@ -346,7 +346,7 @@ button {
 
 /* 🔘 Базова повнокольорова кнопка */
 .btnfullcolor {
-  background: var(--btn-bg);
+  background-color: var(--btn-bg);
   color: var(--btn-text-color);
   font-family: var(--btn-font-family);
   font-weight: var(--btn-font-weight);
@@ -355,9 +355,9 @@ button {
   user-select: none;
   border: none;
   transition:
-    background 0.4s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    background 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 
 .btnfullcolor:hover {

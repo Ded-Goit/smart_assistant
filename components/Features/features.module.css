@@ -1,3 +1,20 @@
+.features__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.features__title::before,
+.features__title::after {
+  display: inline-block;
+  content: "";
+  width: 91px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+.features__title::before {
+  background-image: url("/icons/vector-left.svg");
+}
 .features__title::after {
   background-image: url("/icons/vector-right.svg");
 }

@@ -87,15 +87,15 @@
 }
 
 .howitworks__bottom-btn:hover {
-  background-color: #00bfa6;
+ background: linear-gradient(to right, #6c63ff, #413b99);
   transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .howitworks__bottom-btn:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #00bfa6;
 }
+
 
 /* === ПЛАНШЕТИ (min-width: 768px) === */
 @media (min-width: 768px) {

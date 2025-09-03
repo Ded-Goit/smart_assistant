@@ -1,7 +1,12 @@
+import { ReactNode } from "react";
 import Logout from "../Logout/Logout";
 import css from "./LoginCover.module.css";
 
-export default function LoginCover({ children }) {
+interface LoginCoverProps {
+  children: ReactNode;
+}
+
+export default function LoginCover({ { children }: LoginCoverProps }) {
   return (
     <div className={css.position}>
       <div className={css.form}>

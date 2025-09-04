@@ -21,11 +21,18 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
+        
+
         <div><Logo width={160} height={56} /></div>
+        <div>
+          <Link href="/" className={styles.logo}>
+            <Image src={logo} alt="Logo" width={158} height={56} priority />
+          </Link>
+        </div>
+
 
         {/* Навігація */}
-        <div className={styles.navigation}
-        >
+        <div className={styles.navigation}>
           <p className={`${styles.subtitle} text18medium`}>Navigation</p>
           <nav>
             {navLinks.map((link) => (
@@ -33,7 +40,7 @@ export default function Footer() {
                 key={link.href}
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
-                className={styles.navlink}
+                className={`${styles.navlink} text14`}
               >
                 {link.label}
               </Link>
@@ -42,25 +49,26 @@ export default function Footer() {
         </div>
 
         {/* Legal */}
-        <div className={styles.navigation}
-        >
+        <div className={styles.navigation}>
           <p className={`${styles.subtitle} text18medium`}>Legal</p>
           <nav className={styles.legalNav}>
-            <Link href="/terms-and-conditions" className={styles.navlink}>
+            <Link
+              href="/terms-and-conditions"
+              className={`${styles.navlink} text14`}
+            >
               Terms
             </Link>
-            <Link href="/privacy-policy" className={styles.navlink}>
+            <Link href="/privacy-policy" className={`${styles.navlink} text14`}>
               Privacy Policy
             </Link>
-            <Link href="/cookies-policy" className={styles.navlink}>
+            <Link href="/cookies-policy" className={`${styles.navlink} text14`}>
               Cookies
             </Link>
           </nav>
         </div>
 
         {/* Соцмережі */}
-        <div className={styles.navigation}
-        >
+        <div className={styles.navigation}>
           <p className={`${styles.subtitle} text18medium`}>Subscribe</p>
           <div className={styles.socials}>
             {subscribe.linkedin && (
@@ -118,9 +126,11 @@ export default function Footer() {
       </div>
 
       {/* Підвал */}
+
       <p className={styles.text}>
-        &copy; {new Date().getFullYear()}Smart 
-Assistant |{" "}
+        &copy; {new Date().getFullYear()}Smart Assistant |{" "}
+      <p className={`${styles.text} text14`}>
+        &copy; {new Date().getFullYear()} Smart Assistant |{" "}
         <Link href="/team" className={styles.link}>
           Development team
         </Link>

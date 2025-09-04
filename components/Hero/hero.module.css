@@ -1,5 +1,5 @@
 .heroSection {
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
 }
 
 .container {
@@ -11,14 +11,16 @@
 }
 
 .hero {
-  margin-top: 76px; /* отступ под хедер  */
+  margin-top: 80px;
+  /* отступ под хедер  */
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
   flex-wrap: wrap; /* щоб на мобілках блоки падали вниз */
-  padding-top: 121px; /* отступ с веху по макету  */
-  padding-bottom: 57px; /* отступ внизу по макету  */
+  padding-top: 121px;
+  /* padding-top: 92px; отступ с веху по макету */
+  /* padding-bottom: 57px; отступ внизу по макету  */
 }
 
 .hero__container {
@@ -28,14 +30,19 @@
 }
 
 .hero__title {
-  font-style: normal;
+  /* display: inline-block; */
   background: linear-gradient(90deg, #6c63ff, #413b99);
-  /* кросбраузерна підтримка */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent; /* fallback */
+  color: transparent;
   margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.hero__title:hover {
+  background: linear-gradient(90deg, #6c63ff, #00bfa6);
+  background-clip: text;
 }
 
 .hero__text {
@@ -53,6 +60,7 @@
 }
 
 .hero__btn:hover {
+  text-decoration-line: none;
   transform: scale(1.05);
   background: linear-gradient(to right, #6c63ff, #413b99);
 }

@@ -28,7 +28,7 @@
 }
 
 .hero__title {
-  display: inline-block;
+  /* display: inline-block; */
   background: linear-gradient(90deg, #6c63ff, #413b99);
   background-clip: text;
   -webkit-background-clip: text;

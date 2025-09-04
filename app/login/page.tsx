@@ -12,7 +12,7 @@ import {
   showError,
 } from "../../components/ToastComponent/ToastComponent";
 import { apiClient } from "@/lib/api/apiClient";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import CowerCreateShop from "@/components/LoginCover/LoginCover";
 import UserInfo from "@/components/UserInfo/UserInfo";
 import GoogleLoginBtn from "@/components/GoogleLoginBtn/GoogleLoginBtn";
@@ -66,78 +66,82 @@ export default function LoginPage() {
 
   return (
     <CowerCreateShop>
-      <section className={css.cover}>
-        <div className={styles.imagesBlock}>
-          <h2 className={css.title}>Log in to your account</h2>
-          <p className={css.blala}>Welcome back! Please enter your details.</p>
-          <Formik
-            initialValues={{
-              email: "",
-              password: "",
-            }}
-            onSubmit={handleSubmit}
-            validationSchema={validationControl}
-          >
-            {({ errors, touched }) => (
-              <Form className={css.form} autoComplete="off">
-                <div className={css.fialdStyle}>
-                  <div className={css.fieldPosition}>
-                    <p className={css.fieldName}>Email or phone number*</p>
-                    <Field
-                      type="email"
-                      name="email"
-                      className={`${css.field} ${
-                        errors.email && touched.email
-                          ? css.errorField
-                          : touched.email && !errors.email
-                            ? css.successField
-                            : ""
-                      }`}
-                      placeholder="Enter your email"
-                    />
-                    <CustomMessage
-                      name="email"
-                      errors={errors.email}
-                      touched={touched.email}
-                    />
-                  </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section className={css.cover}>
+          <div className={styles.imagesBlock}>
+            <h2 className={css.title}>Log in to your account</h2>
+            <p className={css.blala}>
+              Welcome back! Please enter your details.
+            </p>
+            <Formik
+              initialValues={{
+                email: "",
+                password: "",
+              }}
+              onSubmit={handleSubmit}
+              validationSchema={validationControl}
+            >
+              {({ errors, touched }) => (
+                <Form className={css.form} autoComplete="off">
+                  <div className={css.fialdStyle}>
+                    <div className={css.fieldPosition}>
+                      <p className={css.fieldName}>Email or phone number*</p>
+                      <Field
+                        type="email"
+                        name="email"
+                        className={`${css.field} ${
+                          errors.email && touched.email
+                            ? css.errorField
+                            : touched.email && !errors.email
+                              ? css.successField
+                              : ""
+                        }`}
+                        placeholder="Enter your email"
+                      />
+                      <CustomMessage
+                        name="email"
+                        errors={errors.email}
+                        touched={touched.email}
+                      />
+                    </div>
 
-                  <div className={css.fieldPosition}>
-                    <p className={css.fieldName}>Password*</p>
-                    <Field
-                      type="password"
-                      name="password"
-                      className={`${css.field} ${
-                        errors.password && touched.password
-                          ? css.errorField
-                          : touched.password && !errors.password
-                            ? css.successField
-                            : ""
-                      }`}
-                      placeholder="Enter your password"
-                    />
-                    <CustomMessage
-                      name="password"
-                      errors={errors.password}
-                      touched={touched.password}
-                    />
+                    <div className={css.fieldPosition}>
+                      <p className={css.fieldName}>Password*</p>
+                      <Field
+                        type="password"
+                        name="password"
+                        className={`${css.field} ${
+                          errors.password && touched.password
+                            ? css.errorField
+                            : touched.password && !errors.password
+                              ? css.successField
+                              : ""
+                        }`}
+                        placeholder="Enter your password"
+                      />
+                      <CustomMessage
+                        name="password"
+                        errors={errors.password}
+                        touched={touched.password}
+                      />
+                    </div>
                   </div>
-                </div>
-                <button type="submit" className={css.btn}>
-                  Sign in
-                </button>
-                <Toaster />
-              </Form>
-            )}
-          </Formik>
-        </div>
-        <Link href="/forgot-password">Forgot password</Link>
-        <GoogleLoginBtn />
-        <div>
-          <p>Don’t have an account? </p>
-          <Link href="/register">Sign up</Link>
-        </div>
-      </section>
+                  <button type="submit" className={css.btn}>
+                    Sign in
+                  </button>
+                  <Toaster />
+                </Form>
+              )}
+            </Formik>
+          </div>
+          <Link href="/forgot-password">Forgot password</Link>
+          <GoogleLoginBtn />
+          <div>
+            <p>Don’t have an account? </p>
+            <Link href="/register">Sign up</Link>
+          </div>
+        </section>
+      </Suspense>
     </CowerCreateShop>
   );
 }

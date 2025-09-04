@@ -30,7 +30,7 @@
  "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { resetPassword } from "@/lib/api/apiClient";
 
 export default function ResetPasswordForm() {
@@ -58,6 +58,7 @@ export default function ResetPasswordForm() {
 
   return (
     <div className="p-8 max-w-md mx-auto">
+          <Suspense fallback={<div>Loading...</div>}>
       <h1 className="text-xl font-bold mb-4">Reset password</h1>
       {!token ? (
         <p className="text-red-500">Token not found in link</p>
@@ -85,6 +86,7 @@ export default function ResetPasswordForm() {
         </form>
       )}
       {message && <p className="mt-4 text-sm">{message}</p>}
+        </Suspense>
     </div>
   );
 }

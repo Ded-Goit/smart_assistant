@@ -1,52 +1,104 @@
 .footer {
   border-radius: 16px 16px 0 0;
-  padding: 64px 96px;
+  padding: 32px 16px;
   background-color: var(--background-viol);
 }
-.subtitle {
-  background-color: brown;
-}
-.footernav {
-  background-color: greenyellow;
-}
-.nav_inner {
-  background-color: crimson;
-}
-.polisy_inner {
-  background-color: darkred;
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  gap: 32px;
 }
 
+/* Блоки з навігацією */
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Заголовок завжди зліва */
 .subtitle {
-  background-color: darkred;
+  text-align: left;
 }
+
+/* Списки лінків */
+.navigation nav,
+.legalNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 8px;
+}
+
 .navlink {
-  background-color: blueviolet;
+  text-decoration: none;
+  color: var(--text-main);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
-.linkpolicy {
-  background-color: paleturquoise;
+
+.navlink:hover {
+  opacity: 1;
 }
-.legalnav {
-  background-color: lightseagreen;
-}
+
+/* Соцмережі */
 .socials {
-  background-color: peachpuff;
+  display: flex;
+  justify-content: center; 
+  gap: 16px;
 }
-.socialButton {
-  background-color: lightsalmon;
-}
-.socials_inner {
-  background-color: blue;
-}
-.socialButton {
-  background-color: lightcoral;
-}
-.developer_inner {
-  background-color: darkorchid;
-}
+
 .text,
 .link {
   line-height: 2.14;
   text-align: center;
-  color: --text-main;
+  color: var(--text-main);
   opacity: 0.6;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+  background-color: var(--color-primary); 
+  color: var(--background); 
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.socialButton:hover {
+  background: var(--gradient-linear); 
+  transform: scale(0.95); 
+}
+
+.socialButton:active {
+  background-color: var(--secondary); 
+  transform: scale(0.95); 
+}
+
+/* --- Десктопні стилі --- */
+@media (min-width: 768px) {
+  .footer {
+    padding: 64px 96px;
+  }
+
+  .container {
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .navigation nav,
+  .legalNav {
+    align-items: flex-start; /* лінки вирівнюються зліва */
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+  .text{ margin: 24px 0 0 0;}
 }

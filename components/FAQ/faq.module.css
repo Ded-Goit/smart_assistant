@@ -83,14 +83,17 @@
   fill: var(--color-neutral);
   transition:
     transform 0.3s ease,
+    color 0.3s ease,
     fill 0.3s ease;
 }
 .faq__item-icon:hover {
   fill: var(--color-primary);
+  color: white;
 }
 .rotate {
   transform: rotate(90deg);
   fill: var(--color-primary);
+  color: white;
 }
 
 /* Текст для акордеона */

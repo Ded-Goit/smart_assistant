@@ -6,7 +6,7 @@
 
 .container {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 32px;
 }
 
@@ -27,12 +27,13 @@
 .legalNav {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   gap: 8px;
 }
 
 .navlink {
-  text-decoration: none;
+  /* text-decoration: none; */
+  text-decoration-line: none;
   color: var(--text-main);
   opacity: 0.8;
   transition: opacity 0.2s ease;
@@ -40,12 +41,13 @@
 
 .navlink:hover {
   opacity: 1;
+  text-decoration-line: none;
 }
 
 /* Соцмережі */
 .socials {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   gap: 16px;
 }
 
@@ -64,20 +66,20 @@
   width: 32px;
   height: 32px;
   border-radius: 50px;
-  background-color: var(--color-primary); 
-  color: var(--background); 
+  background-color: var(--color-primary);
+  color: var(--background);
   transition: all 0.3s ease;
   transform: scale(1);
 }
 
 .socialButton:hover {
-  background: var(--gradient-linear); 
-  transform: scale(0.95); 
+  background: var(--gradient-linear);
+  transform: scale(0.95);
 }
 
 .socialButton:active {
-  background-color: var(--secondary); 
-  transform: scale(0.95); 
+  background-color: var(--secondary);
+  transform: scale(0.95);
 }
 
 /* --- Десктопні стилі --- */
@@ -87,7 +89,7 @@
   }
 
   .container {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -100,5 +102,7 @@
   .socials {
     justify-content: flex-start;
   }
-  .text{ margin: 24px 0 0 0;}
+  .text {
+    margin: 24px 0 0 0;
+  }
 }

@@ -45,7 +45,8 @@
 .features__box-item {
   display: flex;
   align-items: center;
-  justify-content: center; /* по горизонтали */
+  justify-content: center;
+   /* по горизонтали */
   gap: 8px;
   margin-bottom: 8px;
   position: relative;
@@ -74,7 +75,7 @@
 }
 .features__box:nth-child(2) {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   grid-column: span 2 / span 2;
 }
@@ -88,7 +89,7 @@
 }
 .features__box:nth-child(5) {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   grid-column: span 2 / span 2;
   grid-row-start: 3;

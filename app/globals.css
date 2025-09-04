@@ -135,15 +135,15 @@ body {
   /* font-size: 58px; */
   /* Формула расчета адаптивного шрифта */
   /* (размер шрифта mob версии + (размер шрифта desktop версии  - размер шрифта mob версии) * (100% ширины окна просмотра в vw - мобильная ширина экрана px) / на разницу между шириной desktop и шириной mob экрана) */
-  font-size: calc(32px + 26 * (100vw - 390px) / 1050);
+  font-size: min(58px, calc(32px + 26 * (100vw - 390px) / 1050));
   line-height: 64px; /* з токена lineHeights.3 */
   letter-spacing: 0;
 }
 /* Header → Head2-48SB (Nunito SemiBold, 48, line-height: AUTO→normal) */
 .h2 {
+  font-size: min(48px, calc(32px + 16 * (100vw - 390px) / 1050));
   font-family: var(--ff-nunito);
   font-weight: 600;
-  font-size: 48px;
   line-height: normal;
   letter-spacing: 0;
 }
@@ -151,7 +151,7 @@ body {
 .h3 {
   font-family: var(--ff-nunito);
   font-weight: 600;
-  font-size: 34px;
+  font-size: min(34px, calc(24px + 10 * (100vw - 390px) / 1050));
   line-height: normal;
   letter-spacing: 0;
 }

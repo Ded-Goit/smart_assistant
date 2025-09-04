@@ -1,7 +1,8 @@
-"use client";
+ "use client";
 
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { resetPassword } from "@/lib/api/apiClient";
 
 export default function ResetPasswordPage() {
   const searchParams = useSearchParams();
@@ -14,41 +15,28 @@ export default function ResetPasswordPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password !== confirm) {
-      setMessage("Пароли не совпадают");
+      setMessage("The passwords do not match");
       return;
     }
 
     try {
-      const res = await fetch(
-        "https://timemanagement-back.onrender.com/auth/reset-pwd",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ password, token }),
-        }
-      );
-
-      const data = await res.json();
-      if (res.ok) {
-        setMessage("Пароль успешно изменён!");
-      } else {
-        setMessage(data.message || "Ошибка");
-      }
-    } catch (err) {
-      setMessage("Ошибка сети");
+      await resetPassword(password, token as string);
+      setMessage("Password was changed!");
+    } catch (err: any) {
+      setMessage(err.message);
     }
   };
 
   return (
     <div className="p-8 max-w-md mx-auto">
-      <h1 className="text-xl font-bold mb-4">Сброс пароля</h1>
+      <h1 className="text-xl font-bold mb-4">Reset password</h1>
       {!token ? (
-        <p className="text-red-500">Токен не найден в ссылке</p>
+        <p className="text-red-500">Token not found in link</p>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input
             type="password"
-            placeholder="Новый пароль"
+            placeholder="New password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="border p-2 rounded"
@@ -56,14 +44,14 @@ export default function ResetPasswordPage() {
           />
           <input
             type="password"
-            placeholder="Повторите пароль"
+            placeholder="Repeat new password"
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
             className="border p-2 rounded"
             required
           />
           <button type="submit" className="bg-green-500 text-white p-2 rounded">
-            Сохранить
+            Save
           </button>
         </form>
       )}
@@ -71,3 +59,27 @@ export default function ResetPasswordPage() {
     </div>
   );
 }
+
+// export default function ResetPasswordPage() {
+//   const [email, setEmail] = useState("");
+
+//   const handleSubmit = (e: React.FormEvent) => {
+//     e.preventDefault();
+//     alert(`Отправлен запрос на сброс пароля для: ${email}`);
+//   };
+
+//   return (
+//     <div>
+//       <h2>Сброс пароля</h2>
+//       <form onSubmit={handleSubmit}>
+//         <input
+//           type="email"
+//           placeholder="Введите email"
+//           value={email}
+//           onChange={(e) => setEmail(e.target.value)}
+//         />
+//         <button type="submit">Сбросить</button>
+//       </form>
+//     </div>
+//   );
+// }

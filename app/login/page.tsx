@@ -128,6 +128,7 @@ export default function LoginPage() {
             )}
           </Formik>
         </div>
+        <Link href="/forgot-password">Forgot password</Link>
         <GoogleLoginBtn />
         <div>
           <p>Don’t have an account? </p>

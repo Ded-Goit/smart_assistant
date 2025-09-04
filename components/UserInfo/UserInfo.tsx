@@ -12,7 +12,7 @@ export default function UserInfo() {
     const fetchUser = async () => {
       try {
         const userData = await getUserInfo();
-        setUser(userData.data); // сервер возвращает { status, data }
+        setUser(userData.data);
       } catch (err: any) {
         setError(err.message);
       }

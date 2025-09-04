@@ -70,21 +70,20 @@ export const getUserInfo = async () => {
   return res.json();
 };
 
-
 export const getGoogleOAuthUrl = async () => {
   const res = await fetch(`${BASE_URL}/auth/get-oauth-url`, {
     credentials: "include",
   });
   const data = await res.json();
   return data.data.url;
-}
+};
 
 export const loginWithGoogle = async (code: string) => {
   const res = await fetch(`${BASE_URL}/auth/confirm-oauth`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ code }),
-    credentials: "include", 
+    credentials: "include",
   });
 
   if (!res.ok) {
@@ -95,3 +94,42 @@ export const loginWithGoogle = async (code: string) => {
   return res.json();
 };
 
+export async function resetPassword(password: string, token: string) {
+  try {
+    const res = await fetch(`${BASE_URL}/auth/reset-pwd`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, token }),
+      credentials: "include",
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || "Request failed");
+    }
+    return data;
+  } catch (err: any) {
+    throw new Error(err.message || "Network error");
+  }
+}
+
+export async function forgotPwd(email: string) {
+  try {
+    const res = await fetch(
+      "https://timemanagement-back.onrender.com/auth/send-reset-email",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+        credentials: "include",
+      }
+    );
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || "Request failed");
+    }
+    return data;
+  } catch (err: any) {
+    throw new Error(err.message || "Network error");
+  }
+}

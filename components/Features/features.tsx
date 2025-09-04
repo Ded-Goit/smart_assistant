@@ -1,239 +1,120 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./features.module.css";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Scrollbar } from "swiper/modules";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useEffect, useState } from "react";
+
+import { features } from "./features.data"; // ✅ імпорт даних
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+
 export default function FeaturesPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   return (
-    <>
-      <section id="features" className={styles.features}>
-        <div className={styles.container}>
-          <h2 className={`${styles.features__title} h2`}>Features</h2>
+    <section id="features" className={styles.features}>
+      <div className={styles.container}>
+        <h2 className={`${styles.features__title} h2`}>Features</h2>
+
+        {isMobile ? (
+          <Swiper
+            modules={[Navigation, Scrollbar]}
+            spaceBetween={16}
+            slidesPerView={1}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            scrollbar={{ draggable: true }}
+            className={styles.featuresSwiper}
+          >
+            {features.map((feature, idx) => (
+              <SwiperSlide key={idx}>
+                <div className={styles.features__box}>
+                  <h3 className={`${styles["features__box-title"]} h3`}>
+                    {feature.title}
+                  </h3>
+                  <ul className={styles["features__box-list"]}>
+                    {feature.points.map((p, i) => (
+                      <li key={i} className={styles["features__list-item"]}>
+                        <p
+                          className={`${styles["features__item-text"]} text18medium`}
+                        >
+                          {p}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  {feature.img && (
+                    <div className={styles.imagesBlock}>
+                      <Image
+                        src={feature.img}
+                        alt={feature.title}
+                        width={169}
+                        height={200}
+                        style={{ width: "100%", height: "auto" }}
+                        priority
+                      />
+                    </div>
+                  )}
+                </div>
+              </SwiperSlide>
+            ))}
+            <div className="swiper-button-prev">
+              <FaChevronLeft />
+            </div>
+            <div className="swiper-button-next">
+              <FaChevronRight />
+            </div>
+          </Swiper>
+        ) : (
           <div className={styles.features__inner}>
-            <div className={styles.features__box}>
-              <h3 className={`${styles["features__box-title"]} h3`}>
-                Timeline
-              </h3>
-              <ul className={styles["features__box-list"]}>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Stay focused and manage distractions effectively
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Plan your week and quarters with clarity
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Keep motivation high throughout your journey
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Build accountability and track real progress
-                  </p>
-                </li>
-              </ul>
-              <div className={styles.imagesBlock}>
-                <Image
-                  src="/features/focused_worker.webp"
-                  alt="Focused worker"
-                  width={169}
-                  height={205}
-                  style={{ width: "100%", height: "auto" }}
-                  priority
-                />
-              </div>
-            </div>
-            <div className={styles.features__box}>
-              <div>
+            {features.map((feature, idx) => (
+              <div key={idx} className={styles.features__box}>
                 <h3 className={`${styles["features__box-title"]} h3`}>
-                  Smart Priorities
+                  {feature.title}
                 </h3>
                 <ul className={styles["features__box-list"]}>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Mark priorities with clear color-coded flags
-                    </p>
-                  </li>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Focus on what’s urgent and important first
-                    </p>
-                  </li>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Stay on track and complete high-value tasks efficiently
-                    </p>
-                  </li>
+                  {feature.points.map((p, i) => (
+                    <li key={i} className={styles["features__list-item"]}>
+                      <p
+                        className={`${styles["features__item-text"]} text18medium`}
+                      >
+                        {p}
+                      </p>
+                    </li>
+                  ))}
                 </ul>
+                {feature.img && (
+                  <div className={styles.imagesBlock}>
+                    <Image
+                      src={feature.img}
+                      alt={feature.title}
+                      width={169}
+                      height={200}
+                      style={{ width: "100%", height: "auto" }}
+                      priority
+                    />
+                  </div>
+                )}
               </div>
-              <div className={styles.imagesBlock}>
-                <Image
-                  src="/features/mountain_flag_boy.webp"
-                  alt="Mountain flag boy"
-                  width={169}
-                  height={184}
-                  style={{ width: "100%", height: "auto" }}
-                  priority
-                />
-              </div>
-            </div>
-            <div className={styles.features__box}>
-              <h3 className={`${styles["features__box-title"]} h3`}>
-                Task Alerts
-              </h3>
-              <ul className={styles["features__box-list"]}>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Get notified about tasks by due date and time
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Receive alerts a few minutes before your task starts
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Set custom reminders to stay on schedule Never miss an
-                    important deadline again
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Never miss an important deadline again
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.features__box}>
-              <h3 className={`${styles["features__box-title"]} h3`}>
-                Statistics
-              </h3>
-              <ul className={styles["features__box-list"]}>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    View task stats with histograms and pie charts
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Analyze performance and improve efficiency Get detailed
-                    reports for each task
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Get detailed reports for each task
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.features__box}>
-              <div>
-                <h3 className={`${styles["features__box-title"]} h3`}>
-                  Time Master
-                </h3>
-                <ul className={styles["features__box-list"]}>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Stay focused and minimize distractions
-                    </p>
-                  </li>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Plan effectively weekly and quarterly
-                    </p>
-                  </li>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Boost motivation and consistency
-                    </p>
-                  </li>
-                  <li className={styles["features__list-item"]}>
-                    <p
-                      className={`${styles["features__item-text"]} text18medium`}
-                    >
-                      Track progress and stay accountable
-                    </p>
-                  </li>
-                </ul>
-              </div>
-              <div className={styles["features__box-image"]}>
-                <Image
-                  src="/features/girl_with_calendar.webp"
-                  alt="Girl with calendar"
-                  width={169}
-                  height={155}
-                  style={{ width: "100%", height: "auto" }}
-                  priority
-                />
-              </div>
-            </div>
-            <div className={styles.features__box}>
-              <h3 className={`${styles["features__box-title"]} h3`}>Rewards</h3>
-              <ul className={styles["features__box-list"]}>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Earn points when all Pomodoro sessions are completed
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Level up after finishing tasks for extra motivation
-                  </p>
-                </li>
-                <li className={styles["features__list-item"]}>
-                  <p
-                    className={`${styles["features__item-text"]} text18medium`}
-                  >
-                    Celebrate achievements and stay encouraged
-                  </p>
-                </li>
-              </ul>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
-    </>
+        )}
+      </div>
+    </section>
   );
 }

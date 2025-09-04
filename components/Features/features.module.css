@@ -1,3 +1,27 @@
+.container {
+  max-width: 1248px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.features__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+.features__title::before,
+.features__title::after {
+  content: "";
+  display: inline-block;
+  width: 91px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+.features__title::before {
+  background-image: url("/icons/vector-left.svg");
+}
 .features__title::after {
   background-image: url("/icons/vector-right.svg");
 }

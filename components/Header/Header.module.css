@@ -1,5 +1,6 @@
 .header {
   background-color: var(--background-viol);
+  background-color: #ebecf5;/* убрала прозрачность. */
   border-radius: 0 0 16px 16px;
   padding: 0px 96px;
   position: fixed;

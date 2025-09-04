@@ -1,7 +1,8 @@
-.register {
-  width: 100%;
+.cover{
+display:inline-flex;
+column-gap: 20px;
+padding-top: 100px;
 }
 
-.imagesBlock {
-  width: 100%;
+.block{
 }

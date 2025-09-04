@@ -1,20 +1,4 @@
-// "user client"
-// import Image from "next/image";
-// import styles from "./setting.module.css";
-// import Sidebar from "@/components/Sidebar/Sidebar";
 
-// export default function SettingPage() {
-//   return (
-//     <>
-//       <section className={styles.setting}>
-//         <Sidebar />
-//         <div className={styles.imagesBlock}>
-
-//         </div>
-//       </section>
-//     </>
-//   );
-// }
 
 "use client";
 

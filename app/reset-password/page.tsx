@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
-import { ResetPasswordForm } from "@/components/ResetPasswordForm/ResetPasswordForm";
+import  ResetPasswordForm  from "@/components/ResetPasswordForm/ResetPasswordForm";
 
 export default function ResetPasswordPage() {
   

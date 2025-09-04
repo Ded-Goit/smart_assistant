@@ -6,7 +6,7 @@ import css from "../register/register.module.css";
 import { Toaster } from "react-hot-toast";
 import { Formik, Form, Field, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import CustomMessage from "../register/CustomMessage/CustomMessage";
+import CustomMessage from "@/components/CustomMessage/CustomMessage";
 import {
   showSuccess,
   showError,

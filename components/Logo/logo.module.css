@@ -1,0 +1,20 @@
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+.logoDefault {
+  display: block;
+}
+
+.logoHover {
+  display: none;
+}
+
+.logo:hover .logoDefault {
+  display: none;
+}
+
+.logo:hover .logoHover {
+  display: block;
+}

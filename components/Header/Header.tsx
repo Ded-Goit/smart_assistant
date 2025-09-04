@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import MobileMenu from "@/components/MobileMenu/MobileMenu";
 import styles from "./Header.module.css";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import { logo, navLinks } from "@/constant/constant";
-import Image from "next/image";
+import { navLinks } from "@/constant/constant";
+//import Image from "next/image";
+import Logo from "../Logo/logo";
 
 export default function Header() {
   const pathname = usePathname();
@@ -26,9 +27,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <Image src={logo} alt="Logo" width={158} height={56} priority />
-        </Link>
+        <Logo width={160} height={56} />
 
         <MobileMenu />
         <nav className={styles.desktopNav}>

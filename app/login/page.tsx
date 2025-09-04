@@ -14,7 +14,7 @@ import {
 import { apiClient } from "@/lib/api/apiClient";
 import { Suspense, useEffect, useState } from "react";
 import CowerCreateShop from "@/components/LoginCover/LoginCover";
-import UserInfo from "@/components/UserInfo/UserInfo";
+
 import GoogleLoginBtn from "@/components/GoogleLoginBtn/GoogleLoginBtn";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

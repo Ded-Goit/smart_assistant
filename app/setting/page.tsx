@@ -1,23 +1,22 @@
-import Image from "next/image";
-import styles from "./setting.module.css";
+"use client";
+
 import Sidebar from "@/components/Sidebar/Sidebar";
+import ResetPasswordForm from "@/components/ResetPasswordForm/ResetPasswordForm";
+import styles from "./setting.module.css";
+import UserInfo from "@/components/UserInfo/UserInfo";
+import { Suspense } from "react";
 
 export default function SettingPage() {
   return (
-    <>
-      <section className={styles.setting}>
+    <section className={styles.setting}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Sidebar />
         <div className={styles.imagesBlock}>
-          <Image
-            src="/setting/setting.png"
-            alt="Foto page"
-            width={1148}
-            height={1063}
-            style={{ width: "100%", height: "auto" }}
-            priority
-          />
+          <p> reset block</p>
+          <ResetPasswordForm />
+          <UserInfo />
         </div>
-      </section>
-    </>
+      </Suspense>
+    </section>
   );
 }

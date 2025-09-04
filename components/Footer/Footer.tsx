@@ -20,17 +20,9 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
+      <div className={styles.container}>       
+        <Logo width={160} height={56} />
         
-
-        <div><Logo width={160} height={56} /></div>
-        <div>
-          <Link href="/" className={styles.logo}>
-            <Image src={logo} alt="Logo" width={158} height={56} priority />
-          </Link>
-        </div>
-
-
         {/* Навігація */}
         <div className={styles.navigation}>
           <p className={`${styles.subtitle} text18medium`}>Navigation</p>
@@ -126,9 +118,7 @@ export default function Footer() {
       </div>
 
       {/* Підвал */}
-
-      <p className={styles.text}>
-        &copy; {new Date().getFullYear()}Smart Assistant |{" "}
+     
       <p className={`${styles.text} text14`}>
         &copy; {new Date().getFullYear()} Smart Assistant |{" "}
         <Link href="/team" className={styles.link}>

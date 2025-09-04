@@ -1,17 +1,14 @@
 "use client";
 import Link from "next/link";
 import styles from "./Sidebar.module.css";
-import { logo } from "@/constant/constant";
-import Image from "next/image";
+import Logo from "../Logo/logo";
 
 export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
       {/* Логотип зверху */}
       <div className={styles.logo}>
-        <div><Link href="/" className={styles.logo}>
-          <Image src={logo} alt="Logo" width={158} height={56} priority />
-        </Link></div>
+        <div><Logo width={158} height={56} /></div>
       </div>
 
       {/* Центральні кнопки */}

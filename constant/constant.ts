@@ -4,7 +4,7 @@ export const navLinks = [
   { href: "/#features", label: "Features" },
   { href: "/#faq", label: "FAQ" },
 ];
-export const logoText = "Smart Assistant";
+export const logo = "/logo.png";
 
 export const subscribe = {
   linkedin:

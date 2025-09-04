@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./Footer.module.css";
-import { logoText, navLinks } from "@/constant/constant";
+import { logo, navLinks } from "@/constant/constant";
 import {
   RiLinkedinFill,
   RiTelegramFill,
@@ -12,25 +12,29 @@ import {
   RiFacebookFill,
 } from "react-icons/ri";
 import { subscribe } from "@/constant/constant";
+import Image from "next/image";
 
 export default function Footer() {
   const pathname = usePathname();
 
   return (
     <footer className={styles.footer}>
-      <div>
-        <div>{logoText}</div>
+      <div className={styles.container}>
+        <div><Link href="/" className={styles.logo}>
+          <Image src={logo} alt="Logo" width={158} height={56} priority />
+        </Link></div>
 
         {/* Навігація */}
-        <div>
+        <div className={styles.navigation}
+        >
           <p className={`${styles.subtitle} text18medium`}>Navigation</p>
-          <nav className={styles.footerNav}>
+          <nav>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
-                className={styles.navLink}
+                className={styles.navlink}
               >
                 {link.label}
               </Link>
@@ -39,23 +43,25 @@ export default function Footer() {
         </div>
 
         {/* Legal */}
-        <div>
+        <div className={styles.navigation}
+        >
           <p className={`${styles.subtitle} text18medium`}>Legal</p>
           <nav className={styles.legalNav}>
-            <Link href="/terms-and-conditions" className={styles.linkpolicy}>
+            <Link href="/terms-and-conditions" className={styles.navlink}>
               Terms
             </Link>
-            <Link href="/privacy-policy" className={styles.linkpolicy}>
+            <Link href="/privacy-policy" className={styles.navlink}>
               Privacy Policy
             </Link>
-            <Link href="/cookies-policy" className={styles.linkpolicy}>
+            <Link href="/cookies-policy" className={styles.navlink}>
               Cookies
             </Link>
           </nav>
         </div>
 
         {/* Соцмережі */}
-        <div>
+        <div className={styles.navigation}
+        >
           <p className={`${styles.subtitle} text18medium`}>Subscribe</p>
           <div className={styles.socials}>
             {subscribe.linkedin && (

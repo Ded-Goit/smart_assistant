@@ -1,6 +1,6 @@
 .header {
   background-color: var(--background-viol);
-  background-color: #ebecf5;/* убрала прозрачность. */
+  background-color: #ebecf5; /* убрала прозрачность. */
   border-radius: 0 0 16px 16px;
   padding: 0px 96px;
   position: fixed;
@@ -39,12 +39,13 @@
 
 /* 🔹 Hover */
 .navLink:hover {
+  text-decoration-line: none;
   color: #00bfa6;
 }
 
 /* 🔹 Active (поточна сторінка/секція) */
 .navLink[aria-current="page"] {
-  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  background: #00bfa6;
   background-clip: text; /* ✅ стандартна властивість */
   -webkit-background-clip: text; /* ✅ для Safari/Chrome */
   -webkit-text-fill-color: transparent;
@@ -54,6 +55,7 @@
 
 /* 🔹 Підкреслення тільки для активного */
 .navLink[aria-current="page"]::after {
+  display: none;
   content: "";
   position: absolute;
   bottom: -4px;
@@ -62,6 +64,9 @@
   height: 2px;
   background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
   border-radius: 2px;
+}
+.navLink[aria-current="page"]::after:hover {
+  display: block;
 }
 
 .rightSection {
@@ -79,11 +84,13 @@
   border-radius: 6px;
   color: #1f2937;
   text-decoration: none;
+
   font-weight: 500;
   transition: all 0.2s ease-in-out;
 }
 .loginBtn:hover {
   color: #413b99;
+  text-decoration-line: none;
   transform: scale(1.05);
 }
 .registerBtn {
@@ -92,8 +99,7 @@
   border-radius: 6px;
   color: white;
   text-decoration: none;
-  font-weight: 600;
-  /* transition: background-color 0.3s ease; */
+  font-weight: 500;
   transition:
     background 0.3s ease-in-out,
     transform 0.2s ease-in-out;
@@ -101,6 +107,7 @@
 .registerBtn:hover {
   /* background-color: #16a085; */
   transform: scale(1.05);
+  text-decoration-line: none;
   background: linear-gradient(to right, #6c63ff, #413b99);
 }
 .registerBtn:active {

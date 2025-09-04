@@ -28,14 +28,19 @@
 }
 
 .hero__title {
-  font-style: normal;
+  display: inline-block;
   background: linear-gradient(90deg, #6c63ff, #413b99);
-  /* кросбраузерна підтримка */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent; /* fallback */
+  color: transparent;
   margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.hero__title:hover {
+  background: linear-gradient(90deg, #6c63ff, #00bfa6);
+  background-clip: text;
 }
 
 .hero__text {
@@ -53,6 +58,7 @@
 }
 
 .hero__btn:hover {
+  text-decoration-line: none;
   transform: scale(1.05);
   background: linear-gradient(to right, #6c63ff, #413b99);
 }

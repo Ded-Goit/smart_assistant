@@ -37,7 +37,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               aria-current={pathname === link.href ? "page" : undefined}
-              className={styles.navLink}
+              className={`${styles.navLink} text16`}
             >
               {link.label}
             </Link>
@@ -47,10 +47,10 @@ export default function Header() {
         <div className={styles.rightSection}>
           {showTheme && <ThemeSwitcher />}
           <div className={styles.authButtons}>
-            <Link href="/login" className={styles.loginBtn}>
+            <Link href="/login" className={`${styles.loginBtn} text16`}>
               Log In
             </Link>
-            <Link href="/register" className={styles.registerBtn}>
+            <Link href="/register" className={`${styles.registerBtn} text16`}>
               Register
             </Link>
           </div>

@@ -1,7 +1,4 @@
-
-
 "use client";
-
 
 import Sidebar from "@/components/Sidebar/Sidebar";
 import ResetPasswordForm from "@/components/ResetPasswordForm/ResetPasswordForm";
@@ -10,8 +7,6 @@ import UserInfo from "@/components/UserInfo/UserInfo";
 import { Suspense } from "react";
 
 export default function SettingPage() {
-
-
   return (
     <section className={styles.setting}>
       <Suspense fallback={<div>Loading...</div>}>

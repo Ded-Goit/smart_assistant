@@ -132,7 +132,10 @@ body {
 .h1 {
   font-family: var(--ff-nunito);
   font-weight: 700;
-  font-size: 58px;
+  /* font-size: 58px; */
+  /* Формула расчета адаптивного шрифта */
+  /* (размер шрифта mob версии + (размер шрифта desktop версии  - размер шрифта mob версии) * (100% ширины окна просмотра в vw - мобильная ширина экрана px) / на разницу между шириной desktop и шириной mob экрана) */
+  font-size: calc(32px + 26 * (100vw - 390px) / 1050);
   line-height: 64px; /* з токена lineHeights.3 */
   letter-spacing: 0;
 }

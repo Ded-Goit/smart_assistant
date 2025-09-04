@@ -1,5 +1,5 @@
 .heroSection {
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
 }
 
 .container {
@@ -11,14 +11,16 @@
 }
 
 .hero {
-  margin-top: 76px; /* отступ под хедер  */
+  margin-top: 80px;
+  /* отступ под хедер  */
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
   flex-wrap: wrap; /* щоб на мобілках блоки падали вниз */
-  padding-top: 121px; /* отступ с веху по макету  */
-  padding-bottom: 57px; /* отступ внизу по макету  */
+  padding-top: 121px;
+  /* padding-top: 92px; отступ с веху по макету */
+  /* padding-bottom: 57px; отступ внизу по макету  */
 }
 
 .hero__container {

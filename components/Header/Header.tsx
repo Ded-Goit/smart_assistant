@@ -27,8 +27,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Logo width={160} height={56} />
-
+        <Logo width={159} height={54} />
         <MobileMenu />
         <nav className={styles.desktopNav}>
           {navLinks.map((link) => (

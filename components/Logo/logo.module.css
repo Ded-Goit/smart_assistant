@@ -1,20 +1,32 @@
 .logo {
   position: relative;
   display: inline-block;
+  width: 159px;
+  height: 54px;
+}
+
+.logoDefault,
+.logoHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .logoDefault {
-  display: block;
+  opacity: 1;
+  z-index: 2;
 }
 
 .logoHover {
-  display: none;
+  opacity: 0;
+  z-index: 1;
 }
 
 .logo:hover .logoDefault {
-  display: none;
+  opacity: 0;
 }
 
 .logo:hover .logoHover {
-  display: block;
+  opacity: 1;
 }

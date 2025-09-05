@@ -9,14 +9,15 @@ export default function CalendarPage() {
 
       <div className={styles.imagesBlock}>
         <Image
-          src="/calendar/calendar.png"
+          src="/calendar/r1x.png"
           alt="Calendar page"
-          width={1440}
-          height={1059}
-          style={{ width: "100%", height: "auto" }}
+          width={140}
+          height={100}
+          // style={{ width: "100%", height: "auto" }}
           priority
         />
       </div>
+      <p>dskjfapsodhufj</p>
     </section>
   );
 }

@@ -63,7 +63,6 @@ export default function LoginPage() {
     }
   };
 
-
   return (
     <CowerCreateShop>
       <Suspense fallback={<div>Loading...</div>}>
@@ -85,7 +84,9 @@ export default function LoginPage() {
                 <Form className={css.form} autoComplete="off">
                   <div className={css.fialdStyle}>
                     <div className={css.fieldPosition}>
-                      <p className={`${css.fieldName} text14`}>Email or phone number*</p>
+                      <p className={`${css.fieldName} text14`}>
+                        Email or phone number*
+                      </p>
                       <Field
                         type="email"
                         name="email"
@@ -133,12 +134,24 @@ export default function LoginPage() {
               )}
             </Formik>
           </div>
-          <Link className={`${styles.forgot} text14`} href="/forgot-password">Forgot password</Link>
+          <Link className={`${styles.forgot} text14`} href="/forgot-password">
+            Forgot password
+          </Link>
           <GoogleLoginBtn />
           <div>
             <p className={`${styles.text} text14`}>Don’t have an account?</p>
-            <Link className={`${styles.link} text14`} href="/register">Sign up</Link>
+            <Link className={`${styles.link} text14`} href="/register">
+              Sign up
+            </Link>
           </div>
+          <Image
+            src="/login/time_touch-gay.jpg"
+            alt="Time touch gay"
+            width={513}
+            height={513}
+            style={{ width: "100%", height: "auto" }}
+            priority
+          />
         </section>
       </Suspense>
     </CowerCreateShop>

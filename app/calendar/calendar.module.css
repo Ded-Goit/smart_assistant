@@ -4,6 +4,7 @@
   flex-direction: column; /* спочатку sidebar зверху */
   width: 100%;
   min-height: 100vh;
+  padding-top: 150px;
 }
 
 .imagesBlock {

@@ -1,84 +1,233 @@
-/* Mobile first */
-.sidebar {
-  width: 100%;
-  height: auto;
-  background-color: #f0f0f0;
+/* main */
+
+.my {
   display: flex;
-  flex-direction: row; /* на мобайлі в рядок */
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 20px;
 }
 
-.logo {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.navCenter {
+.cards {
   display: flex;
-  gap: 10px;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
 }
 
-.navBottom {
+.card {
   display: flex;
-  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 20px;
+  padding: 32px;
+  width: 168px;
+  height: 199px;
+  background-color: #e5e7eb;
 }
 
-.navButton {
-  padding: 6px 10px;
+.card_p {
+  display: none;
+}
+
+.card_h {
+  font-weight: 500;
+  font-size: 22px;
+  color: #1f2937;
+  font-family: "Inter", sans-serif;
+}
+
+.social_icon_menu_cards {
+  stroke-width: 5.5px;
+  stroke: #6c63ff;
+  fill: none;
+}
+
+.social_icon_menu_cards_two {
+  fill: #6c63ff;
+}
+
+.my-a {
+  font-weight: 600;
+  font-size: 29px;
+  color: #1f2937;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  padding-left: 45px;
+  display: flex;
+}
+
+/* Стрілка зліва */
+.my_a::before {
+  content: "<"; /* символ стрілки */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000; /* колір стрілки */
+  font-weight: 590;
   font-size: 14px;
-  text-decoration: none;
-  color: #333;
-  border-radius: 6px;
-  background: #e0e0e0;
-  transition: background 0.2s ease;
+  line-height: 1.29412;
+  text-align: center;
+  color: #65676a;
 }
 
-.navButton:hover {
-  background: #ccc;
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  color: #717680;
+  font-family: "Inter", sans-serif;
 }
 
-/* Tablet (від 768px) */
-@media (min-width: 768px) {
-  .sidebar {
-    width: 80px;
-    min-width: 80px;
+.dashboard {
+  display: none;
+}
+
+/* Медіазапит для мінімальної ширини 1440px */
+@media (min-width: 1440px) {
+  /* Ліва панель */
+  .dashboard {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 292px; /* ширина сайдбару */
     height: 100vh;
+    background-color: #f9f9fb; /* або #fff за потреби */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
+
+  /* Контейнер правої частини (header + main) */
+  .container {
+    max-width: 1148px;
+    /* margin-left: 32px; */
+    box-sizing: border-box;
+    padding: 0px 32px;
+  }
+
+  /* Ховаємо елементи, які не потрібні на десктопі */
+  .social_icon,
+  .topbar_button_2 {
+    display: none;
+  }
+
+  .robot_img {
+    width: 517px;
+    height: 517px;
+  }
+
+  /* Прибираємо горизонтальну прокрутку */
+  .topbar-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .my_a::before {
+    display: none;
+  }
+
+  .my {
+    gap: 30px;
+  }
+
+  .my_a {
+    font-weight: 500;
+    font-size: 22px;
+    padding-left: 0px;
+    margin-bottom: 7px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    gap: 65px;
+    justify-content: flex-start;
+  }
+
+  .card {
+    border-radius: 20px;
+    padding: 20px;
+    width: 398px !important;
+    height: 325px !important;
+  }
+
+  .card svg,
+  .card img {
+    width: auto;
+    height: auto;
+    max-width: none;
+  }
+
+  .card_p {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    color: #717680;
+    font-family: "Inter", sans-serif;
+    /* width: 334px; */
+  }
+
+  .social_icon_menu_cards,
+  .social_icon_menu_cards_two {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 42px;
+  }
+
+  .card_h {
+    margin-bottom: 5px;
+  }
+
+  .main_section {
+    position: relative;
+  }
+
+  .robot_img {
+    position: absolute;
+    right: -50px;
+    top: 370px;
+    z-index: 2;
+    max-width: 517px;
+  }
+
+  /* сайдбар */
+
+  .sidebar {
+    background-color: rgba(190, 190, 226, 0.2);
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 10px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .navCenter {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .navBottom {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    padding: 32px;
+    height: 100%;
   }
 
   .logo {
-    margin-bottom: 30px;
-  }
-}
-
-/* Desktop (від 1200px) */
-@media (min-width: 1200px) {
-  .sidebar {
-    width: 100px; /* на десктопі трохи ширше */
-    min-width: 100px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
   }
 
-  .navButton {
-    font-size: 15px;
-    padding: 8px 12px;
+  .menu,
+  .menu_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .active,
+  .menu_bottom_a {
+    text-decoration: none;
+    color: #5b4bdb;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .menu a.active {
+    font-weight: 500;
+    font-size: 18px;
+    color: #6c63ff;
   }
 }

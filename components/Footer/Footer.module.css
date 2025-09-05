@@ -41,7 +41,6 @@
 
 .navlink:hover {
   opacity: 1;
-  text-decoration-line: none;
 }
 
 /* Соцмережі */
@@ -63,18 +62,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50px;
-  background-color: var(--color-primary);
+  /* background: var(--color-primary); */
+  background: linear-gradient(to right, #6c63ff, #6c63ff);
   color: var(--background);
-  transition: all 0.3s ease;
-  transform: scale(1);
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .socialButton:hover {
   background: var(--gradient-linear);
-  transform: scale(0.95);
+  transform: scale(1.05);
 }
 
 .socialButton:active {
@@ -96,12 +95,14 @@
 
   .navigation nav,
   .legalNav {
-    align-items: flex-start; /* лінки вирівнюються зліва */
+    align-items: flex-start;
+    /* лінки вирівнюються зліва */
   }
 
   .socials {
     justify-content: flex-start;
   }
+
   .text {
     margin: 24px 0 0 0;
   }

@@ -46,7 +46,7 @@ export default function LoginPage() {
         method: "POST",
         body: JSON.stringify(values),
       });
-  
+
       if (data.accessToken) {
         localStorage.setItem("accessToken", data.accessToken);
       }
@@ -69,8 +69,8 @@ export default function LoginPage() {
       <Suspense fallback={<div>Loading...</div>}>
         <section className={css.cover}>
           <div className={styles.imagesBlock}>
-            <h2 className={css.title}>Log in to your account</h2>
-            <p className={css.blala}>
+            <h2 className={`${styles.title} h2`}>Log in to your account</h2>
+            <p className={`${styles.text} text24`}>
               Welcome back! Please enter your details.
             </p>
             <Formik
@@ -85,7 +85,7 @@ export default function LoginPage() {
                 <Form className={css.form} autoComplete="off">
                   <div className={css.fialdStyle}>
                     <div className={css.fieldPosition}>
-                      <p className={css.fieldName}>Email or phone number*</p>
+                      <p className={`${css.fieldName} text14`}>Email or phone number*</p>
                       <Field
                         type="email"
                         name="email"
@@ -104,9 +104,8 @@ export default function LoginPage() {
                         touched={touched.email}
                       />
                     </div>
-
                     <div className={css.fieldPosition}>
-                      <p className={css.fieldName}>Password*</p>
+                      <p className={`$${css.fieldName} text14`}>Password*</p>
                       <Field
                         type="password"
                         name="password"
@@ -134,11 +133,11 @@ export default function LoginPage() {
               )}
             </Formik>
           </div>
-          <Link href="/forgot-password">Forgot password</Link>
+          <Link className={`${styles.forgot} text14`} href="/forgot-password">Forgot password</Link>
           <GoogleLoginBtn />
           <div>
-            <p>Don’t have an account? </p>
-            <Link href="/register">Sign up</Link>
+            <p className={`${styles.text} text14`}>Don’t have an account?</p>
+            <Link className={`${styles.link} text14`} href="/register">Sign up</Link>
           </div>
         </section>
       </Suspense>

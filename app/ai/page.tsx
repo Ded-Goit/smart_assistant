@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import styles from "./ai.module.css";
-
 import Link from "next/link";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 export default function LoginPage() {
   return (
     <section className={styles.ai}>
+      <Sidebar />
       <div className={styles.imagesBlock}>
         <h2 className={`${styles.title} h2`}>UHJGJHGUIHOH</h2>
         <p className={`${styles.text} text24`}>

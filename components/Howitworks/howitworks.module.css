@@ -13,7 +13,8 @@
 
 .howitworks__title::before,
 .howitworks__title::after {
-  display: none; /* прибираємо декоративні елементи на мобілці */
+  display: none;
+  /* прибираємо декоративні елементи на мобілці */
 }
 
 .howitworks__box {
@@ -76,25 +77,25 @@
 }
 
 .howitworks__bottom-btn {
-  width: 100%;
-  padding: 14px;
-  border-radius: 5px;
-  background-color: #6c63ff;
+  padding: 12px 55px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 500;
+  background: linear-gradient(to right, #6c63ff, #6c63ff);
   transition:
-    background 0.4s ease,
-    transform 0.3s ease;
+    background 0.3s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
 .howitworks__bottom-btn:hover {
- background: linear-gradient(to right, #6c63ff, #413b99);
   transform: scale(1.05);
+  background: linear-gradient(to right, #6c63ff, #413b99);
 }
 
 .howitworks__bottom-btn:active {
   transform: scale(0.97);
   background-color: #00bfa6;
 }
-
 
 /* === ПЛАНШЕТИ (min-width: 768px) === */
 @media (min-width: 768px) {
@@ -150,6 +151,7 @@
   .howitworks__title::before {
     background-image: url("/icons/vector-left.svg");
   }
+
   .howitworks__title::after {
     background-image: url("/icons/vector-right.svg");
   }

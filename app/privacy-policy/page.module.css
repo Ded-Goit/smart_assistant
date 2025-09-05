@@ -1,5 +1,5 @@
 .pageWrapper {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -7,4 +7,40 @@
 .backBtnWrapper {
   margin-top: 40px;
   text-align: center;
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+.title,
+.titleblock {
+  text-align: center;
+}
+
+.contentblock {
+  padding: 8px;
+}
+
+.list {
+  padding: 8px;
+}
+/* desktop */
+@media screen and (min-width: 768px) {
+  .pageWrapper {
+    padding: 80px 20px;
+  }
+
+  .contentblock {
+    padding: 16px;
+  }
+
+  .content-wrapper-pol {
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .titleblock {
+    text-align: left;
+  }
 }

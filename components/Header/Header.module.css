@@ -1,6 +1,7 @@
 .header {
   background-color: var(--background-viol);
-  background-color: #ebecf5; /* убрала прозрачность. */
+  background-color: #ebecf5;
+  /* убрала прозрачность. */
   border-radius: 0 0 16px 16px;
   padding: 0px 96px;
   position: fixed;
@@ -9,6 +10,7 @@
   width: 100%;
   z-index: 1000;
 }
+
 .container {
   display: flex;
   align-items: center;
@@ -17,12 +19,14 @@
   max-width: 1200px;
   margin: auto;
 }
+
 .logo {
   color: white;
   font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
 }
+
 .desktopNav {
   display: flex;
   gap: 1.25rem;
@@ -46,10 +50,13 @@
 /* 🔹 Active (поточна сторінка/секція) */
 .navLink[aria-current="page"] {
   background: #00bfa6;
-  background-clip: text; /* ✅ стандартна властивість */
-  -webkit-background-clip: text; /* ✅ для Safari/Chrome */
+  background-clip: text;
+  /* ✅ стандартна властивість */
+  -webkit-background-clip: text;
+  /* ✅ для Safari/Chrome */
   -webkit-text-fill-color: transparent;
-  color: transparent; /* ✅ для сумісності з Firefox */
+  color: transparent;
+  /* ✅ для сумісності з Firefox */
   font-weight: 600;
 }
 
@@ -65,6 +72,7 @@
   background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
   border-radius: 2px;
 }
+
 .navLink[aria-current="page"]::after:hover {
   display: block;
 }
@@ -74,10 +82,12 @@
   align-items: center;
   gap: 1rem;
 }
+
 .authButtons {
   display: flex;
   gap: 0.75rem;
 }
+
 .loginBtn {
   padding: 0.5rem 1rem;
   border: 1px solid #6c63ff;
@@ -88,32 +98,32 @@
   font-weight: 500;
   transition: all 0.2s ease-in-out;
 }
+
 .loginBtn:hover {
   color: #413b99;
-  text-decoration-line: none;
   transform: scale(1.05);
 }
+
 .registerBtn {
   padding: 0.5rem 1rem;
-  background-color: #6c63ff;
   border-radius: 6px;
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition:
-    background 0.3s ease-in-out,
-    transform 0.2s ease-in-out;
+  background: linear-gradient(to right, #6c63ff, #6c63ff);
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
 }
+
 .registerBtn:hover {
-  /* background-color: #16a085; */
   transform: scale(1.05);
-  text-decoration-line: none;
   background: linear-gradient(to right, #6c63ff, #413b99);
 }
+
 .registerBtn:active {
   transform: scale(0.97);
   background-color: #00bfa6;
 }
+
 @media (max-width: 768px) {
   .desktopNav {
     display: none;

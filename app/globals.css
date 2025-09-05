@@ -288,7 +288,7 @@ a {
   transition: color var(--transition-base);
 }
 a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 button,
 input,

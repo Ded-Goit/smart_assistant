@@ -26,7 +26,6 @@ function RegisterContent() {
   return <div>Register {ref && `(ref: ${ref})`}</div>;
 }
 
-
 export default function RegisterPage() {
   const router = useRouter();
   const validationControl = Yup.object().shape({
@@ -51,7 +50,7 @@ export default function RegisterPage() {
       console.log("User registered:", data);
 
       actions.resetForm();
-     router.push("/setting");
+      router.push("/setting");
     } catch (error: any) {
       showError(error.message || "Server error, please try again later");
       console.error(error);
@@ -60,19 +59,17 @@ export default function RegisterPage() {
     }
   };
 
-    interface registrationValues {
-      email: string;
-      password: string;
-    }
-
-
+  interface registrationValues {
+    email: string;
+    password: string;
+  }
 
   return (
     <>
       <section className={css.cover}>
         <Suspense fallback={<div>Loading...</div>}>
           <div className={css.block}>
-            <h2 className={css.title}>Register</h2>
+            <h2 className={`${css.title} h2`}>Register</h2>
             <Formik
               initialValues={{
                 name: "",
@@ -86,7 +83,7 @@ export default function RegisterPage() {
                 <Form className={css.form} autoComplete="off">
                   <div className={css.fialdStyle}>
                     <div className={css.fieldPosition}>
-                      <p className={css.fieldName}>Name*</p>
+                      <p className={`${css.fieldName} text14`}>Name*</p>
                       <Field
                         type="text"
                         name="name"
@@ -106,7 +103,7 @@ export default function RegisterPage() {
                       />
                     </div>
                     <div className={css.fieldPosition}>
-                      <p className={css.fieldName}>Email*</p>
+                      <p className={`${css.fieldName} text14`}>Email*</p>
                       <Field
                         type="email"
                         name="email"
@@ -127,7 +124,7 @@ export default function RegisterPage() {
                     </div>
 
                     <div className={css.fieldPosition}>
-                      <p className={css.fieldName}>Password*</p>
+                      <p className={`${css.fieldName} text14`}>Password*</p>
                       <Field
                         type="password"
                         name="password"
@@ -147,7 +144,7 @@ export default function RegisterPage() {
                       />
                     </div>
                   </div>
-                  <button type="submit" className={css.btn}>
+                  <button type="submit" className={`${css.btn} text16`}>
                     Create account
                   </button>
                   <Toaster />
@@ -157,11 +154,21 @@ export default function RegisterPage() {
             <Link href="/forgot-password">Forgot password</Link>
             <OAuthCallback />
             <div>
-              <p>Already have an account? </p>
-              <Link href="/login">Sign up</Link>
+              <p className={`${css.link} text14`}>Already have an account?</p>
+              <Link className={`${css.link} text14`} href="/login">
+                Sign up
+              </Link>
             </div>
           </div>
           <div className={css.block}></div>
+          <Image
+            src="/register/task-complete-girl.jpg"
+            alt="Task complete girl"
+            width={513}
+            height={513}
+            style={{ width: "100%", height: "auto" }}
+            priority
+          />
         </Suspense>
       </section>
     </>

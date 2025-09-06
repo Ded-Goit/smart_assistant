@@ -1,8 +1,82 @@
-.cover{
-display:inline-flex;
-column-gap: 20px;
-padding-top: 100px;
+.cover {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.block{
+.imgPart {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.mainPart {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 320px;
+}
+.registerText {
+  height: 78px;
+}
+.loginText {
+  height: 94px;
+}
+.title {
+  font-family: "Nunito";
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-text);
+}
+.blala {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400px;
+  line-height: 1.7;
+  color: var(--color-text);
+  padding-left: 22px;
+}
+
+.otherPage {
+  display: inline-flex;
+  column-gap: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.otherTxt {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2.14;
+  color: var(--color-text);
+}
+.otherLink {
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+@media (min-width: 768px) {
+  .cover {
+    min-width: 768px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .mainPart {
+    width: 360px;
+  }
+  .txtPart {
+    display: grid;
+    grid-template-rows: 96px 1fr 96px;
+  }
+  .title {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cover {
+    min-width: 1440px;
+    grid-template-columns: 1fr 1fr;
+  }
 }

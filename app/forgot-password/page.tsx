@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { forgotPwd } from "@/lib/api/apiClient"; 
-
+import css from ".//ForgotPasswordPage.module.css";
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");

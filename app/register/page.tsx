@@ -8,6 +8,7 @@ import GoogleLoginBtn from "@/components/GoogleLoginBtn/GoogleLoginBtn";
 import OAuthCallback from "@/components/OAuthCallback/OAuthCallback";
 import Link from "next/link";
 import ForgotPasswordPage from "../forgot-password/page";
+
 import RegistrationForm from "@/components/RegistrationForm/RegistrationForm";
 import AuthCover from "@/components/AuthCover/AuthCover";
 
@@ -27,10 +28,13 @@ export default function RegisterPage() {
             <div className={css.otherPage}>
               <p className={css.otherTxt}>Already have an account? </p>
               <Link href="/login" className={css.otherLink}>
+
+
                 Sign up
               </Link>
             </div>
           </div>
+
         </AuthCover>
         <div className={css.imgPart}>
           <img
@@ -39,6 +43,7 @@ export default function RegisterPage() {
             className={css.imgPage}
           />
         </div>
+
       </section>
     </>
   );

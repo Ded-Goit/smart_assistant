@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./logo.module.css";
 
-export default function Logo({ width = 160, height = 56 }) {
+export default function Logo({ width = 159, height = 57 }) {
   return (
     <Link href="/" className={styles.logo}>
       <Image

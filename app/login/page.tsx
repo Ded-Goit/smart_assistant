@@ -11,6 +11,7 @@ import AuthCover from "@/components/AuthCover/AuthCover";
 export default function LoginPage() {
   const router = useRouter();
 
+
   return (
     <section className={css.cover}>
       <AuthCover>
@@ -40,5 +41,6 @@ export default function LoginPage() {
         />
       </div>
     </section>
+
   );
 }

@@ -1,20 +1,19 @@
 "use client";
 
 import React from "react";
-import { ErrorMessage } from "formik";
+import { ErrorMessage, useFormikContext } from "formik";
 import css from "./CustomMessage.module.css";
 
 interface CustomMessageProps {
   name: string;
-  errors?: string | undefined;
-  touched?: boolean | undefined;
+
 }
 
-export default function CustomMessage({
-  name,
-  errors,
-  touched,
-}: CustomMessageProps) {
+export default function CustomMessage({ name }: CustomMessageProps) {
+  const { touched, errors } = useFormikContext<any>();
+
+  const fieldTouched = touched?.[name];
+  const fieldError = errors?.[name];
   return (
     <>
       {errors && touched && (

@@ -1,0 +1,98 @@
+.form {
+  font-family: "Inter";
+  display: block;
+  width: 100%;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+.fialdStyle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 20px;
+}
+.regField{
+  margin-bottom: 60px;
+}
+.loginField{
+  margin-bottom: 43px;
+}
+
+.fieldPosition {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  gap: 6px;
+}
+.fieldName {
+  font-family: "Inter";
+  font-size: 14;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+.btn {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  width: 100%;
+  height: 44px;
+  padding: 8px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  transform: scale(1.01);
+  overflow: hidden;
+}
+
+.field {
+  width: 100%;
+  height: 39px;
+  border-radius: 8px;
+  border: 1px solid rgba(229, 231, 235, 1);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-grey);
+  background-color: transparent;
+  padding: 10px 14px;
+  box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+}
+
+.field:hover,
+.field:focus,
+.field:active {
+  background-color: transparent;
+  outline: none;
+}
+.errorField {
+  border: 1px solid red;
+}
+
+.successField {
+  border: 1px solid var(--secondary);
+}
+
+.forgotPwd {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 51px;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-grey);
+}

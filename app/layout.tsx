@@ -8,42 +8,44 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hackathon2025-beta.vercel.app"),
   title: {
     default: "Smart Assistant",
-    template: "%s — Ши Помічник",
+    template: "%s — Smart Assistant",
   },
   description:
-    "Платформа продуктивності: планувальник, фокус-таймер, мікроуроки, аналітика та спільнота.",
+    "Smart Assistant is a productivity and learning platform that helps you manage your time, stay focused, and achieve better results through planning, Pomodoro sessions, microlearning, and analytics.",
   keywords: [
-    "продуктивність",
-    "тайм-менеджмент",
+    "productivity",
+    "time management",
     "Pomodoro",
-    "планувальник",
+    "planner",
     "focus",
-    "мікроуроки",
+    "microlearning",
+    "study",
+    "learning efficiency",
   ],
   icons: { icon: "/favicon.png", apple: "/apple-touch-icon.png" },
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    siteName: "Ши Помічник",
-    title: "Твій час. Твій ритм. Твій асистент.",
+    siteName: "Smart Assistant",
+    title: "Your Time. Your Rhythm. Your Assistant.",
     description:
-      "Платформа продуктивності з інструментами та навчанням без зайвого шуму.",
+      "A productivity and learning app with planning tools, focus timer, microlearning, and analytics — all in one place.",
     url: "https://hackathon2025-beta.vercel.app/",
     images: [
       {
-        url: "/og/hackathon.png", // поклади файл у public/og/hackathon.png
+        url: "/og/hackathon.png",
         width: 1200,
         height: 630,
-        alt: "Ши Помічник — продуктивність без шуму",
+        alt: "Smart Assistant — productivity and learning without distractions",
       },
     ],
-    locale: "uk_UA",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ши Помічник",
+    title: "Smart Assistant",
     description:
-      "Плануй, фокусуйся, навчайся. Інструменти та мікроуроки для результатів.",
+      "Plan, focus, and learn effectively. Tools and microlearning designed for better results.",
     images: ["/og/hackathon.png"],
   },
   robots: { index: true, follow: true },

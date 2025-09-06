@@ -208,9 +208,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </div>
       <div className={styles.backBtnWrapper}>
-        <Link href="/" className={`${styles.btn} btnfullcolor`}>
-          ← Back to Home
-        </Link>
+        <Link href="/" className={`${styles.btn} btnfullcolor`}>Back to Home</Link>
       </div>
     </section>
   );

@@ -115,9 +115,7 @@ export default function CookiesPolicyPage() {
         </p>
       </div>
       <div className={styles.backBtnWrapper}>
-        <Link href="/" className={`${styles.btn} btnfullcolor`}>
-          ← Back to Home
-        </Link>
+        <Link href="/" className={`${styles.btn} btnfullcolor`}>Back to Home</Link>
       </div>
     </section>
   );

@@ -74,14 +74,19 @@ html.light {
 
 /* ===== ТЕМНА ТЕМА ===== */
 [data-theme="dark"] {
-  --color-bg: #1a202c; /* колишній gray-900 */
-  --color-text: #f9fafb; /* світлий текст */
-  --color-neutral: #2d3748; /* глибший фон */
-  --color-primary: #8c85ff; /* трішки світліший варіант */
+  --color-bg: #1a202c;
+  /* колишній gray-900 */
+  --color-text: #f9fafb;
+  /* світлий текст */
+  --color-neutral: #2d3748;
+  /* глибший фон */
+  --color-primary: #8c85ff;
+  /* трішки світліший варіант */
   --color-secondary: #00e0c3;
   --color-tertiary: #ffd97a;
   --color-bg-viol: #3b3b5f66;
-  --color-white: #1a202c; /* у темі "білий" стає темним */
+  --color-white: #1a202c;
+  /* у темі "білий" стає темним */
   --color-grey: #cbd5e0;
   --color-primary-10: #8c85ff33;
   --color-secondary-10: #00e0c333;
@@ -118,6 +123,7 @@ html.light {
   --gray-800: #edf2f7;
   --gray-900: #f7fafc;
 }
+
 /* ===== БАЗОВІ ПРИЗНАЧЕННЯ ===== */
 body {
   background: var(--color-bg);
@@ -136,9 +142,11 @@ body {
   /* Формула расчета адаптивного шрифта */
   /*min (58px при увеличении экрана текст не будет увеличиваться больше этого размера) (размер шрифта mob версии + (размер шрифта desktop версии  - размер шрифта mob версии) * (100% ширины окна просмотра в vw - мобильная ширина экрана px) / на разницу между шириной desktop и шириной mob экрана) */
   font-size: min(58px, calc(32px + 26 * (100vw - 390px) / 1050));
-  line-height: 64px; /* з токена lineHeights.3 */
+  line-height: 64px;
+  /* з токена lineHeights.3 */
   letter-spacing: 0;
 }
+
 /* Header → Head2-48SB (Nunito SemiBold, 48, line-height: AUTO→normal) */
 .h2 {
   font-size: min(48px, calc(32px + 16 * (100vw - 390px) / 1050));
@@ -147,6 +155,7 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 /* Header → Head3-34SB (Nunito SemiBold, 34, line-height: AUTO→normal) */
 .h3 {
   font-family: var(--ff-nunito);
@@ -155,6 +164,7 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 /* Header → Head4-22Medium (Inter Medium, 22, line-height: AUTO→normal) */
 .h4 {
   font-family: var(--ff-inter);
@@ -163,6 +173,7 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 /* Main text → Text1-24Reg (Inter Regular, 24) */
 .text24 {
   font-family: var(--ff-inter);
@@ -171,9 +182,11 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 .text22 {
-    font-size: min(22px, calc(20px + 2 * (100vw - 390px) / 1050));
+  font-size: min(22px, calc(20px + 2 * (100vw - 390px) / 1050));
 }
+
 /* Main text → Text2-18Reg (Inter Regular, 18) */
 .text18 {
   font-family: var(--ff-inter);
@@ -182,6 +195,7 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 /* Main text → Text3-16Medium (Inter Medium, 16) */
 .text16medium {
   font-family: var(--ff-inter);
@@ -190,6 +204,7 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 /* Main text → Text4-14Reg (Inter Regular, 14/30) */
 .text14 {
   font-family: var(--ff-inter);
@@ -198,14 +213,17 @@ body {
   line-height: 30px;
   letter-spacing: 0;
 }
+
 /* Main text → Text5-14SB (Inter SemiBold, 14/20) */
 .text14sb {
   font-family: var(--ff-inter);
-  font-weight: 600; /* "Semi Bold" */
+  font-weight: 600;
+  /* "Semi Bold" */
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
 }
+
 /* Main text → Text6-18Medium (Inter Medium, 18) */
 .text18medium {
   font-family: var(--ff-inter);
@@ -214,6 +232,7 @@ body {
   line-height: normal;
   letter-spacing: 0;
 }
+
 /* Допоміжні (малий текст із JSON) */
 .text16 {
   /* Text7-16Reg */
@@ -222,6 +241,7 @@ body {
   font-size: 16px;
   line-height: normal;
 }
+
 .text12 {
   /* Text7-12Reg */
   font-family: var(--ff-inter);
@@ -229,6 +249,7 @@ body {
   font-size: 12px;
   line-height: 16px;
 }
+
 .text12medium {
   /* Text8-12Medium */
   font-family: var(--ff-inter);
@@ -236,25 +257,32 @@ body {
   font-size: 12px;
   line-height: 16px;
 }
+
 /* Утилітарні кольорові класи (приклади) */
 .bg-primary {
   background: var(--color-primary);
 }
+
 .bg-secondary {
   background: var(--color-secondary);
 }
+
 .bg-tertiary {
   background: var(--color-tertiary);
 }
+
 .text-primary {
   color: var(--color-primary);
 }
+
 .text-grey {
   color: var(--color-grey);
 }
+
 .border-neutral {
   border-color: var(--color-neutral);
 }
+
 /* -------- RESET & BASE -------- */
 *,
 *::before,
@@ -287,9 +315,11 @@ a {
   text-decoration: none;
   transition: color var(--transition-base);
 }
+
 a:hover {
   /* text-decoration: underline; */
 }
+
 button,
 input,
 select,
@@ -300,6 +330,7 @@ textarea {
   background: none;
   cursor: pointer;
 }
+
 button {
   background: none;
   border: none;
@@ -314,7 +345,7 @@ button {
 :root {
   /* 🎨 Базові змінні для кнопок */
   /* Кольори кнопки (світла тема) */
-  --btn-bg: #6c63ff;
+  --btn-bg: linear-gradient(49deg, #6c63ff 0%, #6c63ff 100%);
   --btn-bg-hover: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
   --btn-bg-active: #00bfa6;
   /* Текст кнопки */
@@ -323,6 +354,7 @@ button {
   --btn-font-size: 16px;
   --btn-text-color: #f9fafb;
 }
+
 /* 🌙 Темна тема (через клас .dark на <html>) */
 .dark {
   --btn-bg: #00bfa6;
@@ -330,6 +362,7 @@ button {
   --btn-bg-active: #6c63ff;
   --btn-text-color: #ffffff;
 }
+
 /* 🔘 Базова повнокольорова кнопка */
 .btnfullcolor {
   background: var(--btn-bg);
@@ -345,10 +378,12 @@ button {
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
+
 .btnfullcolor:hover {
   background: var(--btn-bg-hover);
   transform: scale(1.05);
 }
+
 .btnfullcolor:active {
   background: var(--btn-bg-active);
   transform: scale(0.97);

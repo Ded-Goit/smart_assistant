@@ -1,0 +1,208 @@
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  color: var(--btn-text-color);
+}
+
+/* 🌈 Анімований градієнтний фон */
+.gradientBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #6c63ff, #00bfa6, #ff6ec4, #4facfe);
+  background-size: 400% 400%;
+  animation:
+    gradientMove 15s ease infinite,
+    zoomBg 20s ease-in-out infinite;
+  z-index: -2;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes zoomBg {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Темна тема */
+.dark .gradientBg {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #6c63ff, #00bfa6);
+}
+
+/* ✨ Частинки */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: floatParticle 12s linear infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(50vh) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Рандомні позиції для кожної частинки */
+.particle:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.particle:nth-child(2) {
+  left: 20%;
+  animation-delay: 2s;
+}
+.particle:nth-child(3) {
+  left: 30%;
+  animation-delay: 4s;
+}
+.particle:nth-child(4) {
+  left: 40%;
+  animation-delay: 6s;
+}
+.particle:nth-child(5) {
+  left: 50%;
+  animation-delay: 8s;
+}
+.particle:nth-child(6) {
+  left: 60%;
+  animation-delay: 10s;
+}
+.particle:nth-child(7) {
+  left: 70%;
+  animation-delay: 1s;
+}
+.particle:nth-child(8) {
+  left: 80%;
+  animation-delay: 3s;
+}
+.particle:nth-child(9) {
+  left: 90%;
+  animation-delay: 5s;
+}
+.particle:nth-child(10) {
+  left: 15%;
+  animation-delay: 7s;
+}
+.particle:nth-child(11) {
+  left: 25%;
+  animation-delay: 9s;
+}
+.particle:nth-child(12) {
+  left: 35%;
+  animation-delay: 11s;
+}
+.particle:nth-child(13) {
+  left: 65%;
+  animation-delay: 13s;
+}
+.particle:nth-child(14) {
+  left: 75%;
+  animation-delay: 15s;
+}
+.particle:nth-child(15) {
+  left: 85%;
+  animation-delay: 17s;
+}
+
+/* Хедер */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  z-index: 10;
+}
+
+/* Центр */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 0 16px;
+  z-index: 10;
+}
+
+/* ✨ Glow для заголовка */
+.main h1 {
+  text-shadow:
+    0 0 10px rgba(108, 99, 255, 0.8),
+    0 0 20px rgba(0, 191, 166, 0.6),
+    0 0 30px rgba(255, 110, 196, 0.5);
+  animation: glowPulse 3s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 8px rgba(108, 99, 255, 0.6),
+      0 0 16px rgba(0, 191, 166, 0.4),
+      0 0 24px rgba(255, 110, 196, 0.3);
+  }
+  to {
+    text-shadow:
+      0 0 16px rgba(108, 99, 255, 1),
+      0 0 32px rgba(0, 191, 166, 0.8),
+      0 0 48px rgba(255, 110, 196, 0.7);
+  }
+}
+
+/* Loader */
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  margin-top: 32px;
+}
+
+/* Футер */
+.footer {
+  text-align: center;
+  padding: 16px;
+  opacity: 0.9;
+  z-index: 10;
+}

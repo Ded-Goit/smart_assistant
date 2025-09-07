@@ -1,5 +1,6 @@
 import { ReactNode, Suspense } from "react";
 import css from "./AuthCover.module.css";
+import Logo from "../Logo/logo";
 
 interface AuthCoverProps {
   children: ReactNode;
@@ -8,7 +9,9 @@ interface AuthCoverProps {
 export default function AuthCover({ children }: AuthCoverProps) {
   return (
     <div className={css.txtPart}>
-      <div className={css.hederPart}></div>
+      <div className={css.hederPart}>
+        <Logo/>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <>{children}</>
       </Suspense>

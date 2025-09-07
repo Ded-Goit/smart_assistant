@@ -26,10 +26,8 @@
 }
 
 .howitworks__box-image {
-  width: 100%;
-  max-width: 300px;
+  display: none;
 }
-
 .howitworks__box-title {
   font-size: 20px;
   margin-bottom: 8px;
@@ -52,14 +50,89 @@
   line-height: 1.4;
 }
 
+/* базова іконка */
 .howitworks__box-text::before {
   content: "";
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  background-image: url("/icons/done.svg");
   background-repeat: no-repeat;
   background-size: contain;
+}
+/* === BOX 1 === */
+.icon1 .howitworks__box-text::before {
+  background-image: url("/howitworks/calendar_1.svg");
+}
+.icon2 .howitworks__box-text::before {
+  background-image: url("/howitworks/documents_folder_2.svg");
+}
+.icon3 .howitworks__box-text::before {
+  background-image: url("/howitworks/goal_3.svg");
+}
+.icon4 .howitworks__box-text::before {
+  background-image: url("/howitworks/stopwatch_4.svg");
+}
+.icon5 .howitworks__box-text::before {
+  background-image: url("/howitworks/bar_chart_5.svg");
+}
+.icon1 .howitworks__box-text::before,
+.icon2 .howitworks__box-text::before,
+.icon3 .howitworks__box-text::before,
+.icon4 .howitworks__box-text::before,
+.icon5 .howitworks__box-text::before {
+  width: 40px;
+  height: 40px;
+}
+
+/* === BOX 2 === */
+.icon6 .howitworks__box-text::before {
+  background-image: url("/howitworks/goal_6.svg");
+}
+.icon7 .howitworks__box-text::before {
+  background-image: url("/howitworks/stopwatch_7.svg");
+}
+.icon8 .howitworks__box-text::before {
+  background-image: url("/howitworks/tea_cup_8.svg");
+}
+.icon9 .howitworks__box-text::before {
+  background-image: url("/howitworks/calendar_9.svg");
+}
+.icon10 .howitworks__box-text::before {
+  background-image: url("/howitworks/idea_10.svg");
+}
+.icon11 .howitworks__box-text::before {
+  background-image: url("/howitworks/productivity_11.svg");
+}
+
+/* === BOX 3 === */
+.icon12 .howitworks__box-text::before {
+  background-image: url("/howitworks/folder_12.svg");
+}
+.icon13 .howitworks__box-text::before {
+  background-image: url("/howitworks/notes_13.svg");
+}
+.icon14 .howitworks__box-text::before {
+  background-image: url("/howitworks/table_14.svg");
+}
+.icon15 .howitworks__box-text::before {
+  background-image: url("/howitworks/digital_clock_15.svg");
+}
+.icon16 .howitworks__box-text::before {
+  background-image: url("/howitworks/productivity_16.svg");
+}
+.icon6 .howitworks__box-text::before,
+.icon7 .howitworks__box-text::before,
+.icon8 .howitworks__box-text::before,
+.icon9 .howitworks__box-text::before,
+.icon10 .howitworks__box-text::before,
+.icon11 .howitworks__box-text::before,
+.icon12 .howitworks__box-text::before,
+.icon13 .howitworks__box-text::before,
+.icon14 .howitworks__box-text::before,
+.icon15 .howitworks__box-text::before,
+.icon16 .howitworks__box-text::before {
+  width: 45px;
+  height: 45px;
 }
 
 .howitworks__bottom {
@@ -103,14 +176,6 @@
     max-width: 700px;
   }
 
-  .howitworks__title {
-    /* font-size: 28px; */
-  }
-
-  .howitworks__box-title {
-    /* font-size: 22px; */
-  }
-
   .howitworks__box-text {
     font-size: 18px;
   }
@@ -123,6 +188,11 @@
   .howitworks__bottom-btn {
     width: auto;
     padding: 12px 40px;
+  }
+  .howitworks__box-item .howitworks__box-text::before {
+    background-image: url("/icons/done.svg") !important;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -156,6 +226,15 @@
     background-image: url("/icons/vector-right.svg");
   }
 
+  .howitworks__box-text::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background-image: url("/icons/done.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   .howitworks__box {
     flex-direction: row;
     justify-content: space-between;
@@ -164,6 +243,8 @@
   }
 
   .howitworks__box-image {
+    display: block;
+    width: 100%;
     max-width: 513px;
   }
 

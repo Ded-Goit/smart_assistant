@@ -20,43 +20,51 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>       
+      <div className={styles.container}>
         <Logo width={160} height={56} />
-        
-        {/* Навігація */}
-        <div className={styles.navigation}>
-          <p className={`${styles.subtitle} text18medium`}>Navigation</p>
-          <nav>
-            {navLinks.map((link) => (
+
+        <div className={styles.linksWrapper}>
+          {/* Навігація */}
+          <div className={styles.navigation}>
+            <p className={`${styles.subtitle} text18medium`}>Navigation</p>
+            <nav>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  className={`${styles.navlink} text14`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Legal */}
+          <div className={styles.navigation}>
+            <p className={`${styles.subtitlelegal} text18medium`}>Legal</p>
+            <nav className={styles.legalNav}>
               <Link
-                key={link.href}
-                href={link.href}
-                aria-current={pathname === link.href ? "page" : undefined}
+                href="/terms-and-conditions"
                 className={`${styles.navlink} text14`}
               >
-                {link.label}
+                Terms
               </Link>
-            ))}
-          </nav>
-        </div>
-
-        {/* Legal */}
-        <div className={styles.navigation}>
-          <p className={`${styles.subtitle} text18medium`}>Legal</p>
-          <nav className={styles.legalNav}>
-            <Link
-              href="/terms-and-conditions"
-              className={`${styles.navlink} text14`}
-            >
-              Terms
-            </Link>
-            <Link href="/privacy-policy" className={`${styles.navlink} text14`}>
-              Privacy Policy
-            </Link>
-            <Link href="/cookies-policy" className={`${styles.navlink} text14`}>
-              Cookies
-            </Link>
-          </nav>
+              <Link
+                href="/privacy-policy"
+                className={`${styles.navlink} text14`}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/cookies-policy"
+                className={`${styles.navlink} text14`}
+              >
+                Cookies
+              </Link>
+            </nav>
+          </div>
         </div>
 
         {/* Соцмережі */}
@@ -118,7 +126,7 @@ export default function Footer() {
       </div>
 
       {/* Підвал */}
-     
+
       <p className={`${styles.text} text14`}>
         &copy; {new Date().getFullYear()} Smart Assistant |{" "}
         <Link href="/team" className={styles.link}>

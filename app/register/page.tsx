@@ -19,7 +19,7 @@ export default function RegisterPage() {
         <AuthCover>
           <div className={css.mainPart}>
             <div className={css.registerText}>
-              <h2 className={css.title}>Register</h2>
+              <h2 className={`${css.title} h2`}>Register</h2>
             </div>
 
             <RegistrationForm />
@@ -28,22 +28,19 @@ export default function RegisterPage() {
             <div className={css.otherPage}>
               <p className={css.otherTxt}>Already have an account? </p>
               <Link href="/login" className={css.otherLink}>
-
-
                 Sign up
               </Link>
             </div>
           </div>
-
         </AuthCover>
-        <div className={css.imgPart}>
+        {/* <div className={`${css["imgPart imgPrtRegister"]}`}>
           <img
             src="/register/reg.webp"
             alt="page image"
             className={css.imgPage}
           />
-        </div>
-
+        </div> */}
+        <div className={`${css.imgPart} ${css.imgPrtRegister}`}></div>
       </section>
     </>
   );

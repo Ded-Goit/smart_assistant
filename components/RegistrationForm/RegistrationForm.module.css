@@ -5,16 +5,19 @@
   color: var(--color-text);
   margin-bottom: 16px;
 }
+
 .fialdStyle {
   display: flex;
   flex-direction: column;
   width: 100%;
   row-gap: 20px;
 }
-.regField{
+
+.regField {
   margin-bottom: 60px;
 }
-.loginField{
+
+.loginField {
   margin-bottom: 43px;
 }
 
@@ -25,13 +28,16 @@
   position: relative;
   gap: 6px;
 }
+
 .fieldName {
+  /* padding-top: 32px; */
   font-family: "Inter";
   font-size: 14;
   font-weight: 600;
   line-height: 1.4;
   color: var(--color-text);
 }
+
 .btn {
   font-family: "Inter";
   font-size: 16px;
@@ -50,6 +56,7 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 }
+
 .btn:hover,
 .btn:focus,
 .btn:active {
@@ -78,6 +85,7 @@
   background-color: transparent;
   outline: none;
 }
+
 .errorField {
   border: 1px solid red;
 }

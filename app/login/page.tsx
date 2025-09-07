@@ -33,14 +33,7 @@ export default function LoginPage() {
           </div>
         </div>
       </AuthCover>
-      <div className={css.imgPart}>
-        <img
-          src="/login/login.webp"
-          alt="login image"
-          className={css.imgPage}
-        />
-      </div>
+      <div className={`${css.imgPart} ${css.imgPartLogin}`}></div>
     </section>
-
   );
 }

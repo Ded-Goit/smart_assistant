@@ -1,25 +1,10 @@
 .cover {
+  padding-top: 90px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
 }
 
-.imgPart {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-.mainPart {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 320px;
-}
-.registerText {
-  height: 78px;
-}
-.loginText {
-  height: 94px;
-}
 .title {
   font-family: "Nunito";
   font-size: 30px;
@@ -27,6 +12,7 @@
   line-height: 1;
   color: var(--color-text);
 }
+
 .blala {
   font-family: "Inter";
   font-size: 14px;
@@ -43,6 +29,23 @@
   align-items: center;
   width: 100%;
 }
+
+.otherPage {
+  display: inline-flex;
+  column-gap: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.otherPage {
+  display: inline-flex;
+  column-gap: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .otherTxt {
   font-family: "Inter";
   font-size: 14px;
@@ -50,6 +53,7 @@
   line-height: 2.14;
   color: var(--color-text);
 }
+
 .otherLink {
   font-family: "Inter";
   font-size: 14px;
@@ -57,18 +61,84 @@
   line-height: 1.4;
   color: var(--color-primary);
 }
+
+/* Левая часть — форма */
+.mainPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 40px;
+  background-color: transparent;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* Правая часть — картинка */
+.imgPart {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+
+.imgPrtRegister {
+  background-image: url('/register/reg.webp');
+}
+
+.imgPartLogin {
+  background-image: url('/login/login.webp');
+}
+
+/* .imgPart {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+} */
+
+/* 📱 Мобильная адаптация */
+@media (max-width: 768px) {
+  .cover {
+    display: block;
+    position: relative;
+  }
+
+  .imgPart {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.2;
+    /* или 1, если нужна яркая картинка */
+  }
+
+  .mainPart {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.658);
+    /* читаемость */
+  }
+}
+
 @media (min-width: 768px) {
   .cover {
     min-width: 768px;
     grid-template-columns: 1fr 1fr;
   }
+
   .mainPart {
-    width: 360px;
+    /* width: 360px; */
   }
+
   .txtPart {
     display: grid;
     grid-template-rows: 96px 1fr 96px;
   }
+
   .title {
     font-size: 34px;
   }

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import styles from "./Sidebar.module.css";
 import Logo from "../Logo/logo";
+import Logout from "../Logout/Logout";
 
 export default function Sidebar() {
   return (
@@ -40,12 +41,13 @@ export default function Sidebar() {
             </svg> */}
             Setting
           </a>
-          <a href="#">
-          {/* <svg className={styles.social_icon_menu} width="20" height="22">
+          {/* <a href="#">
+           <svg className={styles.social_icon_menu} width="20" height="22">
               <use href="./images/icons.svg#icon-Group-1"></use>
-            </svg> */}
+            </svg> 
             Log out
-          </a>
+          </a> */}
+        <Logout/>
         </div>
       </aside>
   );

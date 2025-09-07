@@ -14,3 +14,7 @@ export const navLinks = [
   { href: "/terms-and-conditions", label: "Terms" },
   { href: "/privacy-policy", label: "Privacy Policy" },
 ];
+
+/** "/book",  "/shiassistant","/tools","/study",
+    "/blog","/community","/checklist","/team","/resources",
+    "/profile","/cookies-policy","/terms-and-conditions","/privacy-policy",*/  

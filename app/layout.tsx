@@ -1,8 +1,9 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import Header from "@/components/Header/Header";
-import ThemeProvider from "@/providers/ThemeProvider";
-import Footer from "@/components/Footer/Footer";
+//import Header from "@/components/Header/Header";
+//import ThemeProvider from "@/providers/ThemeProvider";
+//import Footer from "@/components/Footer/Footer";
+import LayoutClient from "@/components/LayoutClient"; // винесемо логіку сюди
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hackathon2025-beta.vercel.app"),
@@ -76,11 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <LayoutClient>{children}</LayoutClient>
       </body>
     </html>
   );

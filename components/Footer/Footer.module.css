@@ -10,7 +10,6 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  /* padding: 1rem 1.5rem; */
   margin: auto;
   gap: 32px;
 }
@@ -21,19 +20,25 @@
   flex-direction: column;
   gap: 8px;
 }
+.linksWrapper {
+  display: flex;
+  gap: 32px;
+}
 
-/* Заголовок завжди зліва */
 .subtitle {
-  text-align: left;
+  text-align: center;
   margin-bottom: 11px;
 }
 
+.subtitlelegal {
+  text-align: left;
+  margin-bottom: 11px;
+}
 /* Списки лінків */
 .navigation nav,
 .legalNav {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 4px;
 }
 
@@ -62,6 +67,8 @@
   color: var(--text-main);
   opacity: 0.6;
   transition: opacity 0.2s ease-in;
+  font-size: 12px;
+  margin-top: 24px;
 }
 
 .link:hover {
@@ -79,12 +86,14 @@
   /* background: var(--color-primary); */
   background: linear-gradient(to right, #6c63ff, #6c63ff);
   color: var(--background);
-  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition:
+    background 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 .socialButton:hover {
   background: var(--gradient-linear);
-  transform: scale(1.20);
+  transform: scale(1.2);
 }
 
 .socialButton:active {
@@ -107,7 +116,10 @@
   .navigation nav,
   .legalNav {
     align-items: flex-start;
-    /* лінки вирівнюються зліва */
+  }
+
+  .subtitle {
+    text-align: left;
   }
 
   .socials {
@@ -116,5 +128,13 @@
 
   .text {
     margin: 24px 0 0 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .linksWrapper {
+    display: flex;
+
+    gap: 200px;
   }
 }

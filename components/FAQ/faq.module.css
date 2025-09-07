@@ -31,22 +31,40 @@
   background-image: url("/icons/vector-right.svg");
 }
 
+/* === MOBILE FIRST === */
 .faq__box {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+  flex-direction: column; /* одна колонка */
+  gap: 24px;
 }
 
 .faq__image {
-  flex: 0 0 40%;
+  display: none; /* приховано на мобільних */
 }
 
 .faq__list {
-  flex: 1;
   list-style: none;
-  max-width: 610px;
   width: 100%;
+}
+
+/* === DESKTOP (2 колонки) === */
+@media (min-width: 768px) {
+  .faq__box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .faq__image {
+    display: block; /* показуємо тільки на планшеті/десктопі */
+    flex: 0 0 40%;
+  }
+
+  .faq__list {
+    max-width: 610px;
+    flex: 1;
+  }
 }
 
 .faq__item {
@@ -106,7 +124,7 @@
 }
 
 .show {
-  max-height: 300px; /* достатньо для тексту */
+  max-height: 300px;
   opacity: 1;
   margin-top: 16px;
 }

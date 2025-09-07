@@ -13,34 +13,38 @@ export default function LoginPage() {
 
 
   return (
-    <section className={css.cover}>
-      <AuthCover>
-        <div className={css.mainPart}>
-          <div className={css.loginText}>
-            <h2 className={css.title}>Log in to your account</h2>
-            <p className={css.blala}>
-              Welcome back! Please enter your details.
-            </p>
-          </div>
+    <div className={css.pageWrapper}>
+      <section className={css.cover}>
+        <AuthCover>
+          <Link href="/" className={`${css.otherLink} ${css.headLink}`}>
+            Home &gt; Log in
+          </Link>
+          <div className={css.mainPart}>
+            <div className={css.loginText}>
+              <h2 className={css.title}>Log in to your account</h2>
+              <p className={css.blala}>
+                Welcome back! Please enter your details.
+              </p>
+            </div>
 
-          <LoginForm />
-          <GoogleLoginBtn />
-          <div className={css.otherPage}>
-            <p className={css.otherTxt}>Don’t have an account? </p>
-            <Link href="/register" className={css.otherLink}>
-              Sign up
-            </Link>
+            <LoginForm />
+            <GoogleLoginBtn />
+            <div className={css.otherPage}>
+              <p className={css.otherTxt}>Don’t have an account? </p>
+              <Link href="/register" className={css.otherLink}>
+                Sign up
+              </Link>
+            </div>
           </div>
+        </AuthCover>
+        <div className={css.imgPart}>
+          <img
+            src="/login/login.webp"
+            alt="login image"
+            className={css.imgPage}
+          />
         </div>
-      </AuthCover>
-      <div className={css.imgPart}>
-        <img
-          src="/login/login.webp"
-          alt="login image"
-          className={css.imgPage}
-        />
-      </div>
-    </section>
-
+      </section>
+    </div>
   );
 }

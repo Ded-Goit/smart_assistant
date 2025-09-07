@@ -1,8 +1,15 @@
 .txtPart {
   display: grid;
-  grid-template-rows: 96px 1fr 96px;
+  grid-template-rows: 96px 44px 1fr 96px;
+  max-width: 720px;
+  justify-content: center;
 }
-
+.hederPart{
+display: flex;
+align-items: center;
+width: 720px;
+padding-left: 72px;
+}
 .footerPart {
   display: inline-flex;
   justify-content: center;

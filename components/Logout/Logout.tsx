@@ -16,7 +16,10 @@ export default function Logout() {
     <div className={css.button}>
       <Suspense fallback={<div>Loading...</div>}>
         <button type="button" className={css.btn} onClick={handleLogout}>
-          Logout
+          <svg className={css.logoutIcon}>
+            <use href="/sprite.svg#icon-logout"></use>
+          </svg>
+          <p className={css.logoutTxt}>Logout</p>
         </button>
       </Suspense>
     </div>

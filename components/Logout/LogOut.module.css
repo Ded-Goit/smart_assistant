@@ -1,6 +1,30 @@
 .btn{
-    background-color: blue;
-    color: brown;
-    font-size: larger;
-    padding: 20px;
+    background-color:transparent;
+    color: var(  --color-primary);
+display: inline-flex;
+gap: 8px;
+align-items: center;
+justify-content: center;
+border: none;
+padding: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 8px;
+      font-family: "Inter";
+font-size: 18px;
+font-weight: 500;
+line-height: 1;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+  transform: scale(1.01);
+  overflow: hidden;
+   background-color:var(--color-secondary);
+}
+
+.logoutIcon{
+    width: 24px;
+    height: 24px;
+
 }

@@ -19,18 +19,18 @@ export default function ForgotPasswordPage() {
     };
 
   return (
-    <div className="p-8 max-w-md mx-auto">
-      <h1 className="text-xl font-bold mb-4">Forgot password?</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className={css.cover}>
+      <h1 className={css.title}>Forgot password?</h1>
+      <form onSubmit={handleSubmit} className={css.form}>
         <input
           type="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 rounded"
+          className={css.field}
           required
         />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
+        <button type="submit" className={css.btn}>
           Send link
         </button>
       </form>

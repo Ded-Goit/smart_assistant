@@ -18,7 +18,6 @@ export async function apiClient(endpoint: string, options: RequestInit = {}) {
     const errData = await res.json().catch(() => ({}));
     throw new Error(errData.message || "Request failed");
   }
-
   return res.json();
 }
 
@@ -96,7 +95,7 @@ export const loginWithGoogle = async (code: string) => {
 
 export async function resetPassword(password: string, token: string) {
   try {
-    const res = await fetch(`${BASE_URL}/auth/reset-pwd`, {
+    const res = await fetch(`${BASE_URL}/auth/reset-password`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password, token }),
@@ -112,6 +111,9 @@ export async function resetPassword(password: string, token: string) {
     throw new Error(err.message || "Network error");
   }
 }
+
+
+
 
 export async function forgotPwd(email: string) {
   try {

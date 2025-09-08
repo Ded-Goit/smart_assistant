@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+}
+
+.icons {
+  display: flex;
+  gap: 2px;
+}
+
+/* На планшеті і вище ховаємо лого, іконки зсуваються вправо */
+@media (min-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .header {
+    justify-content: flex-end;
+  }
+  .icons {
+    display: flex;
+    gap: 16px;
+  }
+}

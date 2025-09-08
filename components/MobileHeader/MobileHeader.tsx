@@ -4,40 +4,43 @@ import Logo from "../Logo/logo";
 
 export default function MobileHeader() {
   return (
-    <>
-      <div>
+    <header className={styles.header}>
+      {/* Лого тільки на мобільних */}
+      <div className={styles.logo}>
         <Logo width={121} height={54} />
       </div>
-      <div className={styles.imagesBlock}>
+
+      {/* Іконки завжди відображаються */}
+      <div className={styles.icons}>
         <Image
           src="/mobileheader/nav_item_button.png"
-          alt="Foto page"
+          alt="Nav"
           width={32}
           height={32}
           priority
         />
         <Image
           src="/mobileheader/sharp_magic.png"
-          alt="Foto page"
+          alt="Magic"
           width={32}
           height={32}
           priority
         />
         <Image
           src="/mobileheader/user_avatar.png"
-          alt="Foto page"
+          alt="User"
           width={32}
           height={32}
           priority
         />
         <Image
           src="/mobileheader/iconamoon_menu_burger.png"
-          alt="Foto page"
+          alt="Menu"
           width={32}
           height={32}
           priority
         />
       </div>
-    </>
+    </header>
   );
 }

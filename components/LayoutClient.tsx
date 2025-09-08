@@ -9,7 +9,7 @@ const hiddenHeaderRoutes = [
   // no component header
   "/login",
   "/register",
-  "/shiassistant",
+  "/aiassistant",
   "/profile",
   "/calendar",
   "/resourcesnew",
@@ -23,6 +23,7 @@ const hiddenFooterRoutes = [
   "/calendar",
   "/resourcesnew",
   "/settings",
+  "/aiassistant",
 ];
 
 export default function LayoutClient({

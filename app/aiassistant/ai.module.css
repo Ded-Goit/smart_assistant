@@ -1,4 +1,5 @@
 /* Mobile first */
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -26,7 +27,28 @@
   border-bottom: 1px solid var(--color-neutral);
 }
 
-.four_cart,
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.cart,
 .three_progress,
 .four_task {
   margin-top: 24px;
@@ -34,7 +56,7 @@
 
 .imagesBlock,
 .three_progress,
-.four_img {
+.robot_img {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -47,6 +69,40 @@
   display: none;
 }
 
+.card:hover {
+  background-color: #e0e7ff; /* світліша синя при hover */
+  transform: translateY(-2px);
+}
+
+.cardicon {
+  width: 88px;
+  height: 88px;
+  margin: 32px;
+}
+.card:hover .cardicon {
+  fill: #4338ca; /* темніший синій */
+}
+
+.cardtitle {
+  padding-top: 24px;
+}
+
+.cardtext {
+  line-height: 1.4;
+}
+
+/* адаптив */
+@media (min-width: 768px) {
+  .cards {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .card {
+    flex: 1;
+    min-height: 560px;
+  }
+}
 /* Tablet (≥768px) */
 @media (min-width: 768px) {
   .profileTitle {
@@ -80,7 +136,7 @@
     padding: 16px 0;
   }
 
-  .four_cart .imagesBlock {
+  .cart .imagesBlock {
     flex-direction: row; /* статистика в рядок */
     gap: 16px;
   }
@@ -90,26 +146,33 @@
     gap: 16px;
   }
 
-  .four_img {
-    flex-direction: row;
-    gap: 16px;
-  }
-  .taskMobile {
-    display: none;
-  }
-
-  .taskDesktop {
-    display: block;
+  .robot_img {
+    position: absolute;
+    right: -24px;
+    top: 600px;
+    z-index: 2;
+    max-width: 160px;
   }
 }
 
 /* Desktop (≥1200px) */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .sidebar {
     flex: 0 0 280px;
   }
 
   .content {
     padding: 32px;
+  }
+  .robot_img {
+    position: absolute;
+
+    top: 600px;
+    z-index: 2;
+    max-width: 320px;
+  }
+  .cards {
+    max-width: 861px;
+    max-height: 325px;
   }
 }

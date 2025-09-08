@@ -23,7 +23,6 @@ export default function Sidebar() {
           />
           Home
         </Link>
-
         {/*---calendar---*/}
         <Link href="/development" className={styles.navButton}>
           <Image
@@ -45,6 +44,17 @@ export default function Sidebar() {
             className={styles.icon}
           />
           Resources
+        </Link>
+
+        <Link href="/aiassistant" className={styles.navButton}>
+          <Image
+            src="/icons/resources.svg"
+            alt="Resources"
+            width={24}
+            height={24}
+            className={styles.icon}
+          />
+          AI Assistant
         </Link>
       </nav>
 

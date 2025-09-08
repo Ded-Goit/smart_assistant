@@ -1,0 +1,62 @@
+.wrapper {
+  padding: 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  background: var(--gradient-title);
+  --webkit-background-clip: text; /* для Safari/Chrome */
+  background-clip: text; /* стандарт */
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px var(--card-shadow, rgba(0, 0, 0, 0.08));
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-neutral);
+  border-radius: 8px;
+  font-family: var(--ff-inter);
+  font-size: 16px;
+  background: var(--gray-100);
+  transition: border var(--transition-base);
+}
+
+.input:focus {
+  border: 1px solid var(--color-primary);
+  background: var(--white);
+}
+
+.button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.9rem;
+  border-radius: 8px;
+}
+
+.result {
+  margin-top: 1.5rem;
+  background: var(--gray-100);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-neutral);
+  white-space: pre-line;
+}
+
+.result h2 {
+  font-family: var(--ff-nunito);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}

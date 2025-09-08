@@ -6,7 +6,7 @@ import type { Metadata, Viewport } from "next";
 import LayoutClient from "@/components/LayoutClient"; // винесемо логіку сюди
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hackathon2025-beta.vercel.app"),
+  metadataBase: new URL("https://smart-assistant-delta.vercel.app/"),
   title: {
     default: "Smart Assistant",
     template: "%s — Smart Assistant",
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     title: "Your Time. Your Rhythm. Your Assistant.",
     description:
       "A productivity and learning app with planning tools, focus timer, microlearning, and analytics — all in one place.",
-    url: "https://hackathon2025-beta.vercel.app/",
+    url: "https://smart-assistant-delta.vercel.app/",
     images: [
       {
-        url: "/og/hackathon.png",
+        url: "/og/smart_assistent.webp",
         width: 1200,
         height: 630,
         alt: "Smart Assistant — productivity and learning without distractions",
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     title: "Smart Assistant",
     description:
       "Plan, focus, and learn effectively. Tools and microlearning designed for better results.",
-    images: ["/og/hackathon.png"],
+    images: ["/og/smart_assistent.webp"],
   },
   robots: { index: true, follow: true },
   alternates: {
-    canonical: "https://hackathon2025-beta.vercel.app/",
+    canonical: "https://smart-assistant-delta.vercel.app/",
     languages: {
-      "uk-UA": "https://hackathon2025-beta.vercel.app/uk",
-      "en-US": "https://hackathon2025-beta.vercel.app/en",
+      "uk-UA": "https://smart-assistant-delta.vercel.app/uk",
+      "en-US": "https://smart-assistant-delta.vercel.app/en",
     },
   },
 };

@@ -14,46 +14,14 @@ import {
 
 const team = [
   {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
+    name: "Iryna Ielkina",
+    interests:
+      "Testing new recipes as a way of self-expression and checking one's culinary skills.",
+    photo: "/team/iryna_ielkina.webp",
+    hobby: "Travel and new cultures",
+    email: "ielkinairinka@gmail.com",
     socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
-  {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
-  {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
+      linkedin: "http://www.linkedin.com/in/iryna-ielkina-263596262",
       telegram: "https://web.telegram.org/",
       youtube: "https://youtube.com/",
       instagram: "https://instagram.com/",
@@ -63,7 +31,6 @@ const team = [
   },
   {
     name: "DED",
-    age: 53,
     interests:
       "Deepening my expertise in IT and staying immersed in the digital world",
     photo: "/team/DEDda.webp",
@@ -79,75 +46,10 @@ const team = [
     },
   },
   {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
-  {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
-  {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
-  {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
-  {
-    name: "SISI CETCH",
-    age: 99,
-    interests: "88888888888888",
-    photo: "/team/image.png",
-    hobby: "888888888888888",
+    name: "Olena Lytvynenko",
+    interests: "website design",
+    photo: "/team/olena_lytvynenko.webp",
+    hobby: "UX/UI Designer",
     email: "8888888@gmail.com",
     socials: {
       linkedin: "https://www.linkedin.com/",
@@ -244,7 +146,6 @@ export default function TeamPage() {
                 ) : (
                   member.name
                 )}
-                , {member.age}
               </h3>
               <p>
                 <strong>Interests:</strong> {member.interests}
@@ -303,16 +204,6 @@ export default function TeamPage() {
                   className={styles.socialButton}
                 >
                   <RiFacebookFill />
-                </a>
-              )}
-              {member.socials?.twitter && (
-                <a
-                  href={member.socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialButton}
-                >
-                  <RiTwitterXFill />
                 </a>
               )}
             </div>

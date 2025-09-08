@@ -4,8 +4,8 @@ import FaqPage from "@/components/FAQ/faq";
 import FeaturesPage from "@/components/Features/features";
 import HeroPage from "@/components/Hero/hero";
 import HowitworksPage from "@/components/Howitworks/howitworks";
-import FocussessionPage from "@/components/Focussession/focussession";
-import ProgressPage from "@/components/Progressdashboard/progress";
+//import FocussessionPage from "@/components/Focussession/focussession";
+//import ProgressPage from "@/components/Progressdashboard/progress";
 
 export default function HomePage() {
   return (

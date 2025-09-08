@@ -191,7 +191,7 @@ export default function HowitworksPage() {
               start tracking your tasks like a pro.
             </p>
             <Link
-              href="/development" //RENAME profile
+              href="/profile"
               className={`${styles["howitworks__bottom-btn"]} btnfullcolor`}
             >
               Get Started

@@ -1,34 +1,115 @@
 /* Mobile first */
 .wrapper {
   display: flex;
-  flex-direction: column; /* спочатку sidebar зверху */
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
 }
 
-.imagesBlock {
+/* Sidebar прихований за замовчуванням */
+.sidebar {
+  display: none;
+}
+
+.profiletitle {
+  display: block;
+}
+.content {
   flex: 1;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }
 
-/* Tablet (приблизно ≥768px) */
+.mobileheader {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-neutral);
+}
+
+.four_cart,
+.three_progress,
+.four_task {
+  margin-top: 24px;
+}
+
+.imagesBlock,
+.three_progress,
+.four_task {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.taskMobile {
+  display: block;
+}
+
+.taskDesktop {
+  display: none;
+}
+
+/* Tablet (≥768px) */
 @media (min-width: 768px) {
-  .wrapper {
-    flex-direction: row; /* sidebar зліва, контент справа */
+  .profileTitle {
+    display: none;
   }
 
-  .imagesBlock {
-    flex: 1;
-  }
-}
-
-/* Desktop (приблизно ≥1200px) */
-@media (min-width: 1200px) {
   .wrapper {
     flex-direction: row;
+    min-height: 100vh; /* важливо */
   }
 
-  .imagesBlock {
+  .sidebar {
+    display: block;
+    flex: 0 0 260px;
+    min-height: 100vh; /* щоб Sidebar точно тягнувся */
+    /*border-right: 1px solid var(--color-neutral);*/
+  }
+
+  .content {
     flex: 1;
+    min-height: 100vh; /* щоб контент тягнувся */
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .mobileheader {
+    display: flex;
+    justify-content: flex-end; /* іконки вправо */
+    border-bottom: 1px solid var(--color-neutral);
+    padding: 16px 0;
+  }
+
+  .four_cart .imagesBlock {
+    flex-direction: row; /* статистика в рядок */
+    gap: 16px;
+  }
+
+  .three_progress {
+    flex-direction: row; /* прогрес в рядок */
+    gap: 16px;
+  }
+
+  .four_task {
+    flex-direction: row;
+    gap: 16px;
+  }
+  .taskMobile {
+    display: none;
+  }
+
+  .taskDesktop {
+    display: block;
+  }
+}
+
+/* Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .sidebar {
+    flex: 0 0 280px;
+  }
+
+  .content {
+    padding: 32px;
   }
 }

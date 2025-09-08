@@ -22,10 +22,7 @@ export default function HeroPage() {
           </p>
 
           {/* Кнопка */}
-          <Link
-            href="/development" //RENAME profile
-            className={`${styles.hero__btn} btnfullcolor`}
-          >
+          <Link href="/profile" className={`${styles.hero__btn} btnfullcolor`}>
             Start Now
           </Link>
         </div>

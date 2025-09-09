@@ -27,52 +27,46 @@ export default function AiPage() {
         </p>
 
         {/* === component task === */}
-        <div className={styles.four_cart}>
-          <div className={styles.imagesBlock}>
-            {/*notes*/}
-            <Link href="/development" className={styles.component_img}>
-              <Image
-                src="/profile/weekly_activity.png"
-                alt="component image"
-                width={165}
-                height={185}
-                priority
-              />
-            </Link>
-            {/*planer*/}
-            <Link href="/development" className={styles.component_img}>
-              <Image
-                src="/profile/worked_this_week.png"
-                alt="component image"
-                width={165}
-                height={185}
-                priority
-              />
-            </Link>
-          </div>
+
+        <div className={styles.cards}>
+          <Link href="/notes" className={styles.card}>
+            <svg className={styles.cardicon} width="40" height="40">
+              <use href="/icons/notes.svg"></use>
+            </svg>
+
+            <h2 className={`${styles.cardtitle} h2`}>AI-powered notes</h2>
+            <p className={`${styles.cardtext} text16medium`}>
+              You write short summaries or even upload text. AI automatically
+              compresses, highlights key points or provides a summary. This is
+              very useful for students as it saves time.
+            </p>
+          </Link>
+
+          <Link href="/planner" className={styles.card}>
+            <svg className={styles.cardicon} width="40" height="40">
+              <use href="/icons/planer.svg"></use>
+            </svg>
+
+            <h2 className={`${styles.cardtitle} h2`}>
+              AI-generated lesson plans
+            </h2>
+            <p className={`${styles.cardtext} text16medium`}>
+              You write: ``I want to prepare for an English exam in 2 weeks.``
+              AI generates a ready-made plan with tasks by day. It looks like a
+              ``smart tutor in your pocket.``{" "}
+            </p>
+          </Link>
         </div>
 
         {/* === component img === */}
-        <div className={styles.four_img}>
+        <div className={styles.robot_img}>
           <Link href="/aiassistant/robot.webp" className={styles.component_img}>
-            {/* Мобільна картинка */}
-            <Image
-              src="/profile/task_mobile.png"
-              alt="My AI Assistant"
-              width={352}
-              height={521}
-              priority
-              className={styles.taskMobile}
-            />
-
-            {/* Десктопна картинка */}
             <Image
               src="/aiassistant/robot.webp"
               alt="component image"
               width={600}
               height={400}
               priority
-              className={styles.taskDesktop}
             />
           </Link>
         </div>

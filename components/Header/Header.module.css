@@ -85,14 +85,16 @@
 
 .authButtons {
   display: flex;
-  gap: 0.75rem;
+  gap: 8px;
 }
 
 .loginBtn {
-  padding: 0.5rem 1rem;
-  border: 1px solid #6c63ff;
-  border-radius: 6px;
-  color: #1f2937;
+  border-radius: 5px;
+  padding: 6px 26px;
+  width: 99px;
+  height: 35px;
+  border: 2px solid var(--primary);
+  color: var(--text-main);
   text-decoration: none;
   white-space: nowrap;
   font-weight: 500;
@@ -100,28 +102,38 @@
 }
 
 .loginBtn:hover {
-  color: #413b99;
+  border-color: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+  color: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
   transform: scale(1.05);
+}
+.loginBtn:active {
+  transform: scale(0.97);
+  color: var(--secondary);
+  border-color: var(--secondary);
 }
 
 .registerBtn {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: white;
+  border-radius: 5px;
+  padding: 8px 26px;
+  width: 116px;
+  height: 35px;
+  color: var(--background);
   text-decoration: none;
   font-weight: 500;
-  background: linear-gradient(to right, #6c63ff, #6c63ff);
-  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  background: var(--primary);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease-in-out;
 }
 
 .registerBtn:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #6c63ff, #413b99);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
 }
 
 .registerBtn:active {
   transform: scale(0.97);
-  background-color: #00bfa6;
+  background: var(--secondary);
 }
 
 @media (max-width: 768px) {

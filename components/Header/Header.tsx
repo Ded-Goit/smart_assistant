@@ -19,6 +19,14 @@ export default function Header() {
     "/register",
     "/calendar",
     "/resourcesnew",
+    "/cookies-policy",
+    "/terms-and-conditions",
+    "/privacy-policy",
+    "/profile",
+    "/aiassistant",
+    "/development",
+    "/notes",
+    "/planer",
   ];
 
   // якщо поточний шлях у списку — не показуємо

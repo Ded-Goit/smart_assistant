@@ -190,10 +190,7 @@ export default function HowitworksPage() {
               Boost your productivity and reach your goals faster! Join now and
               start tracking your tasks like a pro.
             </p>
-            <Link
-              href="/profile"
-              className={`${styles["howitworks__bottom-btn"]} btnfullcolor`}
-            >
+            <Link href="/profile" className={styles.howitworks_bottom_btn}>
               Get Started
             </Link>
           </div>

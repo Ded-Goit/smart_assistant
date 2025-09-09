@@ -1,3 +1,6 @@
+.features {
+  margin-top: 64px;
+}
 /* ====== CONTAINER ====== */
 .container {
   max-width: 1248px;
@@ -89,8 +92,8 @@
   }
 
   .features__box {
-   min-height: auto; 
-}
+    min-height: auto;
+  }
 
   .features__box:nth-child(1) {
     grid-row: span 2;

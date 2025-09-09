@@ -7,8 +7,8 @@
 .hederPart{
 display: flex;
 align-items: center;
-width: 720px;
-padding-left: 72px;
+width: 320px;
+padding-left: 20px;
 }
 .footerPart {
   display: inline-flex;
@@ -27,4 +27,13 @@ padding-left: 72px;
 .mailIcon{
   width: 16px;
   height: 16px;
+}
+
+@media (min-width: 768px) {
+  .hederPart{
+display: flex;
+align-items: center;
+width: 720px;
+padding-left: 72px;
+}
 }

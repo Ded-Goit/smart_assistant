@@ -93,27 +93,21 @@ export const loginWithGoogle = async (code: string) => {
   return res.json();
 };
 
-export async function resetPassword(password: string, token: string) {
-  try {
-    const res = await fetch(`${BASE_URL}/auth/reset-password`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password, token }),
-      credentials: "include",
-    });
+export async function changePassword(oldPassword: string, newPassword: string) {
+  const res = await fetch(`${BASE_URL}/auth/change-pwd`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ oldPassword, newPassword }),
+    credentials: "include",
+  });
 
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.message || "Request failed");
-    }
-    return data;
-  } catch (err: any) {
-    throw new Error(err.message || "Network error");
-  }
+  const data = await res.json();
+  
+  if (!res.ok) throw new Error(data.message);
+  return data;
 }
-
-
-
 
 export async function forgotPwd(email: string) {
   try {

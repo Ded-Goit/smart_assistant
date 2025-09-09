@@ -1,11 +1,13 @@
 /* Mobile first */
 .setting{
-
   display: inline-flex;
+  font-family: "Inter";
+  color: var(--text-main);
 }
 .textlock{
   margin-top: 96px;
 }
+
 .bigBlock{
   display: inline-flex;
   justify-content: center;  
@@ -20,8 +22,11 @@ font-family: "Inter";
 font-size: 22;
 font-weight: 500;
 line-height: 1;
-color: var(--text-main);
+margin:
+}
 
+.blabla{
+  
 }
 /* Tablet (приблизно ≥768px) */
 @media (min-width: 768px) {

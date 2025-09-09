@@ -1,4 +1,7 @@
 /* === БАЗА (мобільний перший) === */
+.howitworks {
+  margin-top: 64px;
+}
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -149,25 +152,31 @@
   line-height: 1.4;
 }
 
-.howitworks__bottom-btn {
+.howitworks_bottom_btn {
   padding: 12px 55px;
-  color: white;
   border-radius: 6px;
-  font-weight: 500;
-  background: linear-gradient(to right, #6c63ff, #6c63ff);
+  background: var(--primary);
+  color: white;
+  font-family: var(--btn-font-family);
+  font-weight: var(--btn-font-weight);
+  font-size: var(--btn-font-size);
+  text-align: center;
+  user-select: none;
+  border: none;
   transition:
-    background 0.3s ease-in-out,
-    transform 0.2s ease-in-out;
+    background 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.howitworks__bottom-btn:hover {
+.howitworks_bottom_btn:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #6c63ff, #413b99);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
 }
 
-.howitworks__bottom-btn:active {
+.howitworks_bottom_btn:active {
   transform: scale(0.97);
-  background-color: #00bfa6;
+  background-color: var(--secondary);
 }
 
 /* === ПЛАНШЕТИ (min-width: 768px) === */
@@ -185,7 +194,7 @@
     margin-bottom: 32px;
   }
 
-  .howitworks__bottom-btn {
+  .howitworks_bottom_btn {
     width: auto;
     padding: 12px 40px;
   }

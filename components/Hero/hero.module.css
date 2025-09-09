@@ -14,13 +14,13 @@
   flex-wrap: wrap;
 }
 
-.hero__container {
+.container {
   max-width: 612px;
   width: 100%;
   flex: 1;
 }
 
-.hero__title {
+.title {
   position: relative;
   display: inline-block;
   color: transparent;
@@ -29,7 +29,7 @@
   background-clip: text;
 }
 
-.hero__title::before {
+.title::before {
   content: attr(data-text);
   position: absolute;
   top: 0;
@@ -45,41 +45,36 @@
   pointer-events: none;
 }
 
-.hero__title:hover::before {
+.title:hover::before {
   opacity: 1;
 }
 
-
-
-
-
-
-
-.hero__text {
+.text {
   margin-bottom: 44px;
 }
 
-.hero__btn {
+.btn {
   padding: 12px 55px;
   color: white;
   border-radius: 6px;
   font-weight: 500;
-  background: linear-gradient(to right, #6c63ff, #6c63ff);
-  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  background: var(--primary);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease-in-out;
 }
 
-.hero__btn:hover {
+.btn:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #6c63ff, #413b99);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
 }
 
-.hero__btn:active {
-  background: var(--btn-bg-active);
+.btn:active {
+  background: var(--secondary);
   transform: scale(0.97);
-  background-color: #00bfa6;
 }
 
-.hero__image {
+.image {
   max-width: 537px;
   width: 100%;
   height: auto;
@@ -94,26 +89,26 @@
     text-align: center;
   }
 
-  .hero__container {
+  .container {
     margin-right: 0;
     padding: 0 10px;
   }
 
-  .hero__title {
+  .title {
     font-size: 42px;
     line-height: 48px;
   }
 
-  .hero__text {
+  .text {
     font-size: 20px;
   }
 
-  .hero__btn {
+  .btn {
     width: auto;
     padding: 12px 32px;
   }
 
-  .hero__image {
+  .image {
     width: 100%;
     margin-top: 24px;
   }

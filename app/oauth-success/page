@@ -1,0 +1,10 @@
+"use client";
+
+import css from "../forgot-password/ForgotPasswordPage.module.css";
+export default function EmptyPage() {
+  return (
+    <div className={css.cover}>
+      <h1 className={css.title}>empty</h1>
+    </div>
+  );
+}

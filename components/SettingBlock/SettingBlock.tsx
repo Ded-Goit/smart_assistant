@@ -11,7 +11,7 @@ export default function SettingBlock() {
         <div className={styles.header}></div>
         <div className={styles.mainBlock}>
           <div className={styles.textlock}>
-            <h2 className={styles.title}>Settings</h2>
+            <h2 className={styles.titl}>Settings</h2>
             <p className={styles.blabla}>
               Update personal details, adjust notifications, and choose your
               language settings
@@ -19,11 +19,17 @@ export default function SettingBlock() {
           </div>
           <div className={styles.bigBlock}>
             <div className={styles.pwdBlock}>
-              <h2 className={styles.titleDecor}> Password</h2>
+              <div className={styles.titleDecor}>
+                <h2 className={styles.title}>Password</h2>
+              </div>
+
               <ResetPasswordForm />
             </div>
             <div className={styles.personal}>
-              <h2 className={styles.title}>Personal info</h2>
+              <div className={styles.titleDecor}>
+                <h2 className={styles.title}>Personal info</h2>
+              </div>
+
               <UserInfo />
             </div>
           </div>

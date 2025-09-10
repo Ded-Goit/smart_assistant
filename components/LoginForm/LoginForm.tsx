@@ -48,51 +48,50 @@ export default function LoginForm() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Formik
-        initialValues={{
-          email: "",
-          password: "",
-        }}
-        onSubmit={handleSubmit}
-        validationSchema={validationControl}
-      >
-        {({ errors, touched }) => (
-          <Form className={css.form} autoComplete="off">
-            <div className={`${css.fialdStyle} ${css.loginField}`}>
-              <div className={css.fieldPosition}>
-                <p className={css.fieldName}>Email*</p>
-                <Field
-                  type="email"
-                  name="email"
-                  className={`${css.field} ${
-                    errors.email && touched.email
-                      ? css.errorField
-                      : touched.email && !errors.email
-                        ? css.successField
-                        : ""
-                  }`}
-                  placeholder="Enter your email"
-                />
-                <CustomMessage name="email" />
-              </div>
-              {/* <PasswordField /> */}
-              <PasswordField
-                name="password"
-                label="password*"
-                placeholder="password"
-              />
-            </div>
-            <Link href="/forgot-password" className={css.forgotPwd}>
-              Forgot password
-            </Link>
-            <button type="submit" className={css.btn}>
-              Sign in
-            </button>
-            <Toaster />
-          </Form>
-        )}
-      </Formik>
-    </Suspense>
+    // <Suspense fallback={<div>Loading...</div>}>
+    //   <Formik
+    //     initialValues={{
+    //       email: "",
+    //       password: "",
+    //     }}
+    //     onSubmit={handleSubmit}
+    //     validationSchema={validationControl}
+    //   >
+    //     {({ errors, touched }) => (
+    //       <Form className={css.form} autoComplete="off">
+    //         <div className={`${css.fialdStyle} ${css.loginField}`}>
+    //           <div className={css.fieldPosition}>
+    //             <p className={css.fieldName}>Email*</p>
+    //             <Field
+    //               type="email"
+    //               name="email"
+    //               className={`${css.field} ${
+    //                 errors.email && touched.email
+    //                   ? css.errorField
+    //                   : touched.email && !errors.email
+    //                     ? css.successField
+    //                     : ""
+    //               }`}
+    //               placeholder="Enter your email"
+    //             />
+    //             <CustomMessage name="email" />
+    //           </div>    
+    //           <PasswordField
+    //             name="password"
+    //             label="password*"
+    //             placeholder="password"
+    //           />
+    //         </div>
+    //         <Link href="/forgot-password" className={css.forgotPwd}>
+    //           Forgot password
+    //         </Link>
+    //         <button type="submit" className={css.btn}>
+    //           Sign in
+    //         </button>
+    //         <Toaster />
+    //       </Form>
+    //     )}
+    //   </Formik>
+    // </Suspense>
   );
 }

@@ -18,21 +18,14 @@ export default function SettingBlock() {
             </p>
           </div>
           <div className={styles.bigBlock}>
-            {/* <div className={styles.generalBlock}>
-              <h2 className={styles.title}>General</h2>
-            </div> */}
-            {/* <div className={styles.generalBlock}>
-              <h2 className={styles.title}>Notification</h2> */}
             <div className={styles.pwdBlock}>
               <h2 className={styles.titleDecor}> Password</h2>
               <ResetPasswordForm />
             </div>
-            {/* </div> */}
-          </div>
-
-          <div className={styles.personal}>
-            <h2 className={styles.title}>Personal info</h2>
-            <UserInfo />
+            <div className={styles.personal}>
+              <h2 className={styles.title}>Personal info</h2>
+              <UserInfo />
+            </div>
           </div>
         </div>
       </div>

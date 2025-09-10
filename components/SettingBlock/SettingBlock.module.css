@@ -35,7 +35,7 @@
   line-height: 1;
   position: relative;
   width: 100%;
-  border-bottom: ;
+  border-bottom: 1px solid rgba(229, 231, 235, 1.0) ;
 }
 .titleDecor::after{
     content: "";

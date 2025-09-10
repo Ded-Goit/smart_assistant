@@ -88,9 +88,9 @@ export default function PasswordField({
           aria-label={eyeOpen ? "Show password" : "Hide password"}        
         >
           {eyeOpen ? (
-            <FiEye size={20} className={css.eye} />
+            < FiEyeOff size={20} className={css.eye} />
           ) : (
-            <FiEyeOff size={20} className={css.eye} />
+            < FiEye size={20} className={css.eye} />
           )}
         </button>
         <Field

@@ -16,6 +16,12 @@ padding-left: 20px;
   align-items: center;
   column-gap: 8px;
 }
+.footerEmail{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+}
 .footerTxt {
   font-family: "Inter";
   font-size: 14px;

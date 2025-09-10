@@ -12,43 +12,43 @@ export default function Sidebar() {
           {/* <svg className={styles.social_icon_desk} width="210" height="72">
               <use href="./images/icons.svg#icon-1"></use>
             </svg> */}
-          </a>
-        </div>
+        </a>
+      </div>
       <nav className={styles.menu}>
-        <a href="#" className={styles.active}>
+        <Link href="/" className={styles.active}>
           {/* <svg className={styles.social_icon_menu} width="20" height="22">
               <use href="./images/icons.svg#icon-Group"></use>
             </svg> */}
-            Home
-          </a>
-        <a href="#" className={styles.active}>
+          Home
+        </Link>
+        <Link href="/calendar" className={styles.active}>
           {/* <svg className={styles.social_icon_menu} width="20" height="22">
               <use href="./images/icons.svg#icon-Vector"></use>
             </svg> */}
-            Calendar
-          </a>
-        <a href="#" className={styles.active}>
+          Calendar
+        </Link>
+        <Link href="/resources" className={styles.active}>
           {/* <svg className={styles.social_icon_menu} width="20" height="22">
               <use href="./images/icons.svg#icon-Vector-1"></use>
             </svg> */}
-            Resources
-          </a>
-        </nav>
+          Resources
+        </Link>
+      </nav>
       <div className={styles.menu_bottom}>
-        <a href="#" className={styles.menu_bottom_a}>
+        <Link href="/setting" className={styles.menu_bottom_a}>
           {/* <svg className={styles.social_icon_menu} width="20" height="22">
               <use href="./images/icons.svg#icon-Vector-2"></use>
             </svg> */}
-            Setting
-          </a>
-          {/* <a href="#">
+          Setting
+        </Link>
+        {/* <a href="#">
            <svg className={styles.social_icon_menu} width="20" height="22">
               <use href="./images/icons.svg#icon-Group-1"></use>
             </svg> 
             Log out
           </a> */}
-        <Logout/>
-        </div>
-      </aside>
+        <Logout />
+      </div>
+    </aside>
   );
 }

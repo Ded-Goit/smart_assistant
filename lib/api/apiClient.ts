@@ -84,6 +84,7 @@ export const loginWithGoogle = async (code: string) => {
     body: JSON.stringify({ code }),
     credentials: "include",
   });
+console.log("google res---", res);
 
   if (!res.ok) {
     const errorData = await res.json();
@@ -104,7 +105,7 @@ export async function changePassword(oldPassword: string, newPassword: string) {
   });
 
   const data = await res.json();
-  
+
   if (!res.ok) throw new Error(data.message);
   return data;
 }

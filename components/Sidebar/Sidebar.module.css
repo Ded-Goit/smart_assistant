@@ -84,7 +84,7 @@
 }
 
 /* Медіазапит для мінімальної ширини 1440px */
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   /* Ліва панель */
   .dashboard {
     display: block;
@@ -201,6 +201,7 @@
     justify-content: space-between;
     padding: 32px;
     height: 100%;
+     font-family: "Inter";
   }
 
   .logo {

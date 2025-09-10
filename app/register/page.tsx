@@ -6,6 +6,7 @@ import Image from "next/image";
 import css from "./register.module.css";
 import GoogleLoginBtn from "@/components/GoogleLoginBtn/GoogleLoginBtn";
 import OAuthCallback from "@/components/OAuthCallback/OAuthCallback";
+
 import Link from "next/link";
 import ForgotPasswordPage from "../forgot-password/page";
 
@@ -26,8 +27,8 @@ export default function RegisterPage() {
             </div>
 
             <RegistrationForm />
-
-            <OAuthCallback />
+            <GoogleLoginBtn />
+            {/* <OAuthCallback /> */}
             <div className={css.otherPage}>
               <p className={css.otherTxt}>Already have an account? </p>
               <Link href="/login" className={css.otherLink}>

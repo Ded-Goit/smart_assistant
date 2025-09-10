@@ -84,7 +84,7 @@ export const loginWithGoogle = async (code: string) => {
     body: JSON.stringify({ code }),
     credentials: "include",
   });
-console.log("google res---", res);
+  console.log("google res---", res);
 
   if (!res.ok) {
     const errorData = await res.json();
@@ -121,6 +121,25 @@ export async function forgotPwd(email: string) {
         credentials: "include",
       }
     );
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || "Request failed");
+    }
+    return data;
+  } catch (err: any) {
+    throw new Error(err.message || "Network error");
+  }
+}
+
+export async function resetPassword(password: string, token: string) {
+  try {
+    const res = await fetch(`${BASE_URL}/auth/reset-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, token }),
+      credentials: "include",
+    });
+
     const data = await res.json();
     if (!res.ok) {
       throw new Error(data.message || "Request failed");

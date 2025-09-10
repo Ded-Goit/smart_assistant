@@ -95,7 +95,12 @@ export default function RegistrationForm() {
                 />
                 <CustomMessage name="email" />
               </div>
-              <PasswordField />
+              {/* <PasswordField /> */}
+              <PasswordField
+                name="password"
+                label="password*"
+                placeholder="password"
+              />
             </div>
             <button type="submit" className={css.btn}>
               Create account

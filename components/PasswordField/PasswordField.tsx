@@ -25,7 +25,7 @@ export default function PasswordField({
 
   return (
     <div className={`${css.wrapper} ${className}`}>
-      {label ? <p className={css.fieldName}>{label}</p> : null}
+      {/* {label ? <p className={css.fieldName}>{label}</p> : null}
 
       <div className={css.eyerelative}>
         <button
@@ -47,7 +47,7 @@ export default function PasswordField({
           className={`${css.field}`}
           autoComplete="new-password"
         />
-      </div>
+      </div> */}
     </div>
   );
 }

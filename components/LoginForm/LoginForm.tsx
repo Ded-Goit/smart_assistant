@@ -13,41 +13,41 @@ import { Suspense } from "react";
 import Link from "next/link";
 
 export default function LoginForm() {
-  const router = useRouter();
-  const validationControl = Yup.object().shape({
-    email: Yup.string()
-      .min(3, " Too Short!")
-      .max(30, "Too Long!")
-      .required("Required"),
-    password: Yup.string()
-      .min(5, "Too short")
-      .max(18, "Too long")
-      .required("Required"),
-  });
+  // const router = useRouter();
+  // const validationControl = Yup.object().shape({
+  //   email: Yup.string()
+  //     .min(3, " Too Short!")
+  //     .max(30, "Too Long!")
+  //     .required("Required"),
+  //   password: Yup.string()
+  //     .min(5, "Too short")
+  //     .max(18, "Too long")
+  //     .required("Required"),
+  // });
 
-  const handleSubmit = async (values: any, actions: FormikHelpers<any>) => {
-    try {
-      const data = await apiClient("/auth/login", {
-        method: "POST",
-        body: JSON.stringify(values),
-      });
+  // const handleSubmit = async (values: any, actions: FormikHelpers<any>) => {
+  //   try {
+  //     const data = await apiClient("/auth/login", {
+  //       method: "POST",
+  //       body: JSON.stringify(values),
+  //     });
 
-      showSuccess({ message: "Login successful!" });
-      actions.resetForm();
-      router.push("/setting");
-    } catch (error: any) {
-      showError(error.message || "Server error, please try again later");
-      console.error(error);
-    } finally {
-      actions.setSubmitting(false);
-    }
-  };
-  interface loginValues {
-    email: string;
-    password: string;
-  }
+  //     showSuccess({ message: "Login successful!" });
+  //     actions.resetForm();
+  //     router.push("/setting");
+  //   } catch (error: any) {
+  //     showError(error.message || "Server error, please try again later");
+  //     console.error(error);
+  //   } finally {
+  //     actions.setSubmitting(false);
+  //   }
+  // };
+  // interface loginValues {
+  //   email: string;
+  //   password: string;
+  // }
 
-  return (
+  return (<></>
     // <Suspense fallback={<div>Loading...</div>}>
     //   <Formik
     //     initialValues={{

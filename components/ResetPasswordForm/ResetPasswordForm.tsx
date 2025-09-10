@@ -1,140 +1,85 @@
-// "use client";
-
-// import { useSearchParams } from "next/navigation";
-// import { Suspense, useState } from "react";
-// import { resetPassword } from "@/lib/api/apiClient";
-// import css from './ResetPasswordForm.module.css';
-// import Cookies from "js-cookie";
-
-// export default function ResetPasswordForm() {
-//   const searchParams = useSearchParams();
-//   // const token = searchParams.get("token");
-//   const token = Cookies.get("token");
-
-//   const [password, setPassword] = useState("");
-//   const [confirm, setConfirm] = useState("");
-//   const [message, setMessage] = useState("");
-
-//   const handleSubmit = async (e: React.FormEvent) => {
-//     e.preventDefault();
-//     if (password !== confirm) {
-//       setMessage("The passwords do not match");
-//       return;
-//     }
-
-//     try {
-//       await resetPassword(password, token as string);
-//       setMessage("Password was changed!");
-//     } catch (err: any) {
-//       setMessage(err.message);
-//     }
-//   };
-
-//   return (
-//     <div className={css.resetForm}>
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <h3 className={css.title}>Password</h3>
-//         {!token ? (
-//           <p className={css.errInfo}>Token not found</p>
-//         ) : (
-//           <form onSubmit={handleSubmit} className={css.form}>
-//             <input
-//               type="password"
-//               placeholder="New password"
-//               value={password}
-//               onChange={(e) => setPassword(e.target.value)}
-//               className={css.field}
-//               required
-//             />
-//             <input
-//               type="password"
-//               placeholder="Repeat new password"
-//               value={confirm}
-//               onChange={(e) => setConfirm(e.target.value)}
-//               className={css.field}
-//               required
-//             />
-//             <button type="submit" className={css.btn}>
-//               Save
-//             </button>
-//           </form>
-//         )}
-//         {message && <p className="mt-4 text-sm">{message}</p>}
-//       </Suspense>
-//     </div>
-//   );
-// }
-
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useState, Suspense } from "react";
-import { resetPassword } from "@/lib/api/apiClient";
+import { changePassword } from "@/lib/api/apiClient";
 import css from "./ResetPasswordForm.module.css";
+import { Toaster } from "react-hot-toast";
+import { Formik, Form, FormikHelpers } from "formik";
+import * as Yup from "yup";
+import PasswordField from "../PasswordField/PasswordField";
+import { showSuccess, showError } from "../ToastComponent/ToastComponent.jsx";
 
 export default function ResetPasswordForm() {
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token"); 
+  const passwordField = Yup.string()
+    .min(1, "Too short")
+    .max(18, "Too long")
+    .required("Required");
 
+  const validationControl = Yup.object().shape({
+    oldPassword: passwordField,
+    newPassword: passwordField,
+    confirm: Yup.string()
+      .oneOf([Yup.ref("newPassword")], "❌ Passwords do not match")
+      .required("Required"),
+  });
 
-  const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (password !== confirm) {
-      setMessage("The passwords do not match");
-      return;
-    }
-
-    if (!token) {
-      setMessage("Token not found");
-      return;
-    }
+  const handleSubmit = async (
+    values: { oldPassword: string; newPassword: string; confirm: string },
+    actions: FormikHelpers<any>
+  ) => {
+    const { oldPassword, newPassword } = values;
 
     try {
-      await resetPassword(password, token);
-      setMessage("✅ Password was successfully reset!");
-    } catch (err: any) {
-      setMessage(`❌ ${err.message}`);
+      await changePassword(oldPassword, newPassword);
+      showSuccess({ message: "Change password successful!" });
+      actions.resetForm();
+    } catch (error: any) {
+      showError(error.message || "Server error, please try again later");
+      console.error(error);
+    } finally {
+      actions.setSubmitting(false);
     }
   };
 
+  interface registrationValues {
+    oldPassword: string;
+    newPassword: string;
+    confirm: string;
+  }
   return (
-    <div className={css.resetForm}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <h3 className={css.title}>Reset password</h3>
-
-        {!token ? (
-          <p className={css.errInfo}>Token not found</p>
-        ) : (
-          <form onSubmit={handleSubmit} className={css.form}>
-            <input
-              type="password"
-              placeholder="New password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className={css.field}
-              required
+    <Formik
+      initialValues={{
+        oldPassword: "",
+        newPassword: "",
+        confirm: "",
+      }}
+      onSubmit={handleSubmit}
+      validationSchema={validationControl}
+    >
+      {({ errors, touched }) => (
+        <Form className={css.form} autoComplete="off">
+          <div className={`${css.fialdStyle} ${css.regField}`}>
+            <PasswordField
+              name="oldPassword"
+              label="Old Password*"
+              placeholder="Enter old password"
             />
-            <input
-              type="password"
+            <PasswordField
+              name="newPassword"
+              label="New Password*"
+              placeholder="Enter new password"
+            />
+            <PasswordField
+              name="confirm"
+              label="Confirm Password*"
               placeholder="Repeat new password"
-              value={confirm}
-              onChange={(e) => setConfirm(e.target.value)}
-              className={css.field}
-              required
             />
-            <button type="submit" className={css.btn}>
-              Save
-            </button>
-          </form>
-        )}
-
-        {message && <p className={css.info}>{message}</p>}
-      </Suspense>
-    </div>
+          </div>
+          <button type="submit" className={css.btn}>
+            Save Changes
+          </button>
+          <Toaster />
+        </Form>
+      )}
+    </Formik>
   );
 }

@@ -13,7 +13,7 @@ const hiddenHeaderRoutes = [
   "/profile",
   "/calendar",
   "/resourcesnew",
-  "/settings",
+  "/setting",
 ];
 const hiddenFooterRoutes = [
   // no component footer
@@ -22,7 +22,7 @@ const hiddenFooterRoutes = [
   "/profile",
   "/calendar",
   "/resourcesnew",
-  "/settings",
+  "/setting",
   "/aiassistant",
 ];
 

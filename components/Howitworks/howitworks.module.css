@@ -165,8 +165,7 @@
   border: none;
   transition:
     background 0.4s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.3s ease-in-out;
 }
 
 .howitworks_bottom_btn:hover {
@@ -176,7 +175,7 @@
 
 .howitworks_bottom_btn:active {
   transform: scale(0.97);
-  background-color: var(--secondary);
+  background: var(--secondary);
 }
 
 /* === ПЛАНШЕТИ (min-width: 768px) === */

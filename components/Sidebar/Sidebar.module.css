@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 292px;
+  /* width: 292px; */
   height: 100%;
   padding: 16px;
   background: var(--background-viol);
@@ -48,3 +48,21 @@
   height: 24px;
   flex-shrink: 0;
 }
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+@media (max-width: 1440px) {
+  .sidebar {
+    width: 292px;
+  }
+}
+

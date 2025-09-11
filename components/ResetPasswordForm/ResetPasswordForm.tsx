@@ -57,26 +57,32 @@ export default function ResetPasswordForm() {
     >
       {({ errors, touched }) => (
         <Form className={css.form} autoComplete="off">
-          <div className={`${css.fialdStyle} ${css.regField}`}>
+          <div className={css.fialdStyle} style={{ marginBottom: "24px" }}>
             <PasswordField
               name="oldPassword"
               label="Old Password*"
               placeholder="Enter old password"
+              className={css.mb}
             />
             <PasswordField
               name="newPassword"
               label="New Password*"
               placeholder="Enter new password"
+              className={css.mb}
             />
             <PasswordField
               name="confirm"
               label="Confirm Password*"
               placeholder="Repeat new password"
+              className={css.mb}
             />
           </div>
-          <button type="submit" className={css.btn}>
-            Save Changes
-          </button>
+          <div className={css.btnMb}>
+            <button type="submit" className={css.btn}>
+              Save Changes
+            </button>
+          </div>
+
           <Toaster />
         </Form>
       )}

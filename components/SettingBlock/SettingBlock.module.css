@@ -77,4 +77,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .pwdform{
+    margin-top: 74px;
+  }
 }

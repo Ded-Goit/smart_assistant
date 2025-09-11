@@ -69,6 +69,26 @@ export const getUserInfo = async () => {
   return res.json();
 };
 
+export const changeUserInfo = async (values: any, file?: File) => {
+  const formData = new FormData();
+
+  if (values.name) formData.append("name", values.name);
+  if (values.email) formData.append("email", values.email);
+  if (file) formData.append("photo", file); 
+
+  const res = await fetch(`${BASE_URL}/auth/change-user`, {
+    method: "PATCH", 
+    credentials: "include",
+    body: formData,
+  });
+
+  if (!res.ok) {
+    const errorData = await res.json();
+    throw new Error(errorData.message || "Change user info failed");
+  }
+
+  return res.json();
+};
 export const getGoogleOAuthUrl = async () => {
   const res = await fetch(`${BASE_URL}/auth/get-oauth-url`, {
     credentials: "include",
@@ -84,7 +104,6 @@ export const loginWithGoogle = async (code: string) => {
     body: JSON.stringify({ code }),
     credentials: "include",
   });
-  console.log("google res---", res);
 
   if (!res.ok) {
     const errorData = await res.json();

@@ -83,22 +83,21 @@
   width: 28px;
   height: 28px;
   border-radius: 50px;
-  /* background: var(--color-primary); */
-  background: linear-gradient(to right, #6c63ff, #6c63ff);
+  background: var(--primary);
   color: var(--background);
   transition:
-    background 0.3s ease-in-out,
+    background 0.4s ease,
     transform 0.3s ease-in-out;
 }
 
 .socialButton:hover {
-  background: var(--gradient-linear);
-  transform: scale(1.2);
+  transform: scale(1.05);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
 }
 
 .socialButton:active {
-  background-color: var(--secondary);
-  transform: scale(0.95);
+  transform: scale(0.97);
+  background: var(--secondary);
 }
 
 /* --- Десктопні стилі --- */

@@ -37,7 +37,9 @@
   background-size: 200% 100%;
   background-position: left center;
   animation: fillAnim 1.2s ease-out forwards;
-  transition: width 0.6s ease, background 0.6s ease;
+  transition:
+    width 0.6s ease,
+    background 0.6s ease;
 }
 
 @keyframes fillAnim {
@@ -94,7 +96,10 @@
 
 .item {
   margin-bottom: 0.5rem;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
 }
@@ -181,7 +186,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .wrapper {
     padding: 2rem 4rem;
   }

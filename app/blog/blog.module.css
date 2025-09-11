@@ -8,8 +8,7 @@
 
 .content {
   display: flex;
-  flex-direction: column; /* Mobile First */
-  gap: 2rem;
+  flex-direction: column;
   width: 100%;
   max-width: 1200px;
   align-items: center;

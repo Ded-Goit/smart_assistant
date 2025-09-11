@@ -61,7 +61,7 @@ export default function Sidebar() {
       {/* Нижні кнопки */}
       {/*---setting---*/}
       <div className={styles.navBottom}>
-        <Link href="/development" className={styles.navButton}>
+        <Link href="/setting" className={styles.navButton}>
           <Image
             src="/icons/setting.svg"
             alt="Setting"

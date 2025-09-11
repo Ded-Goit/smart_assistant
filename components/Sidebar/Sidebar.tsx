@@ -24,7 +24,7 @@ export default function Sidebar() {
           Home
         </Link>
         {/*---calendar---*/}
-        <Link href="/development" className={styles.navButton}>
+        <Link href="/calendar" className={styles.navButton}>
           <Image
             src="/icons/calendar.svg"
             alt="Calendar"

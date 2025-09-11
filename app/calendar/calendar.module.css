@@ -1,15 +1,23 @@
-/* Mobile first */
 .wrapper {
   display: flex;
-  flex-direction: column; /* спочатку sidebar зверху */
-  width: 100%;
   min-height: 100vh;
-  padding-top: 150px;
 }
 
-.imagesBlock {
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px; /* або під твій Sidebar */
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  z-index: 50;
+}
+
+.main {
+  margin-left: 260px; /* рівно ширині сайдбара */
   flex: 1;
-  width: 100%;
+  padding: 24px;
 }
 
 /* Tablet (приблизно ≥768px) */

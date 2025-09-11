@@ -10,6 +10,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/react": "^6.1.19",
     "@react-icons/all-files": "^4.1.0",
     "@reduxjs/toolkit": "^2.8.2",
     "canvas-confetti": "^1.9.3",

@@ -103,8 +103,8 @@
   }
 }
 
-/* Desktop (≥1200px) */
-@media (min-width: 1200px) {
+/* Desktop (≥1440px) */
+@media (min-width: 1440px) {
   .sidebar {
     flex: 0 0 280px;
   }

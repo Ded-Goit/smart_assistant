@@ -1,52 +1,23 @@
 /* Mobile first */
-.setting{
-
-  display: inline-flex;
-}
-.textlock{
-  margin-top: 96px;
-}
-.bigBlock{
-  display: inline-flex;
-  justify-content: center;  
+.setting {
+  display: flex;
   gap: 24px;
-}
-.generalBlock{
+  margin: 12px;
   width: 100%;
-
 }
-.title{
-font-family: "Inter";
-font-size: 22;
-font-weight: 500;
-line-height: 1;
-color: var(--text-main);
 
-}
-/* Tablet (приблизно ≥768px) */
 @media (min-width: 768px) {
-  .wrapper {
-    flex-direction: row; /* sidebar зліва, контент справа */
-  }
-
-  .imagesBlock {
-    flex: 1;
-  }
-}
-
-/* Desktop (приблизно ≥1200px) */
-@media (min-width: 1200px) {
-  .wrapper {
-    flex-direction: row;
-  }
-
-  .imagesBlock {
-    flex: 1;
+  .setting {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: 100%;
+    margin: 0 12px 0 0;
   }
 }
 
-@media (min-width: 1440px){
-  .bigBlock{
-    width: 1084px;
+@media (min-width: 1440px) {
+    .setting {
+    grid-template-columns: 292px 1fr;
+    height: 100vh;
   }
 }

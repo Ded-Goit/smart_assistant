@@ -1,0 +1,174 @@
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 26px auto;
+  gap: 12px;
+  width: 100%;
+}
+
+.photo {
+  width: 64px;
+  height: 64px;
+}
+.img {
+  display: inline;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.fialdStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  width: 100%;
+  height: 39px;
+  border-radius: 8px;
+  border: 1px solid rgba(229, 231, 235, 1);
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-grey);
+  background-color: transparent;
+  padding: 10px 14px;
+  box-shadow: 0px 1px 2px rgba(10, 13, 18, 0.05);
+  margin-top: 6px;
+  background-color: var(--background);
+}
+
+.field:hover,
+.field:focus,
+.field:active {
+  background-color: transparent;
+  outline: none;
+}
+.errorField {
+  border: 1px solid red;
+}
+
+.successField {
+  border: 1px solid var(--secondary);
+}
+.fieldName {
+  font-family: "Inter";
+  font-size: 14;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.fieldPosition {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  gap: 6px;
+}
+.btnBlock {
+  display: inline-flex;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+}
+.btn {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  width: 188px;
+  height: 44px;
+  padding: 8px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btnCancel {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text);
+  background-color: transparent;
+  border-radius: 5px;
+  width: 188px;
+  height: 44px;
+  padding: 8px;
+  border: 2px solid rgba(108, 99, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btnCancel:hover,
+.btnCancel:focus,
+.btnCancel:active {
+  transform: scale(1.01);
+  overflow: hidden;
+}
+
+.uploadBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: var(--background);
+  border: 1px solid rgba(113, 118, 128, 1);
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--color-grey);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: background 0.2s;
+  margin-bottom: 16px;
+}
+
+.uploadBtn:hover {
+  background: #e0e7ff;
+}
+.span {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.cloud {
+  background-color: var(--color-neutral);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: rgba(113, 118, 128, 1);
+  border-color: "rgba(229, 231, 235, 1.0)";
+}
+
+@media (max-width: 767px) {
+  .btnBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .btn,
+.btnCancel{
+  width: 100%;
+}
+}

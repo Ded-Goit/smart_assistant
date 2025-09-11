@@ -91,7 +91,7 @@
   line-height: 1.4;
 }
 
-/* адаптив */
+/* Tablet (≥768px) */
 @media (min-width: 768px) {
   .cards {
     flex-direction: row;
@@ -102,9 +102,7 @@
     flex: 1;
     min-height: 560px;
   }
-}
-/* Tablet (≥768px) */
-@media (min-width: 768px) {
+
   .profileTitle {
     display: none;
   }
@@ -156,7 +154,7 @@
 }
 
 /* Desktop (≥1200px) */
-@media (min-width: 1400px) {
+@media (min-width: 1440px) {
   .sidebar {
     flex: 0 0 280px;
   }

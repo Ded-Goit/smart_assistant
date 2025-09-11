@@ -69,6 +69,26 @@ export const getUserInfo = async () => {
   return res.json();
 };
 
+export const changeUserInfo = async (values: any, file?: File) => {
+  const formData = new FormData();
+
+  if (values.name) formData.append("name", values.name);
+  if (values.email) formData.append("email", values.email);
+  if (file) formData.append("photo", file); 
+
+  const res = await fetch(`${BASE_URL}/auth/change-user`, {
+    method: "PATCH", 
+    credentials: "include",
+    body: formData,
+  });
+
+  if (!res.ok) {
+    const errorData = await res.json();
+    throw new Error(errorData.message || "Change user info failed");
+  }
+
+  return res.json();
+};
 export const getGoogleOAuthUrl = async () => {
   const res = await fetch(`${BASE_URL}/auth/get-oauth-url`, {
     credentials: "include",
@@ -93,27 +113,21 @@ export const loginWithGoogle = async (code: string) => {
   return res.json();
 };
 
-export async function resetPassword(password: string, token: string) {
-  try {
-    const res = await fetch(`${BASE_URL}/auth/reset-password`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password, token }),
-      credentials: "include",
-    });
+export async function changePassword(oldPassword: string, newPassword: string) {
+  const res = await fetch(`${BASE_URL}/auth/change-pwd`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ oldPassword, newPassword }),
+    credentials: "include",
+  });
 
-    const data = await res.json();
-    if (!res.ok) {
-      throw new Error(data.message || "Request failed");
-    }
-    return data;
-  } catch (err: any) {
-    throw new Error(err.message || "Network error");
-  }
+  const data = await res.json();
+
+  if (!res.ok) throw new Error(data.message);
+  return data;
 }
-
-
-
 
 export async function forgotPwd(email: string) {
   try {
@@ -126,6 +140,25 @@ export async function forgotPwd(email: string) {
         credentials: "include",
       }
     );
+    const data = await res.json();
+    if (!res.ok) {
+      throw new Error(data.message || "Request failed");
+    }
+    return data;
+  } catch (err: any) {
+    throw new Error(err.message || "Network error");
+  }
+}
+
+export async function resetPassword(password: string, token: string) {
+  try {
+    const res = await fetch(`${BASE_URL}/auth/reset-password`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password, token }),
+      credentials: "include",
+    });
+
     const data = await res.json();
     if (!res.ok) {
       throw new Error(data.message || "Request failed");

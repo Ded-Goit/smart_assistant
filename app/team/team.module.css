@@ -141,13 +141,6 @@
   }
 }
 
-/* Desktop ≥1024px: 4 колонки */
-@media (min-width: 1024px) {
-  .teamGrid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 /* Large Desktop ≥1440px: 5 колонок */
 @media (min-width: 1440px) {
   .teamGrid {
@@ -204,7 +197,9 @@
 .emailLink {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   cursor: pointer;
   position: relative;
 }
@@ -229,7 +224,9 @@
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 10;
 }
 .emailLink::before {
@@ -315,7 +312,9 @@
   animation: flagWave 6s ease infinite;
 
   /* Сяйво */
-  text-shadow: 0 0 10px rgba(0, 87, 183, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+  text-shadow:
+    0 0 10px rgba(0, 87, 183, 0.6),
+    0 0 20px rgba(255, 215, 0, 0.4);
 
   /* Позиціонування для блиску */
   position: relative;

@@ -25,23 +25,23 @@ export default function LoginForm() {
       .required("Required"),
   });
 
-const handleSubmit = async (values: any, actions: FormikHelpers<any>) => {
-  try {
-    const data = await apiClient("/auth/login", {
-      method: "POST",
-      body: JSON.stringify(values),
-    });
+  const handleSubmit = async (values: any, actions: FormikHelpers<any>) => {
+    try {
+      const data = await apiClient("/auth/login", {
+        method: "POST",
+        body: JSON.stringify(values),
+      });
 
-    showSuccess({ message: "Login successful!" });
-    actions.resetForm();
-    router.push("/setting");
-  } catch (error: any) {
-    showError(error.message || "Server error, please try again later");
-    console.error(error);
-  } finally {
-    actions.setSubmitting(false);
-  }
-};
+      showSuccess({ message: "Login successful!" });
+      actions.resetForm();
+      router.push("/setting");
+    } catch (error: any) {
+      showError(error.message || "Server error, please try again later");
+      console.error(error);
+    } finally {
+      actions.setSubmitting(false);
+    }
+  };
   interface loginValues {
     email: string;
     password: string;
@@ -76,7 +76,12 @@ const handleSubmit = async (values: any, actions: FormikHelpers<any>) => {
                 />
                 <CustomMessage name="email" />
               </div>
-              <PasswordField />
+              {/* <PasswordField /> */}
+              <PasswordField
+                name="password"
+                label="password*"
+                placeholder="password"
+              />
             </div>
             <Link href="/forgot-password" className={css.forgotPwd}>
               Forgot password

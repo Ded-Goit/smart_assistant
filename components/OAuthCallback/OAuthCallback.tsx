@@ -3,7 +3,6 @@
 // import { useEffect } from "react";
 // import { useRouter, useSearchParams } from "next/navigation";
 // import { loginWithGoogle } from "@/lib/api/apiClient";
-// import css from "../GoogleLoginBtn/GoogleLoginBtn.module.css";
 
 // export default function OAuthCallback() {
 //   const router = useRouter();
@@ -18,28 +17,21 @@
 //         await loginWithGoogle(code);
 //         router.push("/setting");
 //       } catch (err) {
-//         console.error("err Google:", err);
+//         console.error("Google OAuth error:", err);
+//         router.push("/login");
 //       }
 //     };
 
 //     confirmOAuth();
 //   }, [searchParams, router]);
 
-//   return (
-//     <button className={css.googleBtn}>
-//       <svg className={css.googlIcon}>
-//         <use href="/sprite.svg#icon-google"></use>
-//       </svg>
-//       <p className={css.googlTxt}> Sign up with Google</p>
-//     </button>
-//   );
+//   return <p>Authorizing with Google...</p>;
 // }
 
 "use client";
 
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { loginWithGoogle } from "@/lib/api/apiClient";
 
 export default function OAuthCallback() {
   const router = useRouter();
@@ -51,11 +43,16 @@ export default function OAuthCallback() {
 
     const confirmOAuth = async () => {
       try {
-        await loginWithGoogle(code);
-        router.push("/setting"); 
+        await fetch("/api/auth/google", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code }),
+        });
+
+        router.push("/setting");
       } catch (err) {
         console.error("Google OAuth error:", err);
-        router.push("/login"); 
+        router.push("/login");
       }
     };
 

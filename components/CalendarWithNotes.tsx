@@ -7,7 +7,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { addNote, removeNote, editNote } from "@/store/notesSlice";
-import { Button } from "@/components/Ui/button";
+import styles from "@/app/calendar/calendar.module.css";
 
 export default function CalendarWithNotes() {
   const dispatch = useDispatch();
@@ -89,22 +89,32 @@ export default function CalendarWithNotes() {
 
       {/* Модалка додавання */}
       {openAdd && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full">
-            <h2 className="text-xl font-bold mb-4">
-              Додати нотатку {selectedDate}
-            </h2>
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <h2 className={styles.modalTitle}>Додати нотатку {selectedDate}</h2>
+
+            <label htmlFor="note" className={styles.modalLabel}>
+              Текст нотатки
+            </label>
             <textarea
+              id="note"
+              name="note"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="w-full border rounded-lg p-2 mb-4"
+              className={styles.noteInput}
               placeholder="Введи нотатку..."
             />
-            <div className="flex justify-end gap-2">
-              <Button variant="outline" onClick={() => setOpenAdd(false)}>
+
+            <div className={styles.modalActions}>
+              <button
+                className={styles.buttonOutline}
+                onClick={() => setOpenAdd(false)}
+              >
                 Скасувати
-              </Button>
-              <Button onClick={handleSave}>Зберегти</Button>
+              </button>
+              <button className={styles.buttonPrimary} onClick={handleSave}>
+                Зберегти
+              </button>
             </div>
           </div>
         </div>
@@ -112,19 +122,22 @@ export default function CalendarWithNotes() {
 
       {/* Модалка видалення */}
       {openDelete && selectedEvent && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full">
-            <h2 className="text-xl font-bold mb-4">Видалити нотатку?</h2>
-            <p className="mb-4">
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <h2 className={styles.modalTitle}>Видалити нотатку?</h2>
+            <p>
               "{selectedEvent.title}" ({selectedEvent.date})
             </p>
-            <div className="flex justify-end gap-2">
-              <Button variant="outline" onClick={() => setOpenDelete(false)}>
+            <div className={styles.modalActions}>
+              <button
+                className={styles.buttonOutline}
+                onClick={() => setOpenDelete(false)}
+              >
                 Скасувати
-              </Button>
-              <Button variant="destructive" onClick={handleDelete}>
+              </button>
+              <button className={styles.buttonPrimary} onClick={handleDelete}>
                 Видалити
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -132,20 +145,32 @@ export default function CalendarWithNotes() {
 
       {/* Модалка редагування */}
       {openEdit && selectedEvent && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full">
-            <h2 className="text-xl font-bold mb-4">Редагувати нотатку</h2>
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <h2 className={styles.modalTitle}>Редагувати нотатку</h2>
+
+            <label htmlFor="editNote" className={styles.modalLabel}>
+              Текст нотатки
+            </label>
             <textarea
+              id="editNote"
+              name="editNote"
               value={editValue}
               onChange={(e) => setEditValue(e.target.value)}
-              className="w-full border rounded-lg p-2 mb-4"
+              className={styles.noteInput}
               placeholder="Зміни текст..."
             />
-            <div className="flex justify-end gap-2">
-              <Button variant="outline" onClick={() => setOpenEdit(false)}>
+
+            <div className={styles.modalActions}>
+              <button
+                className={styles.buttonOutline}
+                onClick={() => setOpenEdit(false)}
+              >
                 Скасувати
-              </Button>
-              <Button onClick={handleEdit}>Зберегти</Button>
+              </button>
+              <button className={styles.buttonPrimary} onClick={handleEdit}>
+                Зберегти
+              </button>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import OAuthCallback from "@/components/OAuthCallback/OAuthCallback";
 export default function GoogleAuthPage() {
   return (
      <div className={css.cover}>
-      {/* <OAuthCallback /> */}
+      <OAuthCallback />
     </div>
   );
 }

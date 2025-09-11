@@ -126,6 +126,7 @@ html.light {
 
 /* ===== БАЗОВІ ПРИЗНАЧЕННЯ ===== */
 body {
+  font-family: var(--ff-inter);
   background: var(--color-bg);
   color: var(--color-text);
   transition:

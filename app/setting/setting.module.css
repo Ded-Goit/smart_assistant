@@ -2,18 +2,22 @@
 .setting {
   display: flex;
   gap: 24px;
+  margin: 12px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .setting {
     display: grid;
-    grid-template-columns: 292px 1fr;
+    grid-template-columns: 200px 1fr;
     height: 100%;
+    margin: 0 12px 0 0;
   }
 }
 
 @media (min-width: 1440px) {
     .setting {
+    grid-template-columns: 292px 1fr;
     height: 100vh;
   }
 }

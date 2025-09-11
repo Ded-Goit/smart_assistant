@@ -32,7 +32,6 @@ export default function SettingBlock() {
                 <h2 className={styles.title}>Personal info</h2>
               </div>
 
-              {/* <UserInfo /> */}
               <ChangeUserForm />
             </div>
           </div>

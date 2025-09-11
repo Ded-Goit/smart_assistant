@@ -57,8 +57,8 @@
   }
 }
 
-/* Breakpoint 1200px */
-@media (min-width: 1200px) {
+/* Breakpoint 1440px */
+@media (min-width: 1440px) {
   .grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -99,7 +99,9 @@
   border-radius: 6px;
   box-shadow: 0 2px 4px var(--card-shadow);
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 
 .legend span:hover {

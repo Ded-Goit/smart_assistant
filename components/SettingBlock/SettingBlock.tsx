@@ -4,6 +4,7 @@ import ResetPasswordForm from "@/components/ResetPasswordForm/ResetPasswordForm"
 import styles from "./SettingBlock.module.css";
 import UserInfo from "@/components/UserInfo/UserInfo";
 import { Suspense } from "react";
+import ChangeUserForm from "../ChangeUser/ChangeUser";
 
 export default function SettingBlock() {
     return (
@@ -22,15 +23,17 @@ export default function SettingBlock() {
               <div className={styles.titleDecor}>
                 <h2 className={styles.title}>Password</h2>
               </div>
-
-              <ResetPasswordForm />
+              <div className={styles.pwdform}>
+                <ResetPasswordForm />
+              </div>
             </div>
             <div className={styles.personal}>
               <div className={styles.titleDecor}>
                 <h2 className={styles.title}>Personal info</h2>
               </div>
 
-              <UserInfo />
+              {/* <UserInfo /> */}
+              <ChangeUserForm />
             </div>
           </div>
         </div>

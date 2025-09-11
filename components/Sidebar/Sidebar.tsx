@@ -34,8 +34,8 @@ export default function Sidebar() {
           />
           Calendar
         </Link>
-        {/*---resourcesnew---*/}
-        <Link href="/development" className={styles.navButton}>
+        {/*---development---*/}
+        <Link href="/resourcesnew" className={styles.navButton}>
           <Image
             src="/icons/resources.svg"
             alt="Resources"

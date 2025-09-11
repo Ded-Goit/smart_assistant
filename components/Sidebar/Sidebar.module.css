@@ -48,6 +48,7 @@
   height: 24px;
   flex-shrink: 0;
 }
+
 @media (max-width: 767px) {
   .sidebar {
     display: none;
@@ -59,8 +60,9 @@
     width: 200px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1440px) {
   .sidebar {
     width: 292px;
   }
 }
+

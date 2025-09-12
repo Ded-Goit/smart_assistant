@@ -137,7 +137,8 @@
 }
 
 @media (max-width: 768px) {
-  .desktopNav {
+  .desktopNav,
+  .rightSection {
     display: none;
   }
 }

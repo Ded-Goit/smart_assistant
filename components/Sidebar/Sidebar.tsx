@@ -13,7 +13,7 @@ export default function Sidebar() {
 
       {/* Центральні кнопки */}
       <nav className={styles.navCenter}>
-        <Link href="/" className={styles.navButton}>
+        <Link href="/profile" className={styles.navButton}>
           <Image
             src="/icons/home.svg"
             alt="Home"
@@ -24,7 +24,7 @@ export default function Sidebar() {
           Home
         </Link>
         {/*---calendar---*/}
-        <Link href="/development" className={styles.navButton}>
+        <Link href="/calendar" className={styles.navButton}>
           <Image
             src="/icons/calendar.svg"
             alt="Calendar"
@@ -34,8 +34,8 @@ export default function Sidebar() {
           />
           Calendar
         </Link>
-        {/*---resourcesnew---*/}
-        <Link href="/development" className={styles.navButton}>
+        {/*---development---*/}
+        <Link href="/resources" className={styles.navButton}>
           <Image
             src="/icons/resources.svg"
             alt="Resources"
@@ -61,7 +61,7 @@ export default function Sidebar() {
       {/* Нижні кнопки */}
       {/*---setting---*/}
       <div className={styles.navBottom}>
-        <Link href="/development" className={styles.navButton}>
+        <Link href="/setting" className={styles.navButton}>
           <Image
             src="/icons/setting.svg"
             alt="Setting"

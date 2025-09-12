@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./MobileHeader.module.css";
 import Logo from "../Logo/logo";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 export default function MobileHeader() {
   return (
@@ -33,13 +34,7 @@ export default function MobileHeader() {
           height={32}
           priority
         />
-        <Image
-          src="/mobileheader/iconamoon_menu_burger.png"
-          alt="Menu"
-          width={32}
-          height={32}
-          priority
-        />
+        <HeaderMenu />
       </div>
     </header>
   );

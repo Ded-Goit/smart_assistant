@@ -144,3 +144,17 @@
     display: block;
   }
 }
+
+/* бургер тільки для мобільних */
+.onlyMobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .onlyMobile {
+    display: none; /* ховаємо бургер на планшеті і десктопі */
+  }
+  .menuButton {
+    display: none;
+  }
+}

@@ -1,35 +1,134 @@
-/* Mobile first */
+/* === MOBILE-FIRST БАЗОВІ СТИЛІ === */
 .wrapper {
   display: flex;
-  flex-direction: column; /* спочатку sidebar зверху */
-  width: 100%;
+  flex-direction: column;
   min-height: 100vh;
-  padding-top: 150px;
 }
 
-.imagesBlock {
-  flex: 1;
+.sidebar {
+  position: relative;
   width: 100%;
+  height: auto;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+  z-index: 50;
 }
 
-/* Tablet (приблизно ≥768px) */
+.main {
+  margin-left: 0;
+  flex: 1;
+  padding: 16px;
+}
+
+/* === TEXTAREA для нотатки === */
+.noteInput {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  color: #111827;
+  font-size: 14px;
+  line-height: 1.4;
+  resize: vertical;
+  margin-bottom: 16px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.noteInput::placeholder {
+  color: #6b7280;
+}
+
+.noteInput:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  background-color: #fff;
+}
+
+/* === LABEL над textarea === */
+.modalLabel {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+/* === Кнопки === */
+.buttonPrimary {
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease-in-out;
+}
+
+.buttonPrimary:hover {
+  transform: scale(1.05);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+}
+
+.buttonPrimary:active {
+  transform: scale(0.97);
+  background: var(--secondary);
+}
+
+.buttonOutline {
+  background-color: #fff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttonOutline:hover {
+  background-color: #f3f4f6;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* === Планшет (768px - 1023px) === */
 @media (min-width: 768px) {
-  .wrapper {
-    flex-direction: row; /* sidebar зліва, контент справа */
-  }
-
-  .imagesBlock {
-    flex: 1;
-  }
-}
-
-/* Desktop (приблизно ≥1200px) */
-@media (min-width: 1440px) {
   .wrapper {
     flex-direction: row;
   }
 
-  .imagesBlock {
-    flex: 1;
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    border-bottom: none;
+    border-right: 1px solid #e5e7eb;
+  }
+
+  .main {
+    margin-left: 200px;
+    padding: 20px;
+  }
+}
+
+/* === Десктоп (1024px+) === */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 260px;
+  }
+
+  .main {
+    margin-left: 260px;
+    padding: 24px;
   }
 }

@@ -1,6 +1,9 @@
-import Image from "next/image";
-import styles from "./resourcesnew.module.css";
+"use client";
+
+import { motion } from "framer-motion";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 import Sidebar from "@/components/Sidebar/Sidebar";
+
 import Filter from "@/components/Filter/Filter";
 
 export default function ResourcesnewPage() {
@@ -11,8 +14,9 @@ export default function ResourcesnewPage() {
         <div className={styles.mainBlock}>
           <div className={styles.header}></div>
           <Filter/>
+
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

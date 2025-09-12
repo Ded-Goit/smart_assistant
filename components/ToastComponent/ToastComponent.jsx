@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 export const showSuccess = ({ message }) => {
   toast(message, {
     style: {
-      background: "var(--text-color-white)",
+      background: "var(  --color-text)",
       color: "#3CBF61",
       borderColor: "#3CBF61",
     },
@@ -14,8 +14,8 @@ export const showSuccess = ({ message }) => {
 export const showError = ({ message }) => {
   toast(message, {
     style: {
-      background: "var(--border-color_error)",
-      color: "var(--text-color-white)",
+      background: "var(-color-tertiary)",
+      color: "var(-color-tertiary)",
     },
     position: "top-center",
   });

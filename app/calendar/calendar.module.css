@@ -59,16 +59,25 @@
 
 /* === Кнопки === */
 .buttonPrimary {
-  background-color: #2563eb;
+  background: var(--primary);
   color: #fff;
   padding: 8px 16px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease-in-out;
 }
 
 .buttonPrimary:hover {
-  background-color: #1d4ed8;
+  transform: scale(1.05);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+}
+
+.buttonPrimary:active {
+  transform: scale(0.97);
+  background: var(--secondary);
 }
 
 .buttonOutline {

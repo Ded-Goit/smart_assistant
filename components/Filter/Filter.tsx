@@ -1,7 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getAllResurses, changeResurse, delResurseId } from "@/lib/api/apiResurse";
+import {
+  getAllResurses,
+  changeResurse,
+  delResurseId,
+} from "@/lib/api/apiResurse";
 import { CiSearch } from "react-icons/ci";
 import { Toaster, toast } from "react-hot-toast";
 import css from "./Filter.module.css";
@@ -25,48 +29,6 @@ export default function Filter() {
     resurse: "",
   });
 
-  // const fetchResurses = async () => {
-  //   try {
-  //     const response = await getAllResurses();
-  //     const items = response.data?.data || [];
-  //     setResurses(items);
-  //     setFiltered(items);
-  //   } catch (err) {
-  //     console.error("Ошибка загрузки:", err);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchResurses();
-  // }, []);
-
-  // useEffect(() => {
-  //   let f = resurses;
-
-  //   if (filters.resurseName) {
-  //     f = f.filter((r) =>
-  //       (r.resurseName || "")
-  //         .toLowerCase()
-  //         .includes(filters.resurseName.toLowerCase())
-  //     );
-  //   }
-
-  //   if (filters.category) {
-  //     f = f.filter((r) =>
-  //       (r.category || "")
-  //         .toLowerCase()
-  //         .includes(filters.category.toLowerCase())
-  //     );
-  //   }
-
-  //   setFiltered(f);
-  // }, [filters, resurses]);
-
-  // const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFilters((prev) => ({ ...prev, [name]: value }));
-  // };
-
   const fetchResurses = async () => {
     try {
       const response = await getAllResurses();
@@ -82,7 +44,6 @@ export default function Filter() {
     fetchResurses();
   }, []);
 
-  // Фильтрация
   useEffect(() => {
     let f = resurses;
     if (filters.resurseName) {
@@ -107,7 +68,7 @@ export default function Filter() {
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
 
-  // --- Редактирование ---
+
   const handleStartEdit = (item: Resurse) => {
     setEditingId(item._id);
     setEditFields({ resurseName: "", category: "", resurse: "" });
@@ -134,30 +95,30 @@ export default function Filter() {
     if (editFields.resurse.trim()) payload.resurse = editFields.resurse.trim();
 
     if (Object.keys(payload).length === 0) {
-      toast("Нечего обновлять");
+      toast("any change");
       setEditingId(null);
       return;
     }
 
     try {
       await changeResurse(payload, id);
-      toast.success("Ресурс обновлён");
+      toast.success("Resourse renewed");
       setEditingId(null);
       fetchResurses();
     } catch (err: any) {
-      toast.error(err?.message || "Ошибка обновления");
+      toast.error(err?.message || "error");
     }
   };
 
   // --- Удаление ---
   const handleDelete = async (id: string) => {
-    if (!confirm("Удалить ресурс?")) return;
+    if (!confirm("Delete?")) return;
     try {
       await delResurseId(id);
-      toast.success("Ресурс удалён");
+      toast.success("Deleted");
       fetchResurses();
     } catch (err: any) {
-      toast.error(err?.message || "Ошибка удаления");
+      toast.error(err?.message || "Error");
     }
   };
 
@@ -233,7 +194,7 @@ export default function Filter() {
                       value={editFields.resurse}
                       onChange={handleChangeField}
                       className={css.input}
-                      rows={3}
+                      // rows={3}
                     />
                   </td>
                   <td colSpan={2}>

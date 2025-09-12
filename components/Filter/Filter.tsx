@@ -110,7 +110,6 @@ export default function Filter() {
     }
   };
 
-  // --- Удаление ---
   const handleDelete = async (id: string) => {
     if (!confirm("Delete?")) return;
     try {

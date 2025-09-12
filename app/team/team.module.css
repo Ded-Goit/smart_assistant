@@ -1,5 +1,6 @@
 /* ========== Wrapper ========== */
 .wrapper {
+  margin-top: 87px;
   min-height: 100vh;
   padding: 2rem 1rem;
 }

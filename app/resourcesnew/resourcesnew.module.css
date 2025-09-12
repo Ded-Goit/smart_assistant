@@ -1,7 +1,28 @@
 .register {
+  display: flex;
+  /* width: 100%;   */
+  max-width: 1440px;
+ height: 100vh;
+
+}
+.header {
+  height: 72px;
   width: 100%;
 }
+.mainBlock {
+  background-color: var(--white);
+}
+@media (min-width: 768px) {
+  .register {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: 100%;
+  }
+}
 
-.imagesBlock {
-  width: 100%;
+@media (min-width: 1440px) {
+  .register {
+    grid-template-columns: 292px 1fr;
+    height: 100vh;
+  }
 }

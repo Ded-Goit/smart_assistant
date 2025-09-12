@@ -93,10 +93,10 @@ export default function CalendarWithNotes() {
       {openAdd && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <h2 className={styles.modalTitle}>Додати нотатку {selectedDate}</h2>
+            <h2 className={styles.modalTitle}>Add a note {selectedDate}</h2>
 
             <label htmlFor="note" className={styles.modalLabel}>
-              Текст нотатки
+              Note text
             </label>
             <textarea
               id="note"
@@ -112,10 +112,10 @@ export default function CalendarWithNotes() {
                 className={styles.buttonOutline}
                 onClick={() => setOpenAdd(false)}
               >
-                Скасувати
+                Cancel
               </button>
               <button className={styles.buttonPrimary} onClick={handleSave}>
-                Зберегти
+                Save
               </button>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function CalendarWithNotes() {
       {openDelete && selectedEvent && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <h2 className={styles.modalTitle}>Видалити нотатку?</h2>
+            <h2 className={styles.modalTitle}>Delete note?</h2>
             <p>
               "{selectedEvent.title}" ({selectedEvent.date})
             </p>
@@ -135,10 +135,10 @@ export default function CalendarWithNotes() {
                 className={styles.buttonOutline}
                 onClick={() => setOpenDelete(false)}
               >
-                Скасувати
+                Cancel
               </button>
               <button className={styles.buttonPrimary} onClick={handleDelete}>
-                Видалити
+                Remove
               </button>
             </div>
           </div>
@@ -149,10 +149,10 @@ export default function CalendarWithNotes() {
       {openEdit && selectedEvent && (
         <div className={styles.modalOverlay}>
           <div className={styles.modalContent}>
-            <h2 className={styles.modalTitle}>Редагувати нотатку</h2>
+            <h2 className={styles.modalTitle}>Edit note</h2>
 
             <label htmlFor="editNote" className={styles.modalLabel}>
-              Текст нотатки
+              Note text
             </label>
             <textarea
               id="editNote"
@@ -168,10 +168,10 @@ export default function CalendarWithNotes() {
                 className={styles.buttonOutline}
                 onClick={() => setOpenEdit(false)}
               >
-                Скасувати
+                Cancel
               </button>
               <button className={styles.buttonPrimary} onClick={handleEdit}>
-                Зберегти
+                Save
               </button>
             </div>
           </div>

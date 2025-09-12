@@ -45,21 +45,6 @@ const team = [
       twitter: "https://twitter.com/",
     },
   },
-  {
-    name: "Olena Lytvynenko",
-    interests: "website design",
-    photo: "/team/olena_lytvynenko.webp",
-    hobby: "UX/UI Designer",
-    email: "8888888@gmail.com",
-    socials: {
-      linkedin: "https://www.linkedin.com/",
-      telegram: "https://web.telegram.org/",
-      youtube: "https://youtube.com/",
-      instagram: "https://instagram.com/",
-      facebook: "https://facebook.com/",
-      twitter: "https://twitter.com/",
-    },
-  },
 ];
 export default function TeamPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -90,17 +75,19 @@ export default function TeamPage() {
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.headingMain}>НАЗВА КОМАНДИ</h1>
+      <h1 className={styles.headingMain}>TEAM 4</h1>
 
       <h2 className={`${styles.heading} ${styles.headingSub} ${styles.delay2}`}>
-        With Ukraine in our hearts. With data in our hands.
+        With Ukraine in our hearts. With the future in our hands.
       </h2>
 
       <h3
         className={`${styles.heading} ${styles.headingDesc} ${styles.delay3}`}
       >
-        СЛОГАН Team from Ukraine that proves: deep analysis is power. We work on
-        real problems to change the world with the help of data.
+        Team 4 from Ukraine, which self-organized to participate in Hackathon
+        2025. Knowledge is the only thing that cannot be taken away from you.
+        Use the time given to you by life with benefit. Learn, Love, Live. Work
+        on real problems to change the world with the help of IT technologies.
       </h3>
       <div className={styles.teamGrid} ref={scrollRef}>
         {team.map((member, i) => (

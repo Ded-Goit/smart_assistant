@@ -14,3 +14,12 @@ export const subscribe = {
   instagram: "https://www.instagram.com/goitclub/",
   facebook: "https://www.facebook.com/goITclub",
 };
+
+export const navMobileLinks = [
+  { href: "/", label: "Home" },
+  { href: "/#how-it-works", label: "How It Works?" },
+  { href: "/#features", label: "Features" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/tools", label: "Tools" },
+  { href: "/book", label: "interesting book" },
+];

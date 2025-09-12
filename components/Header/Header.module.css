@@ -137,7 +137,8 @@
 }
 
 @media (max-width: 768px) {
-  .header {
+  .desktopNav,
+  .rightSection {
     display: none;
   }
 }

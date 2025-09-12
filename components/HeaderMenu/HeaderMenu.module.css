@@ -1,0 +1,160 @@
+.mobileMenu {
+  display: none;
+}
+
+.menuButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  z-index: 2100;
+}
+
+/* Бекдроп */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1990;
+}
+
+/* Меню */
+.menuOverlay {
+  background-color: #ebecf5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+  z-index: 2000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.menuOverlay.open {
+  transform: translateX(0);
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  gap: 1.25rem;
+}
+
+.menuLink {
+  background-color: transparent;
+  color: var(--color-primary);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.menuLink:hover,
+.menuLink:focus,
+.menuLink:active {
+  transform: scale(1.01);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.authButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* широкі кнопки */
+.loginBtn,
+.registerBtn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.loginBtn {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginBtn:hover {
+  border-color: #6c63ff;
+  color: #6c63ff;
+  transform: scale(1.05);
+}
+
+.loginBtn:active {
+  transform: scale(0.97);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.registerBtn {
+  background: var(--primary);
+  color: var(--background);
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease-in-out;
+}
+
+.registerBtn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(49deg, #6c63ff 0%, #413b99 100%);
+}
+
+.registerBtn:active {
+  transform: scale(0.97);
+  background: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  .mobileMenu {
+    display: block;
+  }
+}
+
+/* бургер тільки для мобільних */
+.onlyMobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .onlyMobile {
+    display: none; /* ховаємо бургер на планшеті і десктопі */
+  }
+  .menuButton {
+    display: none;
+  }
+}

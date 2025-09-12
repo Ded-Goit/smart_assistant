@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { addNote, removeNote, editNote } from "@/store/notesSlice";
 import styles from "@/app/calendar/calendar.module.css";
+import MobileHeader from "./MobileHeader/MobileHeader";
 
 export default function CalendarWithNotes() {
   const dispatch = useDispatch();
@@ -73,6 +74,7 @@ export default function CalendarWithNotes() {
 
   return (
     <div className="p-4 w-full">
+      <MobileHeader />
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"

@@ -1,14 +1,14 @@
-"use client";
-
-import { motion } from "framer-motion";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import Image from "next/image";
+import styles from "./resourcesnew.module.css";
 import Sidebar from "@/components/Sidebar/Sidebar";
 
 import Filter from "@/components/Filter/Filter";
 
+
 export default function ResourcesnewPage() {
   return (
     <>
+
       <section className={styles.register}>        
         <Sidebar />
         <div className={styles.mainBlock}>
@@ -16,7 +16,7 @@ export default function ResourcesnewPage() {
           <Filter/>
 
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

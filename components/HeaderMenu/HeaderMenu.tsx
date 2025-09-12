@@ -42,7 +42,7 @@ export default function HeaderMenu() {
         <nav className={styles.menuNav}>
           {/* Центральні кнопки */}
           <Link
-            href="/"
+            href="/profile"
             className={styles.menuLink}
             onClick={() => setIsOpen(false)}
           >
@@ -65,7 +65,7 @@ export default function HeaderMenu() {
           </Link>
 
           <Link
-            href="/resourcesnew"
+            href="/resources"
             className={styles.menuLink}
             onClick={() => setIsOpen(false)}
           >

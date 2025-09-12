@@ -14,6 +14,8 @@ import { HiOutlineLightBulb, HiOutlineMicrophone } from "react-icons/hi";
 import { MdOutlineTimer, MdOutlineTrackChanges } from "react-icons/md";
 import { BiCodeBlock, BiGitBranch, BiNotepad } from "react-icons/bi";
 import { AiOutlineDatabase } from "react-icons/ai";
+import MobileHeader from "@/components/MobileHeader/MobileHeader";
+import Sidebar from "@/components/Sidebar/Sidebar";
 
 export default function ResourcesPage() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -280,45 +282,59 @@ export default function ResourcesPage() {
 
   return (
     <section className={styles.wrapper}>
-      <h1 className={styles.heading}>Additional Resources</h1>
-      <div className={styles.legend}>
-        <span
-          onClick={() => setActiveCategory(null)}
-          className={activeCategory === null ? styles.active : ""}
-        >
-          All
-        </span>
-        {legend.map((item, idx) => (
+      {/* Sidebar тільки на планшеті і вище */}
+      <aside className={styles.sidebar}>
+        <Sidebar />
+      </aside>
+
+      {/* Контентна частина */}
+      <div className={styles.content}>
+        <div className={styles.mobileheader}>
+          <MobileHeader />
+        </div>
+
+        <h1 className={styles.heading}>Additional Resources</h1>
+
+        <div className={styles.legend}>
           <span
-            key={idx}
-            onClick={() =>
-              setActiveCategory(
-                activeCategory === item.label ? null : item.label
-              )
-            }
-            className={activeCategory === item.label ? styles.active : ""}
+            onClick={() => setActiveCategory(null)}
+            className={activeCategory === null ? styles.active : ""}
           >
-            {item.icon} {item.label}
+            All
           </span>
-        ))}
-      </div>
-      <div className={styles.grid}>
-        {filteredResources.map((res, idx) => (
-          <a
-            key={idx}
-            href={res.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-            style={{ animationDelay: `${idx * 0.1}s` }}
-          >
-            <div className={styles.icon}>{res.icon}</div>
-            <div className={styles.content}>
-              <h2>{res.title}</h2>
-              <p>{res.description}</p>
-            </div>
-          </a>
-        ))}
+          {legend.map((item, idx) => (
+            <span
+              key={idx}
+              onClick={() =>
+                setActiveCategory(
+                  activeCategory === item.label ? null : item.label
+                )
+              }
+              className={activeCategory === item.label ? styles.active : ""}
+            >
+              {item.icon} {item.label}
+            </span>
+          ))}
+        </div>
+
+        <div className={styles.grid}>
+          {filteredResources.map((res, idx) => (
+            <a
+              key={idx}
+              href={res.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.card}
+              style={{ animationDelay: `${idx * 0.1}s` }}
+            >
+              <div className={styles.icon}>{res.icon}</div>
+              <div className={styles.contentBlock}>
+                <h2>{res.title}</h2>
+                <p>{res.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

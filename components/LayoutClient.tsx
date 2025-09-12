@@ -13,6 +13,7 @@ const hiddenHeaderRoutes = [
   "/profile",
   "/calendar",
   "/resourcesnew",
+  "/resources",
   "/setting",
 ];
 const hiddenFooterRoutes = [

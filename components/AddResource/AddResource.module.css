@@ -1,0 +1,126 @@
+.addtresurse {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.btn {
+  color: var(--color-primary);
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  /* height: 38px; */
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.fieldForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.field {
+  border-radius: 15px;
+  width: 100%;
+  background-color: var(--color-bg-viol);
+  padding: 16px 16px 16px 42px;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-grey);
+  border: none;
+}
+.btnPart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btnAdd {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-bg);
+  background-color: var(--color-primary);
+  border-radius: 5px;
+  width: 188px;
+  height: 44px;
+  padding: 8px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btnCancel {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-text);
+  background-color: transparent;
+  border-radius: 5px;
+  width: 188px;
+  height: 44px;
+  padding: 8px;
+  border: 2px solid rgba(108, 99, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.btnAdd:hover,
+.btnAdd:focus,
+.btnAdd:active,
+.btnCancel:hover,
+.btnCancel:focus,
+.btnCancel:active {
+  transform: scale(1.01);
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .form {
+    /* width: calc(100%-410px); */
+    width: 100%;
+  }
+  .addtresurse {
+    flex-direction: row;
+    gap: 12px;
+
+    /* width: calc(100%-110px); */
+    width: 100%;
+  }
+  .fieldForm {
+    width: 100%;
+  }
+  .field {
+    width: 100%;
+  }
+  .btnPart {
+    flex-direction: row;
+  }
+  .btnPart {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 12px;
+    width: 100%;
+  }
+  .btnAdd,
+  .btnCancel {
+    width: 140px;
+  }
+}

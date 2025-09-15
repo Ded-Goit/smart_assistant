@@ -1,16 +1,13 @@
 .register {
-<<<<<<< Updated upstream
   width: 100%;
 }
 
 .imagesBlock {
   width: 100%;
-=======
   display: flex;
   /* width: 100%;   */
   max-width: 1440px;
- height: 100vh;
-
+  height: 100vh;
 }
 .header {
   height: 72px;
@@ -32,5 +29,4 @@
     grid-template-columns: 292px 1fr;
     height: 100vh;
   }
->>>>>>> Stashed changes
 }

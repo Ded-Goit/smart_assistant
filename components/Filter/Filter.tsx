@@ -10,6 +10,7 @@ import { CiSearch } from "react-icons/ci";
 import { Toaster, toast } from "react-hot-toast";
 import css from "./Filter.module.css";
 import AddResourse from "../AddResource/AddResource";
+import { PaginatedItems } from "../PaginatedItems/PaginatedItems";
 
 interface Resurse {
   _id: string;
@@ -29,20 +30,35 @@ export default function Filter() {
     resurse: "",
   });
 
-  const fetchResurses = async () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
+  const perPage = 10;
+
+  const fetchResurses = async (page = 1) => {
     try {
-      const response = await getAllResurses();
-      const items = response.data?.data || [];
+      const response = await getAllResurses({
+        page,
+        perPage,
+        filter: filters,
+      });
+
+      const items = response.data || [];
+      const meta = response;
+
       setResurses(items);
-      setFiltered(items);
+      setCurrentPage(meta.page);
+      setTotalPage(meta.totalPages);
     } catch (err) {
-      console.error("Ошибка загрузки:", err);
+      console.error("Error download:", err);
     }
   };
+  useEffect(() => {
+    fetchResurses(1);
+  }, []);
 
   useEffect(() => {
-    fetchResurses();
-  }, []);
+    fetchResurses(1);
+  }, [filters]);
 
   useEffect(() => {
     let f = resurses;
@@ -67,7 +83,6 @@ export default function Filter() {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
-
 
   const handleStartEdit = (item: Resurse) => {
     setEditingId(item._id);
@@ -159,8 +174,8 @@ export default function Filter() {
             <th className={css.columName}>Resurse Name</th>
             <th className={css.columName}>Category</th>
             <th className={css.columName}>Resurse</th>
-            <th className={css.columNameBtn}>Edit</th>
-            <th className={css.columNameBtn}>Delete</th>
+            <th className={css.columNameBtn}></th>
+            <th className={css.columNameBtn}></th>
           </tr>
         </thead>
         <tbody>
@@ -198,10 +213,18 @@ export default function Filter() {
                   </td>
                   <td colSpan={2}>
                     <div className={css.controls}>
-                      <button onClick={() => handleSubmitEdit(item._id, item)}>
+                      <button
+                        className={css.controlsBtn}
+                        onClick={() => handleSubmitEdit(item._id, item)}
+                      >
                         💾
                       </button>
-                      <button onClick={handleCancelEdit}>✖ Cancel</button>
+                      <button
+                        className={css.controlsBtn}
+                        onClick={handleCancelEdit}
+                      >
+                        ✖
+                      </button>
                     </div>
                   </td>
                 </>
@@ -236,6 +259,14 @@ export default function Filter() {
           ))}
         </tbody>
       </table>
+      <div className={css.pagination}>
+        <PaginatedItems
+          items={resurses}
+          totalPage={totalPage}
+          currentPage={currentPage}
+          fetchAction={(page: number) => fetchResurses(page)}
+        />
+      </div>
 
       <Toaster />
     </div>
